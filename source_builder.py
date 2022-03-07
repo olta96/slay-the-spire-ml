@@ -27,12 +27,18 @@ for run in runs:
         new_run["ascension_level"] = event["ascension_level"]
         new_run["floor_reached"] = event["floor_reached"]
         new_run["card_choices"] = event["card_choices"]
+
         new_run["event_choices"] = []
         for event_choice in event["event_choices"]:
-            for value in ["cards_optained", "cards_transformed", "cards_removed", "copied", "floor"]:
+            for value in ["cards_obtained", "cards_removed", "cards_upgraded"]:
                 if value in event_choice.keys():
-                    new_run["event_choices"].append(event_choice)
+                    new_event_choice = {}
+                    for _value in ["cards_obtained", "cards_transformed", "cards_removed", "cards_upgraded", "floor"]:
+                        if _value in event_choice.keys():
+                            new_event_choice[_value] = event_choice[_value]
+                    new_run["event_choices"].append(new_event_choice)
                     break
+
         new_run["campfire_choices"] = []
         for campfire_choice in event["campfire_choices"]:
             if campfire_choice["key"] == "SMITH":
