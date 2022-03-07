@@ -12,9 +12,9 @@
 
 - card_choices: 
 
-- - not_picked
-- - picked
-- - floor
+  - not_picked
+  - picked
+  - floor
 
 - event_choices:
 
