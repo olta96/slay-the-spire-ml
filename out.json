@@ -1,6 +1,7 @@
 [
     {
         "id": 0,
+        "victory": false,
         "ascension_level": 10,
         "floor_reached": 55,
         "card_choices": [
@@ -355,6 +356,7 @@
     },
     {
         "id": 1,
+        "victory": true,
         "ascension_level": 20,
         "floor_reached": 52,
         "card_choices": [
@@ -666,6 +668,7 @@
     },
     {
         "id": 2,
+        "victory": false,
         "ascension_level": 20,
         "floor_reached": 56,
         "card_choices": [
@@ -992,6 +995,7 @@
     },
     {
         "id": 3,
+        "victory": false,
         "ascension_level": 13,
         "floor_reached": 50,
         "card_choices": [
@@ -1340,6 +1344,7 @@
     },
     {
         "id": 4,
+        "victory": false,
         "ascension_level": 20,
         "floor_reached": 50,
         "card_choices": [
@@ -1662,6 +1667,7 @@
     },
     {
         "id": 5,
+        "victory": true,
         "ascension_level": 19,
         "floor_reached": 51,
         "card_choices": [
@@ -1997,6 +2003,7 @@
     },
     {
         "id": 6,
+        "victory": true,
         "ascension_level": 16,
         "floor_reached": 51,
         "card_choices": [
@@ -2348,6 +2355,7 @@
     },
     {
         "id": 7,
+        "victory": false,
         "ascension_level": 20,
         "floor_reached": 50,
         "card_choices": [
@@ -2697,6 +2705,7 @@
     },
     {
         "id": 8,
+        "victory": false,
         "ascension_level": 20,
         "floor_reached": 56,
         "card_choices": [
@@ -3083,6 +3092,7 @@
     },
     {
         "id": 9,
+        "victory": true,
         "ascension_level": 19,
         "floor_reached": 51,
         "card_choices": [
@@ -3436,6 +3446,7 @@
     },
     {
         "id": 10,
+        "victory": true,
         "ascension_level": 17,
         "floor_reached": 51,
         "card_choices": [

@@ -23,6 +23,7 @@ for run in runs:
         _id += 1
         new_run = {}
         new_run["id"] = _id
+        new_run["victory"] = event["victory"]
         new_run["ascension_level"] = event["ascension_level"]
         new_run["floor_reached"] = event["floor_reached"]
         new_run["card_choices"] = event["card_choices"]
