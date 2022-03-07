@@ -18,12 +18,12 @@
 
 - event_choices:
 
-- - cards_optained
-- - cards_transformed
-- - cards_removed
-- - copied
-- - floor
+  - cards_optained
+  - cards_transformed
+  - cards_removed
+  - copied
+  - floor
 
 - campfire_choices:
 
-- - data
+  - data
