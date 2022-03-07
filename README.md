@@ -9,14 +9,21 @@ acension_level
 Variables: Cards:
 
 items_purged
-card_choices -> not_picked
-		picked
-		floor
 
-event_choices -> cards_optained
-		 cards_transformed
-		 cards_removed
-		 copied
-		 floor
+card_choices: 
 
-campfire_choices -> data
+not_picked
+picked
+floor
+
+event_choices:
+
+cards_optained
+cards_transformed
+cards_removed
+copied
+floor
+
+campfire_choices:
+
+data
