@@ -10,7 +10,7 @@ def read_json_file():
         return json.loads(json_contents)
     
 runs = read_json_file()
-print(len(runs))
+print(f"Loaded: {len(runs)} runs.")
 
 result_runs = []
 for run in runs:
@@ -23,5 +23,5 @@ for run in runs:
 with open("out.json", "w+") as json_file:
     json_file.write(json.dumps(result_runs, indent=4))
 
-print(len(result_runs))
+print(f"Exported: {len(result_runs)} runs.")
 
