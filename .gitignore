@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Path to Source Original Data
+data_source_path.py
+
 # Original data
 Monthly_2020_11/
