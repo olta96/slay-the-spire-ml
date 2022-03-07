@@ -13,13 +13,16 @@ runs = read_json_file()
 print(f"Loaded: {len(runs)} runs.")
 
 result_runs = []
+_id = -1
 for run in runs:
     event = run["event"]
     if event["character_chosen"] == "IRONCLAD"\
     and event["ascension_level"] >= 10\
     and event["floor_reached"] >= 44\
     and not event["is_endless"]:
+        _id += 1
         new_run = {}
+        new_run["id"] = _id
         new_run["ascension_level"] = event["ascension_level"]
         new_run["floor_reached"] = event["floor_reached"]
         new_run["card_choices"] = event["card_choices"]
