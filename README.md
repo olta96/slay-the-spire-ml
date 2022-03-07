@@ -4,7 +4,8 @@
 
 - character_chosen
 - floor_reached 
-- acension_level
+- acsension_level
+- is_endless == false
 
 ## Key Variables:
 
