@@ -27,3 +27,5 @@
 - campfire_choices:
 
   - data
+  - floor
+  - key = "SMITH"
