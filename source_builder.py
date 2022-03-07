@@ -17,8 +17,23 @@ for run in runs:
     event = run["event"]
     if event["character_chosen"] == "IRONCLAD"\
     and event["ascension_level"] >= 10\
-    and event["floor_reached"] >= 44:
-        result_runs.append(run)
+    and event["floor_reached"] >= 44\
+    and not event["is_endless"]:
+        new_run = {}
+        new_run["ascension_level"] = event["ascension_level"]
+        new_run["floor_reached"] = event["floor_reached"]
+        new_run["card_choices"] = event["card_choices"]
+        new_run["event_choices"] = []
+        for event_choice in event["event_choices"]:
+            for value in ["cards_optained", "cards_transformed", "cards_removed", "copied", "floor"]:
+                if value in event_choice.keys():
+                    new_run["event_choices"].append(event_choice)
+                    break
+        new_run["campfire_choices"] = []
+        for campfire_choice in event["campfire_choices"]:
+            if campfire_choice["key"] == "SMITH":
+                new_run["campfire_choices"].append(campfire_choice)
+        result_runs.append(new_run)
 
 with open("out.json", "w+") as json_file:
     json_file.write(json.dumps(result_runs, indent=4))
