@@ -1,0 +1,3802 @@
+[
+    {
+        "id": 0,
+        "victory": false,
+        "ascension_level": 16,
+        "floor_reached": 50,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Pummel",
+                    "Shockwave"
+                ],
+                "picked": "Disarm",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Thunderclap"
+                ],
+                "picked": "Whirlwind",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Carnage",
+                    "Anger"
+                ],
+                "picked": "SKIP",
+                "floor": 4.0
+            },
+            {
+                "not_picked": [
+                    "Intimidate",
+                    "Iron Wave"
+                ],
+                "picked": "Armaments",
+                "floor": 5.0
+            },
+            {
+                "not_picked": [
+                    "Uppercut",
+                    "Sentinel"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 7.0
+            },
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Havoc"
+                ],
+                "picked": "Pommel Strike",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Metallicize",
+                    "Clothesline"
+                ],
+                "picked": "Dual Wield",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Reaper",
+                    "Exhume"
+                ],
+                "picked": "Double Tap",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Hemokinesis",
+                    "Iron Wave"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Evolve"
+                ],
+                "picked": "Battle Trance",
+                "floor": 19
+            },
+            {
+                "not_picked": [
+                    "Feel No Pain",
+                    "Perfected Strike"
+                ],
+                "picked": "Shrug It Off+1",
+                "floor": 20
+            },
+            {
+                "not_picked": [
+                    "Limit Break",
+                    "Burning Pact",
+                    "Sentinel"
+                ],
+                "picked": "SKIP",
+                "floor": 28
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Clothesline",
+                    "Havoc"
+                ],
+                "picked": "SKIP",
+                "floor": 29
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Carnage",
+                    "Burning Pact"
+                ],
+                "picked": "SKIP",
+                "floor": 30
+            },
+            {
+                "not_picked": [
+                    "Flame Barrier",
+                    "Headbutt",
+                    "Thunderclap"
+                ],
+                "picked": "SKIP",
+                "floor": 31
+            },
+            {
+                "not_picked": [
+                    "Reaper",
+                    "Limit Break"
+                ],
+                "picked": "Corruption",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Twin Strike",
+                    "Thunderclap"
+                ],
+                "picked": "SKIP",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Chrysalis",
+                    "Madness"
+                ],
+                "picked": "Trip",
+                "floor": 37
+            },
+            {
+                "not_picked": [
+                    "Cleave",
+                    "Carnage"
+                ],
+                "picked": "Disarm",
+                "floor": 38
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Second Wind+1"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 41
+            },
+            {
+                "not_picked": [
+                    "Searing Blow",
+                    "Thunderclap"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Anger",
+                    "Warcry"
+                ],
+                "picked": "Sentinel",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Reckless Charge"
+                ],
+                "picked": "Feel No Pain+1",
+                "floor": 47
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Disarm+1",
+            "Whirlwind+1",
+            "Armaments+1",
+            "Shrug It Off",
+            "Pommel Strike+1",
+            "Dual Wield+1",
+            "Double Tap+1",
+            "Shrug It Off",
+            "Battle Trance+1",
+            "Shrug It Off+1",
+            "Corruption",
+            "Trip",
+            "Disarm",
+            "Flame Barrier",
+            "Shrug It Off",
+            "Sentinel",
+            "Feel No Pain+1"
+        ],
+        "play_id": "83daa3f2-d7ab-4ada-a970-24af27fab57b",
+        "cards_purchased": [],
+        "event_choices": [
+            {
+                "cards_removed": [
+                    "Defend_R"
+                ],
+                "floor": 13.0
+            },
+            {
+                "cards_removed": [
+                    "Defend_R"
+                ],
+                "floor": 22
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Armaments",
+                "floor": 6.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Whirlwind",
+                "floor": 10.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Disarm",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Dual Wield",
+                "floor": 23,
+                "key": "SMITH"
+            },
+            {
+                "data": "Bash",
+                "floor": 25,
+                "key": "SMITH"
+            },
+            {
+                "data": "Pommel Strike",
+                "floor": 27,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "victory": true,
+        "ascension_level": 19,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Exhume",
+                    "Limit Break"
+                ],
+                "picked": "Immolate",
+                "floor": 0
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Headbutt"
+                ],
+                "picked": "Heavy Blade",
+                "floor": 1
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Havoc",
+                    "Headbutt"
+                ],
+                "picked": "SKIP",
+                "floor": 2
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Perfected Strike",
+                    "Power Through"
+                ],
+                "picked": "SKIP",
+                "floor": 4
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Headbutt",
+                    "Warcry"
+                ],
+                "picked": "SKIP",
+                "floor": 5
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Second Wind",
+                    "Cleave"
+                ],
+                "picked": "SKIP",
+                "floor": 11
+            },
+            {
+                "not_picked": [
+                    "Double Tap",
+                    "Warcry"
+                ],
+                "picked": "Inflame",
+                "floor": 14
+            },
+            {
+                "not_picked": [
+                    "Reaper",
+                    "Juggernaut"
+                ],
+                "picked": "Immolate",
+                "floor": 16
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Perfected Strike+1",
+                    "Iron Wave"
+                ],
+                "picked": "SKIP",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Thunderclap"
+                ],
+                "picked": "Pommel Strike",
+                "floor": 19
+            },
+            {
+                "not_picked": [
+                    "Reckless Charge",
+                    "Sever Soul"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 21
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade",
+                    "Cleave",
+                    "Thunderclap"
+                ],
+                "picked": "SKIP",
+                "floor": 22
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Thunderclap",
+                    "Infernal Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 24
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Perfected Strike",
+                    "Whirlwind"
+                ],
+                "picked": "SKIP",
+                "floor": 27
+            },
+            {
+                "not_picked": [
+                    "Thunderclap+1",
+                    "Anger"
+                ],
+                "picked": "Seeing Red+1",
+                "floor": 29
+            },
+            {
+                "not_picked": [
+                    "Feed",
+                    "Double Tap+1"
+                ],
+                "picked": "Demon Form",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Headbutt"
+                ],
+                "picked": "SKIP",
+                "floor": 36
+            },
+            {
+                "not_picked": [
+                    "Hemokinesis"
+                ],
+                "picked": "SKIP",
+                "floor": 37
+            },
+            {
+                "not_picked": [
+                    "Carnage"
+                ],
+                "picked": "SKIP",
+                "floor": 41
+            },
+            {
+                "not_picked": [
+                    "Thunderclap+1"
+                ],
+                "picked": "SKIP",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "True Grit+1"
+                ],
+                "picked": "SKIP",
+                "floor": 45
+            },
+            {
+                "not_picked": [
+                    "Wild Strike+1"
+                ],
+                "picked": "SKIP",
+                "floor": 48
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Immolate+1",
+            "Heavy Blade+1",
+            "Inflame+1",
+            "Immolate+1",
+            "Pommel Strike+1",
+            "Shrug It Off",
+            "Seeing Red+1",
+            "Demon Form+1"
+        ],
+        "play_id": "ff8b7c62-e467-4273-a371-a7dbddbe608e",
+        "cards_purchased": [],
+        "event_choices": [
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 3
+            },
+            {
+                "cards_obtained": [
+                    "Doubt"
+                ],
+                "floor": 8
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Bash",
+                "floor": 6,
+                "key": "SMITH"
+            },
+            {
+                "data": "Immolate",
+                "floor": 10,
+                "key": "SMITH"
+            },
+            {
+                "data": "Heavy Blade",
+                "floor": 12,
+                "key": "SMITH"
+            },
+            {
+                "data": "Inflame",
+                "floor": 15,
+                "key": "SMITH"
+            },
+            {
+                "data": "Demon Form",
+                "floor": 42,
+                "key": "SMITH"
+            },
+            {
+                "data": "Immolate",
+                "floor": 47,
+                "key": "SMITH"
+            },
+            {
+                "data": "Pommel Strike",
+                "floor": 49,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "victory": false,
+        "ascension_level": 20,
+        "floor_reached": 50,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Dropkick"
+                ],
+                "picked": "Twin Strike",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Cleave",
+                    "Infernal Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 4.0
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Iron Wave",
+                    "Body Slam"
+                ],
+                "picked": "SKIP",
+                "floor": 5.0
+            },
+            {
+                "not_picked": [
+                    "Warcry",
+                    "Rupture"
+                ],
+                "picked": "Sword Boomerang",
+                "floor": 8.0
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Rampage",
+                    "Perfected Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Armaments"
+                ],
+                "picked": "Shockwave",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Infernal Blade",
+                    "Headbutt"
+                ],
+                "picked": "Sword Boomerang",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Corruption",
+                    "Demon Form"
+                ],
+                "picked": "Offering",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Rage",
+                    "Headbutt",
+                    "Entrench"
+                ],
+                "picked": "SKIP",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Blood for Blood",
+                    "Havoc",
+                    "Second Wind"
+                ],
+                "picked": "SKIP",
+                "floor": 19.0
+            },
+            {
+                "not_picked": [
+                    "Fiend Fire",
+                    "Sever Soul"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 24
+            },
+            {
+                "not_picked": [
+                    "Burning Pact",
+                    "Cleave",
+                    "Power Through"
+                ],
+                "picked": "SKIP",
+                "floor": 27
+            },
+            {
+                "not_picked": [
+                    "Hemokinesis",
+                    "Rampage",
+                    "Pummel"
+                ],
+                "picked": "SKIP",
+                "floor": 28
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Clash",
+                    "Seeing Red"
+                ],
+                "picked": "SKIP",
+                "floor": 31
+            },
+            {
+                "not_picked": [
+                    "Immolate",
+                    "Fiend Fire"
+                ],
+                "picked": "Impervious",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade+1",
+                    "Armaments"
+                ],
+                "picked": "Ghostly Armor+1",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade+1",
+                    "Twin Strike",
+                    "Anger"
+                ],
+                "picked": "SKIP",
+                "floor": 36
+            },
+            {
+                "not_picked": [
+                    "Warcry",
+                    "Flex",
+                    "Evolve+1"
+                ],
+                "picked": "SKIP",
+                "floor": 38
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Feel No Pain",
+                    "Armaments+1"
+                ],
+                "picked": "SKIP",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Shockwave",
+                    "Pummel",
+                    "Anger+1"
+                ],
+                "picked": "SKIP",
+                "floor": 41
+            },
+            {
+                "not_picked": [
+                    "Headbutt+1",
+                    "Cleave",
+                    "Burning Pact"
+                ],
+                "picked": "SKIP",
+                "floor": 45
+            },
+            {
+                "not_picked": [
+                    "Infernal Blade",
+                    "Flex",
+                    "Fiend Fire"
+                ],
+                "picked": "SKIP",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Sword Boomerang",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 48
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Bash+1",
+            "Twin Strike",
+            "Inflame+1",
+            "Immolate",
+            "Sword Boomerang",
+            "Shockwave",
+            "Inflame+1",
+            "Sword Boomerang",
+            "Offering+1",
+            "RitualDagger+1",
+            "Flame Barrier",
+            "Impervious+1",
+            "Ghostly Armor+1",
+            "Doubt"
+        ],
+        "play_id": "06cd4284-c48f-4ade-8ee7-62c454bde61b",
+        "cards_purchased": [
+            {
+                "card": "Inflame",
+                "floor": 3
+            },
+            {
+                "card": "Immolate",
+                "floor": 3
+            },
+            {
+                "card": "Inflame",
+                "floor": 13
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_obtained": [
+                    "RitualDagger"
+                ],
+                "floor": 21
+            },
+            {
+                "cards_upgraded": [
+                    "Strike_R",
+                    "Strike_R",
+                    "Strike_R",
+                    "Strike_R",
+                    "Defend_R",
+                    "Defend_R",
+                    "Defend_R",
+                    "Defend_R"
+                ],
+                "floor": 22
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Inflame",
+                "floor": 6.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Inflame",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "RitualDagger",
+                "floor": 25,
+                "key": "SMITH"
+            },
+            {
+                "data": "Offering",
+                "floor": 29,
+                "key": "SMITH"
+            },
+            {
+                "data": "Impervious",
+                "floor": 40,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "victory": false,
+        "ascension_level": 15,
+        "floor_reached": 50,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Flex",
+                    "Anger"
+                ],
+                "picked": "Clothesline",
+                "floor": 1
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Headbutt"
+                ],
+                "picked": "Thunderclap",
+                "floor": 6
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Armaments"
+                ],
+                "picked": "Inflame",
+                "floor": 7
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Bludgeon"
+                ],
+                "picked": "Armaments",
+                "floor": 10
+            },
+            {
+                "not_picked": [
+                    "Clash",
+                    "Headbutt"
+                ],
+                "picked": "Sword Boomerang",
+                "floor": 14
+            },
+            {
+                "not_picked": [
+                    "Barricade",
+                    "Berserk"
+                ],
+                "picked": "Impervious",
+                "floor": 16
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Anger"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Rampage+1"
+                ],
+                "picked": "Heavy Blade",
+                "floor": 22
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Heavy Blade",
+                    "Sentinel"
+                ],
+                "picked": "SKIP",
+                "floor": 23
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Armaments"
+                ],
+                "picked": "Bloodletting",
+                "floor": 24
+            },
+            {
+                "not_picked": [
+                    "Feel No Pain",
+                    "Pommel Strike",
+                    "Shockwave"
+                ],
+                "picked": "SKIP",
+                "floor": 29
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Blood for Blood",
+                    "True Grit"
+                ],
+                "picked": "SKIP",
+                "floor": 30
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Perfected Strike",
+                    "Power Through"
+                ],
+                "picked": "Metallicize+1",
+                "floor": 31
+            },
+            {
+                "not_picked": [
+                    "Limit Break",
+                    "Impervious",
+                    "Juggernaut"
+                ],
+                "picked": "Immolate",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike+1",
+                    "Headbutt",
+                    "Second Wind"
+                ],
+                "picked": "Iron Wave",
+                "floor": 34
+            },
+            {
+                "not_picked": [
+                    "Cleave",
+                    "Iron Wave",
+                    "Body Slam+1"
+                ],
+                "picked": "Sword Boomerang+1",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Disarm+1",
+                    "Pommel Strike+1",
+                    "Power Through"
+                ],
+                "picked": "Whirlwind",
+                "floor": 36
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade",
+                    "Power Through",
+                    "Flex"
+                ],
+                "picked": "Dropkick+1",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Bludgeon",
+                    "Rage",
+                    "Entrench",
+                    "Thunderclap"
+                ],
+                "picked": "SKIP",
+                "floor": 40
+            },
+            {
+                "not_picked": [
+                    "Anger+1",
+                    "Inflame",
+                    "Headbutt+1"
+                ],
+                "picked": "Heavy Blade+1",
+                "floor": 45
+            },
+            {
+                "not_picked": [
+                    "Master of Strategy",
+                    "Madness",
+                    "Secret Technique"
+                ],
+                "picked": "Flash of Steel+1",
+                "floor": 47
+            },
+            {
+                "not_picked": [
+                    "Power Through",
+                    "Cleave+1",
+                    "Rupture",
+                    "Body Slam+1"
+                ],
+                "picked": "SKIP",
+                "floor": 48
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R+1",
+            "Bash+1",
+            "Clothesline+1",
+            "Thunderclap+1",
+            "Inflame+1",
+            "Armaments+1",
+            "Sword Boomerang+1",
+            "Impervious",
+            "Flame Barrier+1",
+            "Bandage Up",
+            "Battle Trance",
+            "Heavy Blade+1",
+            "Bloodletting+1",
+            "Metallicize+1",
+            "Immolate",
+            "Iron Wave",
+            "Sword Boomerang+1",
+            "Whirlwind",
+            "Dropkick+1",
+            "Heavy Blade+1",
+            "Flash of Steel+1"
+        ],
+        "play_id": "38a1b150-cb0e-48ee-ad5c-ceaf33ff5d85",
+        "cards_purchased": [
+            {
+                "card": "Bandage Up",
+                "floor": 19
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_obtained": [
+                    "Doubt"
+                ],
+                "floor": 2
+            },
+            {
+                "cards_upgraded": [
+                    "Clothesline",
+                    "Bash"
+                ],
+                "floor": 4
+            },
+            {
+                "cards_obtained": [
+                    "Writhe"
+                ],
+                "floor": 20
+            },
+            {
+                "cards_obtained": [
+                    "Battle Trance"
+                ],
+                "floor": 21
+            },
+            {
+                "cards_removed": [
+                    "Writhe"
+                ],
+                "floor": 38
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Thunderclap",
+                "floor": 11,
+                "key": "SMITH"
+            },
+            {
+                "data": "Armaments",
+                "floor": 13,
+                "key": "SMITH"
+            },
+            {
+                "data": "Sword Boomerang",
+                "floor": 15,
+                "key": "SMITH"
+            },
+            {
+                "data": "Bloodletting",
+                "floor": 25,
+                "key": "SMITH"
+            },
+            {
+                "data": "Heavy Blade",
+                "floor": 27,
+                "key": "SMITH"
+            },
+            {
+                "data": "Flame Barrier",
+                "floor": 32,
+                "key": "SMITH"
+            },
+            {
+                "data": "Inflame",
+                "floor": 46,
+                "key": "SMITH"
+            },
+            {
+                "data": "Defend_R",
+                "floor": 49,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "victory": true,
+        "ascension_level": 10,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Dual Wield",
+                    "Hemokinesis"
+                ],
+                "picked": "Flex",
+                "floor": 1
+            },
+            {
+                "not_picked": [
+                    "Intimidate",
+                    "Wild Strike"
+                ],
+                "picked": "Second Wind",
+                "floor": 2
+            },
+            {
+                "not_picked": [
+                    "Warcry",
+                    "Thunderclap"
+                ],
+                "picked": "Sentinel",
+                "floor": 3
+            },
+            {
+                "not_picked": [
+                    "Metallicize",
+                    "Clothesline"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 4
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Body Slam"
+                ],
+                "picked": "Pommel Strike",
+                "floor": 6
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Infernal Blade"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 8
+            },
+            {
+                "not_picked": [
+                    "Headbutt",
+                    "Havoc"
+                ],
+                "picked": "Reaper",
+                "floor": 11
+            },
+            {
+                "not_picked": [
+                    "Uppercut",
+                    "Body Slam"
+                ],
+                "picked": "Spot Weakness",
+                "floor": 12
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Sword Boomerang"
+                ],
+                "picked": "Whirlwind",
+                "floor": 14
+            },
+            {
+                "not_picked": [
+                    "Impervious",
+                    "Bludgeon"
+                ],
+                "picked": "Offering",
+                "floor": 16
+            },
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Perfected Strike+1"
+                ],
+                "picked": "Armaments",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Rage+1"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 20
+            },
+            {
+                "not_picked": [
+                    "Wild Strike+1",
+                    "Dropkick"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 21
+            },
+            {
+                "not_picked": [
+                    "Entrench",
+                    "Reckless Charge"
+                ],
+                "picked": "Pommel Strike+1",
+                "floor": 22
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Entrench"
+                ],
+                "picked": "Infernal Blade+1",
+                "floor": 24
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Warcry"
+                ],
+                "picked": "Whirlwind+1",
+                "floor": 28
+            },
+            {
+                "not_picked": [
+                    "Wild Strike",
+                    "Havoc"
+                ],
+                "picked": "Entrench",
+                "floor": 31
+            },
+            {
+                "not_picked": [
+                    "Immolate",
+                    "Juggernaut"
+                ],
+                "picked": "Offering",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Thunderclap+1",
+                    "Whirlwind"
+                ],
+                "picked": "Fire Breathing+1",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Clash",
+                    "Iron Wave+1",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Twin Strike+1",
+                    "Body Slam+1"
+                ],
+                "picked": "Rage+1",
+                "floor": 40
+            },
+            {
+                "not_picked": [
+                    "Flex+1",
+                    "Heavy Blade+1"
+                ],
+                "picked": "Seeing Red",
+                "floor": 41
+            },
+            {
+                "not_picked": [
+                    "Warcry",
+                    "Thunderclap"
+                ],
+                "picked": "Pommel Strike+1",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Thunderclap+1",
+                    "Headbutt",
+                    "Cleave"
+                ],
+                "picked": "SKIP",
+                "floor": 45
+            },
+            {
+                "not_picked": [
+                    "Cleave+1",
+                    "Thunderclap"
+                ],
+                "picked": "Armaments+1",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Entrench",
+                    "Impervious"
+                ],
+                "picked": "Second Wind+1",
+                "floor": 47
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade+1",
+                    "Iron Wave",
+                    "Searing Blow+1"
+                ],
+                "picked": "SKIP",
+                "floor": 48
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Whirlwind+1"
+                ],
+                "picked": "Battle Trance+1",
+                "floor": 49
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Defend_R+1",
+            "Bash+1",
+            "Flex+1",
+            "Second Wind",
+            "Sentinel",
+            "Shrug It Off",
+            "Pommel Strike+1",
+            "Shrug It Off",
+            "Immolate+1",
+            "Reaper+1",
+            "Spot Weakness",
+            "Whirlwind+1",
+            "Offering+1",
+            "Armaments+1",
+            "Corruption+1",
+            "Shrug It Off",
+            "Shrug It Off",
+            "Pommel Strike+1",
+            "Infernal Blade+1",
+            "Writhe",
+            "Parasite",
+            "Whirlwind+1",
+            "Entrench",
+            "Offering",
+            "Fire Breathing+1",
+            "Madness",
+            "Madness",
+            "Offering",
+            "Flame Barrier",
+            "Fire Breathing",
+            "Rage+1",
+            "Seeing Red",
+            "Doubt",
+            "Pommel Strike+1",
+            "Armaments+1",
+            "Second Wind+1",
+            "Battle Trance+1"
+        ],
+        "play_id": "9b42eab2-b9a9-4fcf-85ad-a8be1236981f",
+        "cards_purchased": [
+            {
+                "card": "Immolate",
+                "floor": 10
+            },
+            {
+                "card": "Corruption",
+                "floor": 19
+            },
+            {
+                "card": "Offering",
+                "floor": 38
+            },
+            {
+                "card": "Flame Barrier",
+                "floor": 38
+            },
+            {
+                "card": "Fire Breathing",
+                "floor": 38
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_upgraded": [
+                    "Flex"
+                ],
+                "floor": 5
+            },
+            {
+                "cards_upgraded": [
+                    "Strike_R",
+                    "Strike_R",
+                    "Strike_R",
+                    "Strike_R",
+                    "Defend_R",
+                    "Defend_R",
+                    "Defend_R",
+                    "Defend_R"
+                ],
+                "floor": 30
+            },
+            {
+                "cards_obtained": [
+                    "Madness",
+                    "Madness"
+                ],
+                "floor": 36
+            },
+            {
+                "cards_upgraded": [
+                    "Reaper",
+                    "Offering"
+                ],
+                "floor": 37
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Pommel Strike",
+                "floor": 7,
+                "key": "SMITH"
+            },
+            {
+                "data": "Bash",
+                "floor": 13,
+                "key": "SMITH"
+            },
+            {
+                "data": "Whirlwind",
+                "floor": 15,
+                "key": "SMITH"
+            },
+            {
+                "data": "Corruption",
+                "floor": 23,
+                "key": "SMITH"
+            },
+            {
+                "data": "Armaments",
+                "floor": 32,
+                "key": "SMITH"
+            },
+            {
+                "data": "Immolate",
+                "floor": 42,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "victory": true,
+        "ascension_level": 19,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Anger",
+                    "Shrug It Off"
+                ],
+                "picked": "Spot Weakness",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Headbutt",
+                    "Flex"
+                ],
+                "picked": "Perfected Strike",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Exhume"
+                ],
+                "picked": "Headbutt",
+                "floor": 3.0
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Perfected Strike"
+                ],
+                "picked": "Heavy Blade",
+                "floor": 8.0
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Clash",
+                    "Clothesline"
+                ],
+                "picked": "SKIP",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Sever Soul"
+                ],
+                "picked": "Clothesline",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Corruption",
+                    "Impervious"
+                ],
+                "picked": "Double Tap",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave"
+                ],
+                "picked": "SKIP",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 24.0
+            },
+            {
+                "not_picked": [
+                    "Warcry"
+                ],
+                "picked": "SKIP",
+                "floor": 28.0
+            },
+            {
+                "not_picked": [
+                    "Pummel"
+                ],
+                "picked": "SKIP",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Pummel"
+                ],
+                "picked": "SKIP",
+                "floor": 31.0
+            },
+            {
+                "not_picked": [],
+                "picked": "Limit Break",
+                "floor": 33.0
+            },
+            {
+                "not_picked": [
+                    "Warcry"
+                ],
+                "picked": "SKIP",
+                "floor": 35.0
+            },
+            {
+                "not_picked": [
+                    "Clash"
+                ],
+                "picked": "SKIP",
+                "floor": 36.0
+            },
+            {
+                "not_picked": [
+                    "Havoc"
+                ],
+                "picked": "SKIP",
+                "floor": 41.0
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R+1",
+            "Strike_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Spot Weakness+1",
+            "Perfected Strike+1",
+            "Headbutt",
+            "Inflame+1",
+            "Heavy Blade+1",
+            "Clothesline+1",
+            "Double Tap+1",
+            "Necronomicurse",
+            "Limit Break+1"
+        ],
+        "play_id": "31b6b9cd-72d7-4e77-a188-bf4173250a6e",
+        "cards_purchased": [
+            {
+                "card": "Inflame",
+                "floor": 7
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_upgraded": [
+                    "Perfected Strike"
+                ],
+                "floor": 4.0
+            },
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 20.0
+            },
+            {
+                "cards_obtained": [
+                    "Decay"
+                ],
+                "floor": 25.0
+            },
+            {
+                "cards_obtained": [
+                    "Writhe"
+                ],
+                "floor": 39.0
+            },
+            {
+                "cards_removed": [
+                    "Bash"
+                ],
+                "floor": 45.0
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Spot Weakness",
+                "floor": 6.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Heavy Blade",
+                "floor": 10.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Clothesline",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Double Tap",
+                "floor": 40.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Limit Break",
+                "floor": 46.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Inflame",
+                "floor": 49.0,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "victory": true,
+        "ascension_level": 17,
+        "floor_reached": 56,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Burning Pact",
+                    "Dark Embrace"
+                ],
+                "picked": "Pommel Strike",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Uppercut"
+                ],
+                "picked": "Spot Weakness",
+                "floor": 4.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Bloodletting"
+                ],
+                "picked": "Twin Strike",
+                "floor": 5.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Havoc"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 7.0
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Headbutt"
+                ],
+                "picked": "Feed",
+                "floor": 8.0
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Rage"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Clash",
+                    "Rampage"
+                ],
+                "picked": "Fire Breathing",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Blood for Blood",
+                    "Dropkick"
+                ],
+                "picked": "Twin Strike",
+                "floor": 13.0
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Havoc",
+                    "Shrug It Off"
+                ],
+                "picked": "SKIP",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Exhume",
+                    "Impervious"
+                ],
+                "picked": "Demon Form",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Burning Pact",
+                    "True Grit",
+                    "Wild Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Flame Barrier",
+                    "Heavy Blade"
+                ],
+                "picked": "Disarm",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Headbutt",
+                    "Carnage"
+                ],
+                "picked": "Uppercut+1",
+                "floor": 22.0
+            },
+            {
+                "not_picked": [
+                    "Disarm",
+                    "Perfected Strike",
+                    "Thunderclap"
+                ],
+                "picked": "SKIP",
+                "floor": 25.0
+            },
+            {
+                "not_picked": [
+                    "Wild Strike",
+                    "Iron Wave"
+                ],
+                "picked": "Shockwave",
+                "floor": 27.0
+            },
+            {
+                "not_picked": [
+                    "Spot Weakness",
+                    "Entrench",
+                    "Shockwave"
+                ],
+                "picked": "SKIP",
+                "floor": 28.0
+            },
+            {
+                "not_picked": [
+                    "Reckless Charge",
+                    "Intimidate",
+                    "Perfected Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Rupture",
+                    "Clash"
+                ],
+                "picked": "SKIP",
+                "floor": 31.0
+            },
+            {
+                "not_picked": [
+                    "Brutality",
+                    "Double Tap"
+                ],
+                "picked": "Corruption",
+                "floor": 33.0
+            },
+            {
+                "not_picked": [
+                    "Disarm",
+                    "Cleave",
+                    "Rupture+1"
+                ],
+                "picked": "SKIP",
+                "floor": 35.0
+            },
+            {
+                "not_picked": [
+                    "Carnage",
+                    "Body Slam+1",
+                    "Clash+1"
+                ],
+                "picked": "SKIP",
+                "floor": 38.0
+            },
+            {
+                "not_picked": [
+                    "Evolve+1",
+                    "Thunderclap",
+                    "Corruption"
+                ],
+                "picked": "SKIP",
+                "floor": 40.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Body Slam"
+                ],
+                "picked": "Headbutt",
+                "floor": 42.0
+            },
+            {
+                "not_picked": [
+                    "Anger",
+                    "Headbutt",
+                    "Twin Strike+1"
+                ],
+                "picked": "SKIP",
+                "floor": 45.0
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Warcry"
+                ],
+                "picked": "Reaper",
+                "floor": 46.0
+            },
+            {
+                "not_picked": [
+                    "Blood for Blood",
+                    "Bludgeon",
+                    "Seeing Red+1"
+                ],
+                "picked": "SKIP",
+                "floor": 47
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Pommel Strike"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 54
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Pommel Strike+1",
+            "Spot Weakness",
+            "Twin Strike",
+            "Flame Barrier",
+            "Feed+1",
+            "Shrug It Off",
+            "Shrug It Off",
+            "Fire Breathing",
+            "Twin Strike",
+            "Demon Form+1",
+            "Reaper",
+            "Disarm+1",
+            "Uppercut+1",
+            "Shockwave",
+            "Shrug It Off",
+            "Corruption+1",
+            "Headbutt",
+            "Doubt",
+            "Reaper",
+            "Flame Barrier"
+        ],
+        "play_id": "d715b910-b6f8-415b-b446-854a37e7fe16",
+        "cards_purchased": [
+            {
+                "card": "Shrug It Off",
+                "floor": 10
+            },
+            {
+                "card": "Shrug It Off",
+                "floor": 30
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_obtained": [
+                    "Pain"
+                ],
+                "floor": 3.0
+            },
+            {
+                "cards_obtained": [
+                    "Reaper"
+                ],
+                "floor": 20.0
+            },
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 24.0
+            },
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 36.0
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Bash",
+                "floor": 6.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Feed",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Demon Form",
+                "floor": 23.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Disarm",
+                "floor": 32.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Corruption",
+                "floor": 49,
+                "key": "SMITH"
+            },
+            {
+                "data": "Pommel Strike",
+                "floor": 52,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "victory": true,
+        "ascension_level": 14,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Twin Strike"
+                ],
+                "picked": "Clash",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Warcry",
+                    "Burning Pact"
+                ],
+                "picked": "Dropkick",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Twin Strike"
+                ],
+                "picked": "Cleave",
+                "floor": 4.0
+            },
+            {
+                "not_picked": [
+                    "Anger",
+                    "Clash"
+                ],
+                "picked": "Flex",
+                "floor": 5.0
+            },
+            {
+                "not_picked": [
+                    "Hemokinesis",
+                    "Blood for Blood"
+                ],
+                "picked": "Spot Weakness",
+                "floor": 6.0
+            },
+            {
+                "not_picked": [
+                    "Pummel",
+                    "True Grit"
+                ],
+                "picked": "Clash",
+                "floor": 7.0
+            },
+            {
+                "not_picked": [
+                    "Intimidate",
+                    "Rupture"
+                ],
+                "picked": "Iron Wave",
+                "floor": 10.0
+            },
+            {
+                "not_picked": [
+                    "Demon Form",
+                    "Battle Trance"
+                ],
+                "picked": "Carnage",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Pommel Strike"
+                ],
+                "picked": "Clothesline",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Feel No Pain"
+                ],
+                "picked": "Combust",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Demon Form",
+                    "Limit Break"
+                ],
+                "picked": "Bludgeon",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Havoc"
+                ],
+                "picked": "Armaments",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Dropkick+1"
+                ],
+                "picked": "Headbutt",
+                "floor": 20.0
+            },
+            {
+                "not_picked": [
+                    "Inflame",
+                    "Havoc"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Offering",
+                    "Flex"
+                ],
+                "picked": "Anger+1",
+                "floor": 24.0
+            },
+            {
+                "not_picked": [
+                    "Flame Barrier",
+                    "Evolve"
+                ],
+                "picked": "Disarm",
+                "floor": 27.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Seeing Red"
+                ],
+                "picked": "Uppercut",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Twin Strike"
+                ],
+                "picked": "Rampage",
+                "floor": 30.0
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Cleave"
+                ],
+                "picked": "Inflame",
+                "floor": 31.0
+            },
+            {
+                "not_picked": [
+                    "Limit Break",
+                    "Corruption"
+                ],
+                "picked": "Impervious",
+                "floor": 33.0
+            },
+            {
+                "not_picked": [
+                    "Dropkick",
+                    "Sever Soul"
+                ],
+                "picked": "True Grit+1",
+                "floor": 35.0
+            },
+            {
+                "not_picked": [
+                    "Burning Pact",
+                    "Clothesline"
+                ],
+                "picked": "Clash",
+                "floor": 36.0
+            },
+            {
+                "not_picked": [
+                    "Evolve",
+                    "Iron Wave"
+                ],
+                "picked": "Flame Barrier+1",
+                "floor": 37.0
+            },
+            {
+                "not_picked": [
+                    "Seeing Red",
+                    "Searing Blow"
+                ],
+                "picked": "Body Slam+1",
+                "floor": 38.0
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Entrench"
+                ],
+                "picked": "Body Slam",
+                "floor": 41.0
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike+1",
+                    "Wild Strike"
+                ],
+                "picked": "True Grit+1",
+                "floor": 44.0
+            },
+            {
+                "not_picked": [
+                    "Second Wind",
+                    "Warcry"
+                ],
+                "picked": "Rage+1",
+                "floor": 45.0
+            },
+            {
+                "not_picked": [
+                    "Cleave",
+                    "Wild Strike"
+                ],
+                "picked": "Seeing Red",
+                "floor": 46.0
+            },
+            {
+                "not_picked": [
+                    "Purity",
+                    "Dramatic Entrance"
+                ],
+                "picked": "Panacea",
+                "floor": 48.0
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Clash",
+            "Dropkick",
+            "Inflame",
+            "Cleave",
+            "Flex",
+            "Spot Weakness",
+            "Clash+1",
+            "Iron Wave+1",
+            "Carnage",
+            "Clothesline",
+            "Combust",
+            "Bludgeon",
+            "Armaments",
+            "Sadistic Nature+1",
+            "Discovery",
+            "Headbutt",
+            "Flame Barrier",
+            "Anger+1",
+            "Disarm",
+            "Uppercut",
+            "Rampage",
+            "Inflame",
+            "Impervious",
+            "True Grit+1",
+            "Clash",
+            "Flame Barrier+1",
+            "Body Slam+1",
+            "Body Slam",
+            "Parasite",
+            "True Grit+1",
+            "Rage+1",
+            "Seeing Red",
+            "Panacea"
+        ],
+        "play_id": "984d2c70-5b62-4ebc-a2bd-5b1b18c8aabe",
+        "cards_purchased": [
+            {
+                "card": "Inflame",
+                "floor": 3
+            },
+            {
+                "card": "Sadistic Nature",
+                "floor": 19
+            },
+            {
+                "card": "Discovery",
+                "floor": 19
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_obtained": [],
+                "floor": 8.0
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Iron Wave",
+                "floor": 13.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Sadistic Nature",
+                "floor": 49.0,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "victory": true,
+        "ascension_level": 20,
+        "floor_reached": 57,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Flex",
+                    "Warcry"
+                ],
+                "picked": "Disarm",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Evolve",
+                    "Clash"
+                ],
+                "picked": "Pummel",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "Burning Pact",
+                    "Headbutt"
+                ],
+                "picked": "Pommel Strike",
+                "floor": 6.0
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Rage",
+                    "Headbutt"
+                ],
+                "picked": "SKIP",
+                "floor": 10.0
+            },
+            {
+                "not_picked": [
+                    "Flex",
+                    "Headbutt"
+                ],
+                "picked": "Rage",
+                "floor": 10.0
+            },
+            {
+                "not_picked": [
+                    "Entrench",
+                    "Fire Breathing"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Spot Weakness",
+                    "Armaments"
+                ],
+                "picked": "Reaper",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Spot Weakness"
+                ],
+                "picked": "Twin Strike",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Limit Break",
+                    "Corruption"
+                ],
+                "picked": "Offering",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Warcry"
+                ],
+                "picked": "Sword Boomerang+1",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Wild Strike+1",
+                    "Sever Soul"
+                ],
+                "picked": "Thunderclap",
+                "floor": 19.0
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Fire Breathing"
+                ],
+                "picked": "Burning Pact",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Havoc+1",
+                    "Flex"
+                ],
+                "picked": "Brutality",
+                "floor": 23.0
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Dark Embrace"
+                ],
+                "picked": "Dual Wield",
+                "floor": 25.0
+            },
+            {
+                "not_picked": [
+                    "Armaments+1",
+                    "Pummel"
+                ],
+                "picked": "Corruption",
+                "floor": 27.0
+            },
+            {
+                "not_picked": [
+                    "Rampage+1",
+                    "Searing Blow"
+                ],
+                "picked": "Shrug It Off+1",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Combust",
+                    "Shrug It Off",
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 30.0
+            },
+            {
+                "not_picked": [
+                    "Offering",
+                    "Corruption"
+                ],
+                "picked": "Feed",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Blood for Blood",
+                    "Iron Wave+1",
+                    "Twin Strike+1"
+                ],
+                "picked": "SKIP",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Shrug It Off",
+                    "Iron Wave+1"
+                ],
+                "picked": "SKIP",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Barricade",
+                    "Evolve"
+                ],
+                "picked": "Flame Barrier+1",
+                "floor": 40
+            },
+            {
+                "not_picked": [
+                    "Swift Strike+1",
+                    "Chrysalis"
+                ],
+                "picked": "PanicButton",
+                "floor": 42
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike+1",
+                    "Armaments+1",
+                    "Brutality"
+                ],
+                "picked": "SKIP",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Twin Strike+1",
+                    "Flex",
+                    "Wild Strike+1"
+                ],
+                "picked": "SKIP",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Shrug It Off",
+                    "Clash+1"
+                ],
+                "picked": "SKIP",
+                "floor": 48
+            },
+            {
+                "not_picked": [
+                    "Spot Weakness",
+                    "Pommel Strike+1"
+                ],
+                "picked": "Evolve",
+                "floor": 55
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R+1",
+            "Bash+1",
+            "Disarm+1",
+            "Pummel+1",
+            "Master of Strategy",
+            "Pommel Strike+1",
+            "Rage+1",
+            "Shrug It Off",
+            "Reaper",
+            "Twin Strike",
+            "Offering",
+            "Sword Boomerang+1",
+            "Thunderclap",
+            "Reckless Charge",
+            "Cleave",
+            "Burning Pact+1",
+            "Necronomicurse",
+            "Brutality",
+            "Dual Wield+1",
+            "Corruption",
+            "Shrug It Off+1",
+            "Feed",
+            "Heavy Blade+1",
+            "Battle Trance+1",
+            "Feel No Pain+1",
+            "Flame Barrier+1",
+            "Feel No Pain+1",
+            "Shrug It Off",
+            "Flame Barrier",
+            "PanicButton",
+            "PanicButton",
+            "Offering",
+            "Evolve"
+        ],
+        "play_id": "a38873a7-d10f-43c9-a4e2-c865e04a96d8",
+        "cards_purchased": [
+            {
+                "card": "Master of Strategy",
+                "floor": 4
+            },
+            {
+                "card": "Feel No Pain",
+                "floor": 37
+            },
+            {
+                "card": "Feel No Pain",
+                "floor": 41
+            },
+            {
+                "card": "Shrug It Off",
+                "floor": 41
+            },
+            {
+                "card": "Flame Barrier",
+                "floor": 41
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_upgraded": [
+                    "Pummel",
+                    "Defend_R"
+                ],
+                "floor": 3.0
+            },
+            {
+                "cards_upgraded": [
+                    "Bash"
+                ],
+                "floor": 5.0
+            },
+            {
+                "cards_obtained": [
+                    "Reckless Charge",
+                    "Cleave"
+                ],
+                "cards_transformed": [
+                    "Strike_R",
+                    "Strike_R"
+                ],
+                "floor": 20.0
+            },
+            {
+                "cards_obtained": [],
+                "floor": 31
+            },
+            {
+                "cards_obtained": [
+                    "Normality",
+                    "Normality"
+                ],
+                "floor": 36
+            },
+            {
+                "cards_removed": [
+                    "Normality"
+                ],
+                "floor": 38
+            },
+            {
+                "cards_removed": [
+                    "Rupture"
+                ],
+                "floor": 45
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Disarm",
+                "floor": 7.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Rage",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Pommel Strike",
+                "floor": 24.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Dual Wield",
+                "floor": 28.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Burning Pact",
+                "floor": 32,
+                "key": "SMITH"
+            },
+            {
+                "data": "Feel No Pain",
+                "floor": 49,
+                "key": "SMITH"
+            },
+            {
+                "data": "Feel No Pain",
+                "floor": 53,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "victory": false,
+        "ascension_level": 20,
+        "floor_reached": 50,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Sever Soul",
+                    "Headbutt"
+                ],
+                "picked": "Cleave",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Rupture"
+                ],
+                "picked": "Metallicize",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Shrug It Off"
+                ],
+                "picked": "Uppercut",
+                "floor": 3.0
+            },
+            {
+                "not_picked": [
+                    "Cleave",
+                    "Pommel Strike",
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 6.0
+            },
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "True Grit"
+                ],
+                "picked": "Battle Trance",
+                "floor": 8.0
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Pommel Strike"
+                ],
+                "picked": "Double Tap",
+                "floor": 10.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Headbutt"
+                ],
+                "picked": "Demon Form",
+                "floor": 12.0
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "True Grit"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 13.0
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Clothesline",
+                    "Hemokinesis"
+                ],
+                "picked": "SKIP",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Bludgeon",
+                    "Demon Form"
+                ],
+                "picked": "Offering",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Battle Trance",
+                    "Second Wind"
+                ],
+                "picked": "Intimidate",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Clothesline"
+                ],
+                "picked": "True Grit",
+                "floor": 20.0
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Flame Barrier"
+                ],
+                "picked": "Shrug It Off+1",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Infernal Blade",
+                    "Power Through",
+                    "Perfected Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 24.0
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Evolve"
+                ],
+                "picked": "Combust",
+                "floor": 25.0
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade",
+                    "Sword Boomerang+1",
+                    "Blood for Blood"
+                ],
+                "picked": "SKIP",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Demon Form",
+                    "Bludgeon"
+                ],
+                "picked": "Reaper",
+                "floor": 33.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang+1",
+                    "Cleave",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 35.0
+            },
+            {
+                "not_picked": [
+                    "Intimidate",
+                    "Anger",
+                    "Clash"
+                ],
+                "picked": "SKIP",
+                "floor": 36.0
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade",
+                    "Twin Strike+1",
+                    "Clothesline"
+                ],
+                "picked": "SKIP",
+                "floor": 37.0
+            },
+            {
+                "not_picked": [
+                    "Rampage",
+                    "Entrench",
+                    "Dark Embrace"
+                ],
+                "picked": "SKIP",
+                "floor": 41.0
+            },
+            {
+                "not_picked": [
+                    "Rage",
+                    "Perfected Strike"
+                ],
+                "picked": "Fire Breathing",
+                "floor": 46.0
+            },
+            {
+                "not_picked": [
+                    "Flame Barrier",
+                    "Thunderclap+1"
+                ],
+                "picked": "Burning Pact",
+                "floor": 47.0
+            },
+            {
+                "not_picked": [
+                    "Anger+1",
+                    "Burning Pact",
+                    "Headbutt+1"
+                ],
+                "picked": "SKIP",
+                "floor": 48.0
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Cleave",
+            "Metallicize",
+            "Uppercut+1",
+            "Battle Trance",
+            "Double Tap",
+            "Demon Form+1",
+            "Shrug It Off",
+            "Offering",
+            "Intimidate",
+            "True Grit",
+            "Shrug It Off+1",
+            "Sever Soul",
+            "Immolate+1",
+            "Inflame+1",
+            "Combust",
+            "Reaper",
+            "Limit Break+1",
+            "Evolve",
+            "Demon Form+1",
+            "Fire Breathing",
+            "Burning Pact"
+        ],
+        "play_id": "57f17ef4-70d7-460a-a8a5-30aa6e5bd6c8",
+        "cards_purchased": [
+            {
+                "card": "Sever Soul",
+                "floor": 22
+            },
+            {
+                "card": "Immolate",
+                "floor": 22
+            },
+            {
+                "card": "Inflame",
+                "floor": 22
+            },
+            {
+                "card": "Limit Break",
+                "floor": 44
+            },
+            {
+                "card": "Evolve",
+                "floor": 44
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 5.0
+            },
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 31.0
+            },
+            {
+                "cards_obtained": [
+                    "Demon Form"
+                ],
+                "floor": 45.0
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Uppercut",
+                "floor": 7.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Demon Form",
+                "floor": 23.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Inflame",
+                "floor": 27.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Limit Break",
+                "floor": 49.0,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "victory": true,
+        "ascension_level": 16,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "Reckless Charge",
+                    "Pommel Strike"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 1.0
+            },
+            {
+                "not_picked": [
+                    "Rage",
+                    "Ghostly Armor"
+                ],
+                "picked": "True Grit",
+                "floor": 2.0
+            },
+            {
+                "not_picked": [
+                    "Bloodletting",
+                    "Pommel Strike"
+                ],
+                "picked": "Feel No Pain",
+                "floor": 6.0
+            },
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Thunderclap"
+                ],
+                "picked": "Sever Soul",
+                "floor": 7.0
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Intimidate"
+                ],
+                "picked": "Body Slam",
+                "floor": 11.0
+            },
+            {
+                "not_picked": [
+                    "Blood for Blood",
+                    "Cleave",
+                    "Perfected Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 13.0
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Cleave",
+                    "True Grit"
+                ],
+                "picked": "SKIP",
+                "floor": 14.0
+            },
+            {
+                "not_picked": [
+                    "Immolate",
+                    "Berserk"
+                ],
+                "picked": "Limit Break",
+                "floor": 16.0
+            },
+            {
+                "not_picked": [
+                    "Combust",
+                    "Wild Strike"
+                ],
+                "picked": "Power Through",
+                "floor": 18.0
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Body Slam"
+                ],
+                "picked": "Pummel+1",
+                "floor": 20.0
+            },
+            {
+                "not_picked": [
+                    "Rampage",
+                    "Twin Strike",
+                    "True Grit"
+                ],
+                "picked": "SKIP",
+                "floor": 21.0
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Sword Boomerang",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 24.0
+            },
+            {
+                "not_picked": [
+                    "Shockwave",
+                    "Offering"
+                ],
+                "picked": "Dark Embrace+1",
+                "floor": 28.0
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Metallicize",
+                    "Shrug It Off+1"
+                ],
+                "picked": "SKIP",
+                "floor": 29.0
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade+1",
+                    "Wild Strike",
+                    "True Grit"
+                ],
+                "picked": "SKIP",
+                "floor": 31.0
+            },
+            {
+                "not_picked": [
+                    "Juggernaut",
+                    "Immolate"
+                ],
+                "picked": "Brutality",
+                "floor": 33.0
+            },
+            {
+                "not_picked": [
+                    "Combust",
+                    "Sever Soul"
+                ],
+                "picked": "Intimidate+1",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Intimidate+1",
+                    "Uppercut",
+                    "Armaments+1"
+                ],
+                "picked": "SKIP",
+                "floor": 37
+            },
+            {
+                "not_picked": [
+                    "Wild Strike+1",
+                    "Metallicize",
+                    "Carnage+1"
+                ],
+                "picked": "SKIP",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Perfected Strike",
+                    "Cleave",
+                    "Heavy Blade+1"
+                ],
+                "picked": "SKIP",
+                "floor": 41
+            },
+            {
+                "not_picked": [
+                    "Armaments+1",
+                    "Havoc",
+                    "Pommel Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Headbutt",
+                    "Rampage",
+                    "Juggernaut"
+                ],
+                "picked": "SKIP",
+                "floor": 45
+            },
+            {
+                "not_picked": [
+                    "Disarm+1",
+                    "Flex",
+                    "Clothesline"
+                ],
+                "picked": "SKIP",
+                "floor": 46
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Shrug It Off+1",
+            "True Grit+1",
+            "Feel No Pain+1",
+            "Sever Soul+1",
+            "Body Slam+1",
+            "Limit Break+1",
+            "Power Through+1",
+            "Pummel+1",
+            "Dark Embrace+1",
+            "Brutality+1",
+            "Intimidate+1"
+        ],
+        "play_id": "807abf08-4ef6-41d1-a3f2-fb077cb27ed2",
+        "cards_purchased": [],
+        "event_choices": [
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 3.0
+            },
+            {
+                "cards_upgraded": [
+                    "Brutality"
+                ],
+                "floor": 36
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "True Grit",
+                "floor": 8.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Sever Soul",
+                "floor": 10.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Body Slam",
+                "floor": 15.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Limit Break",
+                "floor": 23.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Power Through",
+                "floor": 25.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Feel No Pain",
+                "floor": 27.0,
+                "key": "SMITH"
+            },
+            {
+                "data": "Shrug It Off",
+                "floor": 40,
+                "key": "SMITH"
+            },
+            {
+                "data": "Bash",
+                "floor": 42,
+                "key": "SMITH"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "victory": false,
+        "ascension_level": 20,
+        "floor_reached": 51,
+        "card_choices": [
+            {
+                "not_picked": [
+                    "True Grit",
+                    "Rupture"
+                ],
+                "picked": "Spot Weakness",
+                "floor": 1
+            },
+            {
+                "not_picked": [
+                    "Seeing Red",
+                    "Infernal Blade",
+                    "Havoc"
+                ],
+                "picked": "SKIP",
+                "floor": 1
+            },
+            {
+                "not_picked": [
+                    "Uppercut",
+                    "Iron Wave"
+                ],
+                "picked": "Whirlwind",
+                "floor": 4
+            },
+            {
+                "not_picked": [
+                    "Metallicize",
+                    "Seeing Red",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 4
+            },
+            {
+                "not_picked": [
+                    "Metallicize",
+                    "Seeing Red",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 4
+            },
+            {
+                "not_picked": [
+                    "Rupture",
+                    "Pommel Strike"
+                ],
+                "picked": "Headbutt",
+                "floor": 5
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Reckless Charge"
+                ],
+                "picked": "Power Through",
+                "floor": 5
+            },
+            {
+                "not_picked": [
+                    "Anger",
+                    "Clash"
+                ],
+                "picked": "Evolve",
+                "floor": 7
+            },
+            {
+                "not_picked": [
+                    "Ghostly Armor",
+                    "Perfected Strike",
+                    "Warcry"
+                ],
+                "picked": "SKIP",
+                "floor": 11
+            },
+            {
+                "not_picked": [
+                    "Sentinel",
+                    "Warcry"
+                ],
+                "picked": "Inflame",
+                "floor": 12
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Anger"
+                ],
+                "picked": "Brutality",
+                "floor": 13
+            },
+            {
+                "not_picked": [
+                    "Shrug It Off",
+                    "Havoc"
+                ],
+                "picked": "Flame Barrier",
+                "floor": 14
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Pommel Strike"
+                ],
+                "picked": "Clothesline",
+                "floor": 14
+            },
+            {
+                "not_picked": [
+                    "Inflame",
+                    "Cleave"
+                ],
+                "picked": "Wild Strike",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Clash+1",
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Clash+1",
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 18
+            },
+            {
+                "not_picked": [
+                    "Body Slam",
+                    "Blood for Blood"
+                ],
+                "picked": "Battle Trance",
+                "floor": 21
+            },
+            {
+                "not_picked": [
+                    "Heavy Blade",
+                    "Clash",
+                    "Flex"
+                ],
+                "picked": "SKIP",
+                "floor": 21
+            },
+            {
+                "not_picked": [
+                    "Dropkick+1",
+                    "Thunderclap"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 22
+            },
+            {
+                "not_picked": [
+                    "Armaments",
+                    "Thunderclap",
+                    "Brutality"
+                ],
+                "picked": "SKIP",
+                "floor": 22
+            },
+            {
+                "not_picked": [
+                    "Twin Strike",
+                    "Thunderclap"
+                ],
+                "picked": "True Grit",
+                "floor": 24
+            },
+            {
+                "not_picked": [
+                    "Pommel Strike",
+                    "Havoc+1"
+                ],
+                "picked": "Heavy Blade",
+                "floor": 27
+            },
+            {
+                "not_picked": [
+                    "Sword Boomerang",
+                    "Iron Wave"
+                ],
+                "picked": "Shrug It Off",
+                "floor": 27
+            },
+            {
+                "not_picked": [
+                    "Clothesline",
+                    "Heavy Blade",
+                    "Pommel Strike"
+                ],
+                "picked": "SKIP",
+                "floor": 29
+            },
+            {
+                "not_picked": [
+                    "Iron Wave",
+                    "Dropkick",
+                    "Searing Blow"
+                ],
+                "picked": "SKIP",
+                "floor": 29
+            },
+            {
+                "not_picked": [
+                    "Sever Soul",
+                    "Barricade"
+                ],
+                "picked": "Immolate",
+                "floor": 31
+            },
+            {
+                "not_picked": [
+                    "Exhume",
+                    "Juggernaut"
+                ],
+                "picked": "Reaper",
+                "floor": 33
+            },
+            {
+                "not_picked": [
+                    "Twin Strike+1",
+                    "Clash+1"
+                ],
+                "picked": "Wild Strike+1",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Searing Blow",
+                    "Warcry",
+                    "Shrug It Off"
+                ],
+                "picked": "SKIP",
+                "floor": 35
+            },
+            {
+                "not_picked": [
+                    "Wild Strike",
+                    "Sever Soul"
+                ],
+                "picked": "Whirlwind+1",
+                "floor": 38
+            },
+            {
+                "not_picked": [
+                    "Anger",
+                    "Wild Strike+1",
+                    "Rage"
+                ],
+                "picked": "SKIP",
+                "floor": 38
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Intimidate"
+                ],
+                "picked": "Combust",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Ghostly Armor",
+                    "Twin Strike",
+                    "Warcry"
+                ],
+                "picked": "SKIP",
+                "floor": 39
+            },
+            {
+                "not_picked": [
+                    "Cleave",
+                    "Perfected Strike"
+                ],
+                "picked": "Intimidate+1",
+                "floor": 40
+            },
+            {
+                "not_picked": [
+                    "Wild Strike",
+                    "Pommel Strike+1"
+                ],
+                "picked": "Corruption",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Havoc",
+                    "Shrug It Off",
+                    "Heavy Blade"
+                ],
+                "picked": "SKIP",
+                "floor": 44
+            },
+            {
+                "not_picked": [
+                    "Armaments+1",
+                    "Heavy Blade"
+                ],
+                "picked": "Rupture",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Thunderclap",
+                    "Anger",
+                    "Twin Strike+1"
+                ],
+                "picked": "SKIP",
+                "floor": 46
+            },
+            {
+                "not_picked": [
+                    "Bludgeon",
+                    "Twin Strike"
+                ],
+                "picked": "Shrug It Off+1",
+                "floor": 48
+            },
+            {
+                "not_picked": [
+                    "Intimidate",
+                    "Sword Boomerang"
+                ],
+                "picked": "Headbutt",
+                "floor": 48
+            }
+        ],
+        "master_deck": [
+            "AscendersBane",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Spot Weakness+1",
+            "Whirlwind+1",
+            "Headbutt",
+            "Power Through",
+            "Evolve+1",
+            "Inflame",
+            "Brutality+1",
+            "Flame Barrier",
+            "Clothesline",
+            "Wild Strike",
+            "Berserk",
+            "Havoc",
+            "Flame Barrier+1",
+            "Shrug It Off",
+            "Battle Trance",
+            "Shrug It Off",
+            "True Grit+1",
+            "Heavy Blade",
+            "Shrug It Off",
+            "Immolate",
+            "Reaper",
+            "Wild Strike+1",
+            "Whirlwind+1",
+            "Parasite",
+            "Combust",
+            "Intimidate+1",
+            "Corruption",
+            "Rupture",
+            "Shrug It Off+1",
+            "Headbutt"
+        ],
+        "play_id": "2aa6db92-aaf0-4440-8e5f-befc6652c951",
+        "cards_purchased": [
+            {
+                "card": "Flame Barrier",
+                "floor": 20
+            },
+            {
+                "card": "Shrug It Off",
+                "floor": 20
+            }
+        ],
+        "event_choices": [
+            {
+                "cards_upgraded": [
+                    "Bash"
+                ],
+                "floor": 2
+            },
+            {
+                "cards_upgraded": [
+                    "Spot Weakness",
+                    "Defend_R"
+                ],
+                "floor": 3
+            },
+            {
+                "cards_obtained": [
+                    "Berserk",
+                    "Havoc"
+                ],
+                "floor": 19
+            },
+            {
+                "cards_removed": [
+                    "Strike_R"
+                ],
+                "floor": 42
+            }
+        ],
+        "campfire_choices": [
+            {
+                "data": "Whirlwind",
+                "floor": 10,
+                "key": "SMITH"
+            },
+            {
+                "data": "Evolve",
+                "floor": 15,
+                "key": "SMITH"
+            },
+            {
+                "data": "True Grit",
+                "floor": 32,
+                "key": "SMITH"
+            },
+            {
+                "data": "Flame Barrier",
+                "floor": 45,
+                "key": "SMITH"
+            },
+            {
+                "data": "Brutality",
+                "floor": 49,
+                "key": "SMITH"
+            }
+        ]
+    }
+]

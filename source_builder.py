@@ -1,9 +1,10 @@
 import json
 
 from data_source_path import data_source_path
+from reference_list import ironclad_cards, colorless_cards
 
 
-sample_data_json_file = "2020-11-01-00-07#1067.json"
+sample_data_json_file = "2020-11-01-00-37#1158.json"
 
 
 def read_json_file(json_file_name):
@@ -25,7 +26,8 @@ def event_matches_filters(event):
     return event["character_chosen"] == "IRONCLAD"\
     and event["ascension_level"] >= 10\
     and event["floor_reached"] >= 44\
-    and not event["is_endless"]
+    and not event["is_endless"]\
+    and event["is_ascension_mode"]
 
 
 def append_event_choice(event_choices, event_choice):
@@ -44,6 +46,18 @@ def create_run(event):
     run["ascension_level"] = event["ascension_level"]
     run["floor_reached"] = event["floor_reached"]
     run["card_choices"] = event["card_choices"]
+    run["master_deck"] = event["master_deck"]
+    run["play_id"] = event["play_id"]
+
+    run["cards_purchased"] = []
+    for i in range(len(event["items_purchased"])):
+        for purchasable_card in ironclad_cards + colorless_cards:
+            if event["items_purchased"][i].startswith(purchasable_card):
+                run["cards_purchased"].append({
+                    "card": event["items_purchased"][i],
+                    "floor": event["item_purchase_floors"][i],
+                })
+                break
 
     run["event_choices"] = []
     for event_choice in event["event_choices"]:
@@ -66,7 +80,7 @@ for run in runs:
         result_runs.append(new_run)
 
 
-with open("out.json", "w+") as json_file:
+with open("filtered.json", "w+") as json_file:
     json_file.write(json.dumps(result_runs, indent=4))
 
 
