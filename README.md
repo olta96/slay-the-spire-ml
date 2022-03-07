@@ -19,14 +19,14 @@
 
 - event_choices:
 
-  - cards_optained
+  - cards_obtained
   - cards_transformed
   - cards_removed
-  - copied
+  - cards_upgraded
   - floor
 
 - campfire_choices:
 
   - data
   - floor
-  - key = "SMITH"
+  - key == "SMITH"
