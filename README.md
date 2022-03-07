@@ -1,29 +1,29 @@
 # slay-the-spire-ml
 
-Filtration of Data: 
+## Filtration of Data: 
 
-character_chosen
-floor_reached 
-acension_level
+- character_chosen
+- floor_reached 
+- acension_level
 
-Variables: Cards:
+## Key Variables:
 
-items_purged
+- items_purged
 
-card_choices: 
+- card_choices: 
 
-not_picked
-picked
-floor
+- - not_picked
+- - picked
+- - floor
 
-event_choices:
+- event_choices:
 
-cards_optained
-cards_transformed
-cards_removed
-copied
-floor
+- - cards_optained
+- - cards_transformed
+- - cards_removed
+- - copied
+- - floor
 
-campfire_choices:
+- campfire_choices:
 
-data
+- - data
