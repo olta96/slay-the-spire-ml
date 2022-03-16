@@ -25,9 +25,9 @@ result_runs = []
 def event_matches_filters(event):
     return event["character_chosen"] == "IRONCLAD"\
     and event["ascension_level"] >= 10\
-    and event["floor_reached"] >= 44\
     and not event["is_endless"]\
-    and event["is_ascension_mode"]
+    and event["is_ascension_mode"]\
+    and not event["chose_seed"]
 
 
 def append_event_choice(event_choices, event_choice):
