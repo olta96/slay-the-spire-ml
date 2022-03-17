@@ -2,29 +2,29 @@
     {
         "choices": [
             2,
-            1,
             3,
+            1,
             0
         ],
         "player_choice": 1
     },
     {
         "choices": [
-            6,
-            0,
             5,
-            4
+            6,
+            4,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 4
     },
     {
         "choices": [
             7,
-            9,
             8,
+            9,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
@@ -33,77 +33,77 @@
             5,
             0
         ],
-        "player_choice": 2
+        "player_choice": 5
     },
     {
         "choices": [
-            0,
-            13,
             12,
-            11
+            13,
+            11,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 11
     },
     {
         "choices": [
-            14,
+            15,
             16,
-            0,
-            15
+            14,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 14
     },
     {
         "choices": [
-            19,
             18,
-            0,
-            17
+            19,
+            17,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 17
     },
     {
         "choices": [
             21,
-            0,
+            22,
             20,
-            22
+            0
         ],
-        "player_choice": 2
+        "player_choice": 20
     },
     {
         "choices": [
             23,
+            7,
             11,
-            0,
-            7
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            24,
-            26,
-            0,
-            25
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            29,
-            27,
-            28,
             0
         ],
-        "player_choice": 1
+        "player_choice": 11
     },
     {
         "choices": [
-            0,
+            25,
+            26,
+            24,
+            0
+        ],
+        "player_choice": 24
+    },
+    {
+        "choices": [
+            28,
+            29,
+            27,
+            0
+        ],
+        "player_choice": 27
+    },
+    {
+        "choices": [
             30,
             31,
-            13
+            13,
+            0
         ],
         "player_choice": 0
     },
@@ -114,52 +114,52 @@
             16,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
-            8,
             32,
-            31
+            8,
+            31,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
-            6,
             33,
-            34
+            34,
+            6,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            30,
             21,
+            30,
             35,
             0
         ],
-        "player_choice": 2
+        "player_choice": 35
     },
     {
         "choices": [
-            36,
             29,
-            0,
-            6
+            36,
+            6,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
-            37,
             38,
-            39
+            39,
+            37,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 37
     },
     {
         "choices": [
@@ -168,250 +168,250 @@
             1,
             0
         ],
-        "player_choice": 2
+        "player_choice": 1
     },
     {
         "choices": [
             16,
-            0,
+            41,
             33,
-            41
+            0
         ],
-        "player_choice": 2
+        "player_choice": 33
     },
     {
         "choices": [
-            0,
+            42,
             6,
             11,
-            42
+            0
         ],
-        "player_choice": 2
+        "player_choice": 11
     },
     {
         "choices": [
-            13,
-            0,
             9,
-            43
+            43,
+            13,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 13
     },
     {
         "choices": [
-            44,
-            0,
             32,
-            45
+            45,
+            44,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 44
     },
     {
         "choices": [
-            0,
-            30,
             22,
-            46
+            30,
+            46,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 46
     },
     {
         "choices": [
             19,
-            0,
-            47,
-            34
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
             34,
-            16,
-            36,
+            47,
             0
         ],
-        "player_choice": 3
+        "player_choice": 47
     },
     {
         "choices": [
+            36,
+            16,
+            34,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            48,
             29,
             49,
-            48,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
-            43,
+            48,
             34,
-            0,
-            48
+            43,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
             25,
+            50,
             40,
-            50
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             20,
+            43,
             51,
-            0,
-            43
+            0
         ],
-        "player_choice": 1
+        "player_choice": 51
     },
     {
         "choices": [
+            21,
             52,
             46,
-            21,
             0
         ],
-        "player_choice": 1
+        "player_choice": 46
     },
     {
         "choices": [
-            0,
             25,
             53,
-            7
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            6,
-            36,
-            0,
-            14
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            11,
-            45,
-            54,
+            7,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
+            36,
             6,
+            14,
+            0
+        ],
+        "player_choice": 14
+    },
+    {
+        "choices": [
+            45,
+            54,
+            11,
+            0
+        ],
+        "player_choice": 11
+    },
+    {
+        "choices": [
             47,
-            40
+            40,
+            6,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            55,
+            32,
             6,
-            0,
-            32
+            55,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            29,
             32,
+            29,
             4,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
             57,
+            9,
             56,
-            0,
-            9
+            0
         ],
-        "player_choice": 1
+        "player_choice": 56
     },
     {
         "choices": [
-            58,
-            60,
             59,
+            60,
+            58,
+            0
+        ],
+        "player_choice": 58
+    },
+    {
+        "choices": [
+            15,
+            61,
+            36,
+            0
+        ],
+        "player_choice": 36
+    },
+    {
+        "choices": [
+            5,
+            40,
+            55,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
-            15,
-            36,
-            61
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            55,
-            40,
-            0,
-            5
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            15,
-            7,
-            0,
-            29
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            32,
-            43,
-            62
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            48,
             29,
-            63
+            7,
+            15,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            43,
+            62,
+            32,
+            0
+        ],
+        "player_choice": 32
+    },
+    {
+        "choices": [
+            48,
+            63,
+            29,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             48,
-            0,
+            5,
             3,
-            5
+            0
         ],
-        "player_choice": 2
+        "player_choice": 3
     },
     {
         "choices": [
-            0,
-            34,
             55,
-            32
+            34,
+            32,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 32
     },
     {
         "choices": [
@@ -420,7 +420,7 @@
             64,
             0
         ],
-        "player_choice": 2
+        "player_choice": 64
     },
     {
         "choices": [
@@ -429,142 +429,142 @@
             66,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
+            67,
             16,
             50,
-            0,
-            67
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
             68,
+            54,
             33,
-            0,
-            54
+            0
         ],
-        "player_choice": 1
+        "player_choice": 33
     },
     {
         "choices": [
-            0,
             31,
             40,
-            49
+            49,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             23,
-            2,
             63,
+            2,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
             5,
-            0,
             69,
-            70
+            70,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
-            71,
             46,
-            68
+            68,
+            71,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 71
     },
     {
         "choices": [
+            73,
             5,
             72,
-            0,
-            73
+            0
         ],
-        "player_choice": 1
+        "player_choice": 72
     },
     {
         "choices": [
             73,
             36,
-            0,
-            9
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            43,
-            74,
-            48
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            28,
-            75,
-            25
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            2,
-            76,
-            3
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            31,
-            40,
-            77,
+            9,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
+            43,
+            48,
+            74,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            25,
+            28,
+            75,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            3,
+            2,
+            76,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            77,
+            40,
+            31,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            55,
+            48,
             68,
-            48,
-            55
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
             16,
+            32,
             47,
-            32
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            9,
-            0,
             48,
-            19
+            9,
+            19,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 19
     },
     {
         "choices": [
@@ -573,34 +573,34 @@
             6,
             0
         ],
-        "player_choice": 2
+        "player_choice": 6
     },
     {
         "choices": [
             7,
             5,
-            0,
-            51
+            51,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 51
     },
     {
         "choices": [
-            5,
-            0,
+            29,
             78,
-            29
+            5,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 5
     },
     {
         "choices": [
+            69,
             34,
             32,
-            0,
-            69
+            0
         ],
-        "player_choice": 1
+        "player_choice": 32
     },
     {
         "choices": [
@@ -609,507 +609,471 @@
             71,
             0
         ],
-        "player_choice": 2
+        "player_choice": 71
     },
     {
         "choices": [
             36,
+            9,
             33,
-            0,
-            9
+            0
         ],
-        "player_choice": 1
+        "player_choice": 33
     },
     {
         "choices": [
-            0,
-            47,
             16,
-            81
+            81,
+            47,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 47
     },
     {
         "choices": [
             29,
-            0,
             47,
-            13
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            5,
-            14,
-            82
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            0,
-            3,
-            28,
-            14
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            67,
-            0,
-            48,
-            25
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            48,
-            23,
-            17
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            83,
-            0,
-            50,
-            10
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
             13,
-            0,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            14,
+            5,
+            82,
+            0
+        ],
+        "player_choice": 82
+    },
+    {
+        "choices": [
+            28,
+            14,
+            3,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            48,
+            67,
+            25,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            17,
+            23,
+            48,
+            0
+        ],
+        "player_choice": 48
+    },
+    {
+        "choices": [
+            10,
+            83,
+            50,
+            0
+        ],
+        "player_choice": 50
+    },
+    {
+        "choices": [
             43,
-            6
+            6,
+            13,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 13
     },
     {
         "choices": [
-            11,
-            0,
+            18,
             19,
-            18
+            11,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 11
     },
     {
         "choices": [
-            15,
             36,
+            15,
             14,
             0
         ],
-        "player_choice": 2
+        "player_choice": 14
     },
     {
         "choices": [
-            55,
             14,
-            0,
-            11
+            55,
+            11,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 11
     },
     {
         "choices": [
-            16,
             34,
-            0,
-            21
+            16,
+            21,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 21
     },
     {
         "choices": [
+            12,
             15,
             84,
-            12,
             0
         ],
-        "player_choice": 1
+        "player_choice": 84
     },
     {
         "choices": [
-            0,
-            4,
+            29,
             32,
-            29
+            4,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 4
     },
     {
         "choices": [
+            71,
             78,
             64,
-            71,
             0
         ],
-        "player_choice": 1
+        "player_choice": 64
     },
     {
         "choices": [
-            0,
             15,
             53,
-            5
+            5,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 5
     },
     {
         "choices": [
-            11,
-            0,
             25,
-            85
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            61,
-            86,
+            85,
             11,
             0
         ],
-        "player_choice": 2
+        "player_choice": 11
     },
     {
         "choices": [
-            66,
-            87,
-            45,
+            86,
+            61,
+            11,
             0
         ],
-        "player_choice": 1
+        "player_choice": 11
     },
     {
         "choices": [
             66,
-            7,
-            0,
-            88
+            45,
+            87,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 87
     },
     {
         "choices": [
-            89,
+            7,
+            66,
+            88,
+            0
+        ],
+        "player_choice": 88
+    },
+    {
+        "choices": [
             25,
             43,
+            89,
             0
         ],
-        "player_choice": 0
+        "player_choice": 89
     },
     {
         "choices": [
-            0,
-            16,
             83,
-            66
+            16,
+            66,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 66
     },
     {
         "choices": [
-            0,
+            46,
             52,
             64,
-            46
+            0
         ],
-        "player_choice": 2
+        "player_choice": 64
     },
     {
         "choices": [
-            90,
-            0,
             57,
-            4
+            4,
+            90,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 90
     },
     {
         "choices": [
+            69,
             91,
-            0,
             47,
-            69
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            85,
-            0,
-            93,
-            92
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
+            92,
+            93,
+            85,
+            0
+        ],
+        "player_choice": 85
+    },
+    {
+        "choices": [
             94,
             73,
-            70
+            70,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 70
     },
     {
         "choices": [
-            6,
-            0,
             43,
-            87
+            6,
+            87,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 87
     },
     {
         "choices": [
-            34,
             57,
+            34,
             40,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
             95,
-            0,
+            6,
             75,
-            6
+            0
         ],
-        "player_choice": 2
+        "player_choice": 75
     },
     {
         "choices": [
-            0,
-            71,
             66,
-            41
+            71,
+            41,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 41
     },
     {
         "choices": [
-            96,
-            0,
+            73,
             7,
-            73
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            97,
-            11,
-            0,
-            89
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            84,
-            11,
-            9
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            29,
-            0,
-            34,
-            48
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            34,
-            16,
-            22,
+            96,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            29,
-            0,
             11,
-            47
+            89,
+            97,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 97
+    },
+    {
+        "choices": [
+            9,
+            11,
+            84,
+            0
+        ],
+        "player_choice": 84
+    },
+    {
+        "choices": [
+            34,
+            48,
+            29,
+            0
+        ],
+        "player_choice": 29
+    },
+    {
+        "choices": [
+            16,
+            22,
+            34,
+            0
+        ],
+        "player_choice": 34
+    },
+    {
+        "choices": [
+            11,
+            29,
+            47,
+            0
+        ],
+        "player_choice": 47
     },
     {
         "choices": [
             14,
             69,
-            0,
-            19
+            19,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            54,
-            0,
             32,
-            19
+            54,
+            19,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 19
     },
     {
         "choices": [
+            35,
             71,
             20,
-            35,
             0
         ],
-        "player_choice": 1
+        "player_choice": 20
     },
     {
         "choices": [
+            31,
             98,
             14,
-            31,
             0
         ],
-        "player_choice": 1
+        "player_choice": 14
     },
     {
         "choices": [
             32,
             12,
-            0,
-            84
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            7,
-            0,
-            82,
-            36
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            33,
-            16,
-            7,
+            84,
             0
         ],
-        "player_choice": 0
+        "player_choice": 84
+    },
+    {
+        "choices": [
+            7,
+            82,
+            36,
+            0
+        ],
+        "player_choice": 36
+    },
+    {
+        "choices": [
+            7,
+            16,
+            33,
+            0
+        ],
+        "player_choice": 33
     },
     {
         "choices": [
             25,
             34,
-            0,
-            59
+            59,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 59
     },
     {
         "choices": [
-            11,
+            16,
             65,
-            16,
-            0
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            99,
-            69,
-            63
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            36,
-            67,
-            0,
-            61
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
             11,
-            0,
-            16,
-            14
+            0
         ],
-        "player_choice": 1
+        "player_choice": 11
     },
     {
         "choices": [
-            58,
-            71,
-            22,
+            69,
+            63,
+            99,
+            0
+        ],
+        "player_choice": 99
+    },
+    {
+        "choices": [
+            67,
+            61,
+            36,
+            0
+        ],
+        "player_choice": 36
+    },
+    {
+        "choices": [
+            14,
+            16,
+            11,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
+            22,
+            71,
+            58,
+            0
+        ],
+        "player_choice": 58
+    },
+    {
+        "choices": [
             31,
             25,
-            83
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            47,
-            1,
-            33
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            34,
-            100,
-            8,
-            0
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            6,
-            1,
-            29,
-            0
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            3,
-            7,
             83,
             0
         ],
@@ -1117,252 +1081,288 @@
     },
     {
         "choices": [
-            84,
-            3,
-            66,
+            33,
+            47,
+            1,
             0
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            10,
-            45,
-            29,
-            0
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            7,
-            0,
-            62,
-            69
         ],
         "player_choice": 1
     },
     {
         "choices": [
-            35,
-            101,
-            20,
+            34,
+            8,
+            100,
+            0
+        ],
+        "player_choice": 100
+    },
+    {
+        "choices": [
+            1,
+            29,
+            6,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            1,
-            0,
-            40,
-            102
+            83,
+            7,
+            3,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 3
     },
     {
         "choices": [
-            103,
-            8,
-            0,
-            93
+            84,
+            66,
+            3,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            45,
+            10,
+            29,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            7,
+            62,
+            69,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            101,
+            20,
+            35,
+            0
+        ],
+        "player_choice": 35
+    },
+    {
+        "choices": [
+            1,
+            40,
+            102,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            8,
+            93,
+            103,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            74,
+            6,
+            35,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            7,
+            15,
+            34,
+            0
+        ],
+        "player_choice": 34
+    },
+    {
+        "choices": [
+            9,
+            34,
+            92,
+            0
+        ],
+        "player_choice": 0
     },
     {
         "choices": [
             6,
-            35,
-            74,
-            0
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            34,
-            7,
-            15,
-            0
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            9,
-            0,
-            92,
-            34
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            21,
-            0,
             43,
-            6
+            21,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 21
     },
     {
         "choices": [
+            67,
             78,
-            0,
             56,
-            67
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
             11,
+            14,
             33,
-            0,
-            14
+            0
         ],
-        "player_choice": 1
+        "player_choice": 33
     },
     {
         "choices": [
-            36,
             15,
+            36,
             69,
             0
         ],
-        "player_choice": 2
+        "player_choice": 69
     },
     {
         "choices": [
-            0,
-            31,
             43,
-            61
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            40,
-            36,
-            25,
+            31,
+            61,
             0
         ],
-        "player_choice": 0
+        "player_choice": 61
+    },
+    {
+        "choices": [
+            25,
+            36,
+            40,
+            0
+        ],
+        "player_choice": 40
     },
     {
         "choices": [
             9,
-            48,
-            0,
-            69
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            84,
-            23,
-            67
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
             69,
-            0,
-            25,
-            2
+            48,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 48
+    },
+    {
+        "choices": [
+            23,
+            67,
+            84,
+            0
+        ],
+        "player_choice": 84
+    },
+    {
+        "choices": [
+            2,
+            25,
+            69,
+            0
+        ],
+        "player_choice": 69
     },
     {
         "choices": [
             10,
             62,
-            0,
-            7
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            0,
-            24,
-            58,
-            8
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            0,
-            19,
-            5,
-            14
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            104,
             7,
-            0,
-            28
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            58,
-            0,
-            78,
-            30
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            19,
-            5,
-            16
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            105,
-            34,
-            0,
-            11
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            16,
-            33,
-            51,
             0
         ],
-        "player_choice": 1
+        "player_choice": 7
     },
     {
         "choices": [
-            0,
-            76,
-            48,
-            64
+            58,
+            24,
+            8,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 8
     },
     {
         "choices": [
+            5,
+            14,
+            19,
+            0
+        ],
+        "player_choice": 19
+    },
+    {
+        "choices": [
+            7,
+            28,
+            104,
+            0
+        ],
+        "player_choice": 104
+    },
+    {
+        "choices": [
+            58,
+            30,
+            78,
+            0
+        ],
+        "player_choice": 78
+    },
+    {
+        "choices": [
+            19,
+            16,
+            5,
+            0
+        ],
+        "player_choice": 5
+    },
+    {
+        "choices": [
+            11,
+            105,
+            34,
+            0
+        ],
+        "player_choice": 34
+    },
+    {
+        "choices": [
+            51,
+            16,
+            33,
+            0
+        ],
+        "player_choice": 33
+    },
+    {
+        "choices": [
+            64,
+            48,
+            76,
+            0
+        ],
+        "player_choice": 76
+    },
+    {
+        "choices": [
+            33,
             26,
             1,
-            33,
             0
         ],
         "player_choice": 1
@@ -1371,208 +1371,208 @@
         "choices": [
             32,
             70,
-            0,
-            12
+            12,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 12
     },
     {
         "choices": [
-            0,
-            36,
             16,
-            63
+            36,
+            63,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 63
     },
     {
         "choices": [
-            51,
+            19,
             40,
-            19,
+            51,
             0
         ],
-        "player_choice": 0
+        "player_choice": 51
     },
     {
         "choices": [
-            0,
-            30,
-            71,
-            35
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            106,
-            61,
-            54
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            19,
-            31,
-            0,
-            69
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            7,
-            107,
-            26,
-            0
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            42,
-            70,
-            93
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            15,
-            0,
-            66,
-            6
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            83,
-            0,
-            87,
-            106
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            85,
-            43,
-            0,
-            50
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            0,
-            83,
-            70,
-            40
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            110,
-            108,
-            109,
-            0
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            43,
-            48,
-            1
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            2,
-            69,
-            0,
-            26
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            34,
-            14,
-            31,
-            0
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            34,
-            48,
-            0,
-            65
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            65,
-            48,
-            34
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            66,
-            11,
-            99
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            21,
-            84,
-            0,
-            5
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            84,
-            0,
-            11,
-            36
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            0,
             30,
             35,
-            64
+            71,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 71
     },
     {
         "choices": [
-            43,
-            0,
-            15,
-            111
+            61,
+            54,
+            106,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 106
+    },
+    {
+        "choices": [
+            31,
+            19,
+            69,
+            0
+        ],
+        "player_choice": 69
+    },
+    {
+        "choices": [
+            26,
+            7,
+            107,
+            0
+        ],
+        "player_choice": 107
+    },
+    {
+        "choices": [
+            70,
+            42,
+            93,
+            0
+        ],
+        "player_choice": 93
+    },
+    {
+        "choices": [
+            6,
+            66,
+            15,
+            0
+        ],
+        "player_choice": 15
+    },
+    {
+        "choices": [
+            87,
+            83,
+            106,
+            0
+        ],
+        "player_choice": 106
+    },
+    {
+        "choices": [
+            50,
+            43,
+            85,
+            0
+        ],
+        "player_choice": 85
+    },
+    {
+        "choices": [
+            40,
+            83,
+            70,
+            0
+        ],
+        "player_choice": 70
+    },
+    {
+        "choices": [
+            109,
+            110,
+            108,
+            0
+        ],
+        "player_choice": 108
+    },
+    {
+        "choices": [
+            48,
+            43,
+            1,
+            0
+        ],
+        "player_choice": 1
+    },
+    {
+        "choices": [
+            26,
+            69,
+            2,
+            0
+        ],
+        "player_choice": 2
+    },
+    {
+        "choices": [
+            31,
+            34,
+            14,
+            0
+        ],
+        "player_choice": 14
+    },
+    {
+        "choices": [
+            48,
+            65,
+            34,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            48,
+            34,
+            65,
+            0
+        ],
+        "player_choice": 65
+    },
+    {
+        "choices": [
+            66,
+            99,
+            11,
+            0
+        ],
+        "player_choice": 11
+    },
+    {
+        "choices": [
+            84,
+            5,
+            21,
+            0
+        ],
+        "player_choice": 21
+    },
+    {
+        "choices": [
+            11,
+            84,
+            36,
+            0
+        ],
+        "player_choice": 36
+    },
+    {
+        "choices": [
+            30,
+            35,
+            64,
+            0
+        ],
+        "player_choice": 64
+    },
+    {
+        "choices": [
+            15,
+            43,
+            111,
+            0
+        ],
+        "player_choice": 111
     },
     {
         "choices": [
@@ -1581,131 +1581,131 @@
             6,
             0
         ],
-        "player_choice": 2
+        "player_choice": 6
     },
     {
         "choices": [
             6,
-            31,
             99,
+            31,
             0
         ],
-        "player_choice": 1
+        "player_choice": 31
     },
     {
         "choices": [
             112,
-            0,
             48,
-            101
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            98,
-            0,
-            19,
-            17
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            35,
-            75,
-            2,
+            101,
             0
         ],
-        "player_choice": 0
+        "player_choice": 101
     },
     {
         "choices": [
-            42,
-            0,
-            81,
-            27
+            19,
+            98,
+            17,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 17
     },
     {
         "choices": [
-            0,
-            48,
+            75,
+            2,
+            35,
+            0
+        ],
+        "player_choice": 35
+    },
+    {
+        "choices": [
+            81,
+            42,
+            27,
+            0
+        ],
+        "player_choice": 27
+    },
+    {
+        "choices": [
             104,
-            11
+            11,
+            48,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             64,
+            35,
             59,
-            0,
-            35
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            91,
-            92,
-            67,
             0
         ],
-        "player_choice": 3
+        "player_choice": 59
     },
     {
         "choices": [
-            11,
-            0,
+            67,
+            91,
+            92,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
             25,
-            91
+            11,
+            91,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
-            107,
-            0,
+            79,
             26,
-            79
+            107,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 107
     },
     {
         "choices": [
-            113,
-            0,
             114,
-            38
+            38,
+            113,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 113
     },
     {
         "choices": [
             87,
-            101,
             75,
+            101,
             0
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            0,
-            86,
-            48,
-            92
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
+            92,
+            48,
+            86,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
             16,
+            11,
             103,
-            11
+            0
         ],
         "player_choice": 0
     },
@@ -1716,286 +1716,286 @@
             26,
             0
         ],
-        "player_choice": 2
+        "player_choice": 26
     },
     {
         "choices": [
-            0,
-            40,
             54,
-            34
+            34,
+            40,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 40
     },
     {
         "choices": [
-            18,
-            0,
             11,
-            62
+            62,
+            18,
+            0
+        ],
+        "player_choice": 18
+    },
+    {
+        "choices": [
+            14,
+            11,
+            12,
+            0
+        ],
+        "player_choice": 12
+    },
+    {
+        "choices": [
+            40,
+            14,
+            48,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
-            14,
-            12,
-            11
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            14,
-            40,
-            0,
-            48
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
+            15,
             25,
-            0,
             24,
-            15
+            0
         ],
-        "player_choice": 2
+        "player_choice": 24
     },
     {
         "choices": [
-            20,
             16,
-            0,
-            14
+            14,
+            20,
+            0
+        ],
+        "player_choice": 20
+    },
+    {
+        "choices": [
+            32,
+            34,
+            58,
+            0
+        ],
+        "player_choice": 58
+    },
+    {
+        "choices": [
+            6,
+            25,
+            11,
+            0
+        ],
+        "player_choice": 11
+    },
+    {
+        "choices": [
+            16,
+            19,
+            23,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            78,
+            58,
+            64,
+            0
+        ],
+        "player_choice": 64
+    },
+    {
+        "choices": [
+            24,
+            50,
+            10,
+            0
+        ],
+        "player_choice": 10
+    },
+    {
+        "choices": [
+            29,
+            19,
+            25,
+            0
+        ],
+        "player_choice": 25
+    },
+    {
+        "choices": [
+            36,
+            33,
+            27,
+            0
+        ],
+        "player_choice": 27
+    },
+    {
+        "choices": [
+            55,
+            49,
+            29,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            29,
+            26,
+            104,
+            0
+        ],
+        "player_choice": 104
+    },
+    {
+        "choices": [
+            47,
+            111,
+            67,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             58,
-            0,
-            34,
-            32
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            6,
-            11,
-            0,
-            25
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            23,
-            19,
-            16
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            64,
             78,
-            0,
-            58
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            10,
-            24,
-            50,
-            0
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            25,
-            19,
-            29,
-            0
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            27,
-            36,
-            0,
-            33
-        ],
-        "player_choice": 0
-    },
-    {
-        "choices": [
-            49,
-            29,
-            0,
-            55
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            29,
-            26,
-            104
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            111,
-            47,
-            0,
-            67
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
             21,
-            78,
-            58
+            0
         ],
-        "player_choice": 1
+        "player_choice": 21
     },
     {
         "choices": [
             111,
+            40,
             47,
-            0,
-            40
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
             10,
             9,
-            0,
-            69
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            92,
-            0,
-            47,
-            19
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            66,
-            98,
-            63,
+            69,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            47,
+            92,
+            19,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            63,
+            66,
+            98,
+            0
+        ],
+        "player_choice": 0
     },
     {
         "choices": [
             65,
+            29,
             99,
-            0,
-            29
+            0
         ],
-        "player_choice": 1
+        "player_choice": 99
     },
     {
         "choices": [
             33,
-            31,
             57,
+            31,
             0
         ],
-        "player_choice": 1
+        "player_choice": 31
     },
     {
         "choices": [
-            31,
             76,
-            0,
-            77
+            31,
+            77,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            11,
-            0,
+            45,
             14,
-            45
+            11,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 11
     },
     {
         "choices": [
-            25,
             65,
-            0,
-            115
+            115,
+            25,
+            0
         ],
-        "player_choice": 0
+        "player_choice": 25
     },
     {
         "choices": [
             82,
             14,
-            0,
-            28
+            28,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 28
     },
     {
         "choices": [
             25,
+            6,
             54,
-            0,
-            6
+            0
         ],
-        "player_choice": 1
+        "player_choice": 54
     },
     {
         "choices": [
-            15,
             6,
-            0,
-            10
+            10,
+            15,
+            0
+        ],
+        "player_choice": 15
+    },
+    {
+        "choices": [
+            67,
+            40,
+            29,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            29,
-            67,
-            0,
-            40
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            40,
-            0,
             14,
-            25
+            40,
+            25,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
@@ -2004,259 +2004,259 @@
             30,
             0
         ],
-        "player_choice": 2
+        "player_choice": 30
     },
     {
         "choices": [
-            83,
-            0,
             104,
-            49
+            83,
+            49,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 49
     },
     {
         "choices": [
             32,
-            0,
             15,
-            116
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            25,
-            36,
-            63,
+            116,
             0
         ],
-        "player_choice": 3
+        "player_choice": 116
     },
     {
         "choices": [
-            0,
-            47,
-            5,
-            32
+            63,
+            36,
+            25,
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            64,
+            5,
+            32,
+            47,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
             3,
+            64,
             117,
             0
         ],
-        "player_choice": 2
+        "player_choice": 117
     },
     {
         "choices": [
             5,
             18,
-            0,
-            27
+            27,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            25,
+            73,
             83,
-            0,
-            73
+            25,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
-            101,
+            52,
             46,
-            52
+            101,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 101
     },
     {
         "choices": [
             104,
+            54,
             118,
-            0,
-            54
+            0
         ],
-        "player_choice": 1
+        "player_choice": 118
     },
     {
         "choices": [
-            0,
+            118,
             12,
             75,
-            118
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
             86,
+            18,
             119,
-            0,
-            18
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            0,
-            73,
-            40,
-            29
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            14,
-            0,
-            75,
-            16
+            29,
+            40,
+            73,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
-            63,
+            75,
+            16,
+            14,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
             34,
+            63,
             52,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
             120,
+            48,
             19,
-            48
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
-            84,
             25,
-            62
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            70,
-            0,
-            16,
-            55
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            7,
-            12,
-            4
-        ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            18,
-            47,
-            70,
+            62,
+            84,
             0
         ],
-        "player_choice": 3
+        "player_choice": 84
     },
     {
         "choices": [
-            47,
-            18,
-            0,
-            70
+            70,
+            55,
+            16,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
+            12,
+            7,
+            4,
+            0
+        ],
+        "player_choice": 4
+    },
+    {
+        "choices": [
+            18,
+            70,
+            47,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            18,
+            70,
+            47,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            62,
             14,
             34,
-            62,
             0
         ],
-        "player_choice": 1
+        "player_choice": 34
     },
     {
         "choices": [
-            0,
             6,
             45,
-            49
+            49,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 49
     },
     {
         "choices": [
-            0,
-            26,
             9,
-            69
+            69,
+            26,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 26
     },
     {
         "choices": [
             115,
             29,
-            0,
-            43
+            43,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
+            13,
             43,
             51,
-            0,
-            13
+            0
         ],
-        "player_choice": 1
+        "player_choice": 51
     },
     {
         "choices": [
-            0,
             7,
+            9,
             101,
-            9
+            0
         ],
-        "player_choice": 2
+        "player_choice": 101
     },
     {
         "choices": [
             11,
-            0,
             16,
-            33
+            33,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 33
     },
     {
         "choices": [
-            0,
+            7,
             14,
             19,
-            7
+            0
         ],
-        "player_choice": 2
+        "player_choice": 19
     },
     {
         "choices": [
@@ -2265,79 +2265,79 @@
             83,
             0
         ],
-        "player_choice": 2
+        "player_choice": 83
     },
     {
         "choices": [
-            0,
             7,
+            103,
             48,
-            103
+            0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            103,
-            0,
             7,
-            48
+            103,
+            48,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
-            67,
-            0,
             15,
-            24
+            67,
+            24,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 24
     },
     {
         "choices": [
             47,
-            0,
+            69,
             48,
-            69
+            0
         ],
-        "player_choice": 1
+        "player_choice": 0
     },
     {
         "choices": [
+            105,
             6,
-            0,
             11,
-            105
+            0
         ],
-        "player_choice": 2
+        "player_choice": 11
     },
     {
         "choices": [
             5,
             6,
-            0,
-            101
+            101,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 0
     },
     {
         "choices": [
-            6,
             36,
+            6,
             25,
             0
         ],
-        "player_choice": 2
+        "player_choice": 25
     },
     {
         "choices": [
+            14,
             112,
             47,
-            0,
-            14
+            0
         ],
-        "player_choice": 1
+        "player_choice": 47
     },
     {
         "choices": [
@@ -2346,133 +2346,133 @@
             11,
             0
         ],
-        "player_choice": 2
+        "player_choice": 11
     },
     {
         "choices": [
-            14,
+            19,
             47,
-            0,
-            19
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            42,
-            0,
-            61,
-            7
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            79,
-            46,
-            54,
+            14,
             0
         ],
-        "player_choice": 1
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            7,
+            61,
+            42,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            54,
+            79,
+            46,
+            0
+        ],
+        "player_choice": 46
     },
     {
         "choices": [
             22,
+            52,
             21,
-            0,
-            52
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            0,
-            103,
-            86,
-            92
-        ],
-        "player_choice": 2
-    },
-    {
-        "choices": [
-            11,
-            0,
-            42,
-            43
-        ],
-        "player_choice": 1
-    },
-    {
-        "choices": [
-            54,
-            89,
-            83,
             0
         ],
-        "player_choice": 1
+        "player_choice": 21
     },
     {
         "choices": [
-            9,
-            65,
-            0,
-            86
+            92,
+            103,
+            86,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 86
     },
     {
         "choices": [
-            104,
-            10,
-            16,
+            42,
+            43,
+            11,
             0
         ],
         "player_choice": 0
     },
     {
         "choices": [
-            43,
-            36,
-            115,
+            83,
+            54,
+            89,
             0
         ],
-        "player_choice": 3
+        "player_choice": 89
     },
     {
         "choices": [
-            29,
-            0,
-            40,
-            118
+            9,
+            86,
+            65,
+            0
         ],
-        "player_choice": 3
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            16,
+            10,
+            104,
+            0
+        ],
+        "player_choice": 104
+    },
+    {
+        "choices": [
+            115,
+            36,
+            43,
+            0
+        ],
+        "player_choice": 0
+    },
+    {
+        "choices": [
+            40,
+            29,
+            118,
+            0
+        ],
+        "player_choice": 118
     },
     {
         "choices": [
             83,
-            0,
+            87,
             35,
-            87
+            0
         ],
-        "player_choice": 2
+        "player_choice": 35
     },
     {
         "choices": [
-            11,
             16,
+            11,
             47,
             0
         ],
-        "player_choice": 3
+        "player_choice": 0
     },
     {
         "choices": [
-            0,
-            62,
             75,
-            47
+            47,
+            62,
+            0
         ],
-        "player_choice": 1
+        "player_choice": 62
     },
     {
         "choices": [
@@ -2481,24 +2481,24 @@
             92,
             0
         ],
-        "player_choice": 3
-    },
-    {
-        "choices": [
-            27,
-            0,
-            78,
-            36
-        ],
         "player_choice": 0
     },
     {
         "choices": [
-            0,
-            10,
-            34,
-            32
+            78,
+            36,
+            27,
+            0
         ],
-        "player_choice": 2
+        "player_choice": 27
+    },
+    {
+        "choices": [
+            10,
+            32,
+            34,
+            0
+        ],
+        "player_choice": 34
     }
 ]

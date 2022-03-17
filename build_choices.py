@@ -1,14 +1,9 @@
-import json, random
-
-
-
-print(not not []) # prints False
-print(not not [False]) # prints True
+import json
 
 
 
 INCLUDE_SKIPS = True
-INDEX_ANSWERS = True
+INDEX_ANSWERS = False
 
 
 
@@ -34,6 +29,8 @@ def build_choices():
     choices = []
 
     for run in filtered_data:
+        if run["floor_reached"] < 44:
+            continue
         for card_choice in run["card_choices"]:
             if len(card_choice["not_picked"]) < 2 or len(card_choice["not_picked"]) > 3:
                 continue
@@ -70,7 +67,6 @@ def build_choices_no_skip():
 
 def index_answers(choices):
     for choice in choices:
-        random.shuffle(choice["choices"])
         choice["player_choice"] = choice["choices"].index(choice["player_choice"])
 
 
@@ -89,5 +85,4 @@ for i, card_id in enumerate(card_ids):
 
 with open("choices.json", "w+") as json_file:
     json_file.write(json.dumps(choices, indent=4))
-
 

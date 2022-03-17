@@ -7,6 +7,7 @@ from torch.optim import SGD
 from numpy import argmax, vstack
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
 
 
 
@@ -22,15 +23,16 @@ class ChoicesDataset(Dataset):
         for choice in choices:
             self.X.append(choice["choices"])
             self.y.append(choice["player_choice"])
-
-        self.X = torch.tensor(self.X, dtype=torch.float32)
-
-        self.y = LabelEncoder().fit_transform(self.y)
+        
+        encoder = OneHotEncoder(sparse = False)
+        # transform data
+        onehot = encoder.fit_transform(self.X)
+        print(onehot)
  
     # number of rows in the dataset
     def __len__(self):
         return len(self.X)
- 
+
     # get a row at an index
     def __getitem__(self, idx):
         return [self.X[idx], self.y[idx]]
