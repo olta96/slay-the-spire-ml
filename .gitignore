@@ -133,3 +133,6 @@ data_source_path.py
 
 # Original data
 Monthly_2020_11/
+
+#One-Hot
+one_hot_encoded.json

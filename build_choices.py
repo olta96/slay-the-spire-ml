@@ -1,7 +1,9 @@
 import json
+from reference_list import ironclad_cards, colorless_cards
 
+choosable_cards = ironclad_cards + colorless_cards + ["SKIP"]
 
-
+print(choosable_cards)
 INCLUDE_SKIPS = True
 INDEX_ANSWERS = False
 
@@ -36,6 +38,19 @@ def build_choices():
                 continue
             if len(card_choice["not_picked"]) == 3 and card_choice["picked"] != "SKIP":
                 continue
+            
+            should_continue = False
+            
+            if card_choice["picked"] not in choosable_cards:
+                continue
+            for not_picked in card_choice["not_picked"]:
+                if not_picked not in choosable_cards:
+                    should_continue = True
+                    break
+
+            if should_continue:
+                continue
+
             new_choice = { "choices": [], "player_choice": identify_choice(card_choice["picked"]) }
             if len(card_choice["not_picked"]) == 2:
                 new_choice["choices"].append(identify_choice(card_choice["not_picked"][0]))

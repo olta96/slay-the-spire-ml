@@ -1,4 +1,5 @@
 import json
+import numpy as np
 
 print("started one-hot encoding")
 def get_choices_data():
@@ -9,7 +10,7 @@ choices_data = get_choices_data()
 
 standard_list = []
 
-for i in range(121):
+for i in range(208):
     standard_list.append(0)
 
 def create_one_hot_encoded_list(choices):
@@ -44,13 +45,13 @@ from torch.nn import Module, Linear, ReLU, Softmax, CrossEntropyLoss
 from torch.utils.data import Dataset, random_split, DataLoader
 from torch.nn.init import kaiming_uniform_, xavier_uniform_
 from torch.optim import SGD
-from numpy import argmax, vstack
+from numpy import argmax, dtype, vstack
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+print(device)
 
 
 
@@ -66,8 +67,8 @@ class ChoicesDataset(Dataset):
             self.X.append(choice["inputs"])
             self.y.append(choice["outputs"])
         
-        self.X = torch.tensor(self.X, dtype=torch.float32)
-        self.y = torch.tensor(self.y, dtype=torch.float32)
+        self.X = torch.tensor(self.X, dtype=torch.float32).to(device)
+        self.y = torch.tensor(self.y, dtype=torch.float32).to(device)
 
  
     # number of rows in the dataset
@@ -100,7 +101,7 @@ class MLP(Module):
         kaiming_uniform_(self.hidden2.weight, nonlinearity='relu')
         self.act2 = ReLU()
         # third hidden layer and output
-        self.hidden3 = Linear(8, 121)
+        self.hidden3 = Linear(8, 208)
         xavier_uniform_(self.hidden3.weight)
         self.act3 = Softmax(dim=1)
  
@@ -123,13 +124,17 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
+    max_epochs = 100
+    ep_log_interval = 10
     loss_func = torch.nn.MSELoss()
     optimizer = SGD(model.parameters(), lr=0.01, momentum=0.9)
 
-    # enumerate epochs
-    for epoch in range(500):
-        # enumerate mini batches
+    
 
+    # enumerate epochs
+    for epoch in range(max_epochs):
+        # enumerate mini batches
+        epoch_loss = 0
         for i, (inputs, targets) in enumerate(train_dl):
             # clear the gradients
             optimizer.zero_grad()
@@ -137,11 +142,14 @@ def train_model(train_dl, model: MLP):
             yhat = model(inputs)
             # calculate loss
             loss = loss_func(yhat, targets)
+            epoch_loss += loss.item()
             # credit assignment
             loss.backward()
             # update model weights
             optimizer.step()
-
+        if epoch % ep_log_interval == 0:
+            print("epoch = %4d   loss = %0.4f" % (epoch, epoch_loss))
+    print("Done ")
 
 def accuracy(model, ldr):
   # assumes model.eval()
@@ -190,12 +198,13 @@ def evaluate_model(model: MLP, train_ds):
 # make a class prediction for one row of data
 def predict(row, model):
     # convert row to data
-    row = Tensor([row])
-    # make prediction
-    yhat = model(row)
-    # retrieve numpy array
-    yhat = yhat.detach().numpy()
-    return yhat
+    with torch.no_grad():
+        probs = model(row).to(device)  # values sum to 1.0
+    probs = probs.cpu()
+    probs = probs.numpy()  # numpy vector prints better
+    np.set_printoptions(precision=4, suppress=True)
+    print(probs)
+    print('(class=%f)' % (argmax(probs)))
 
 
 
@@ -213,7 +222,7 @@ train_dl = DataLoader(train, batch_size=32, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
-model = MLP(121)
+model = MLP(208).to(device)
 
 print("Started training model")
 train_model(train_dl, model)
@@ -221,7 +230,14 @@ print("Training complete")
 
 acc = accuracy(model, test_dl)
 print('Accuracy: %.3f' % acc)
+row = [1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+for i, val in enumerate(row):
+    if val == 1:
+        print(i)
 
-row = [1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-yhat = predict(row, model)
-print('Predicted: %s (class=%f)' % (yhat, argmax(yhat)))
+row = np.array([row], dtype=np.float32)
+
+row = torch.tensor(row, dtype=torch.float32).to(device)
+
+predict(row, model)
+
