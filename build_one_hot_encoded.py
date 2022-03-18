@@ -10,7 +10,7 @@ choices_data = get_choices_data()
 
 standard_list = []
 
-for i in range(208):
+for i in range(207):
     standard_list.append(0)
 
 def create_one_hot_encoded_list(choices):

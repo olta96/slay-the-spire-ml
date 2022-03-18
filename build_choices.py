@@ -1,9 +1,8 @@
 import json
 from reference_list import ironclad_cards, colorless_cards
 
-choosable_cards = ironclad_cards + colorless_cards + ["SKIP"]
+choosable_cards = ironclad_cards + colorless_cards # + ["SKIP"]
 
-print(choosable_cards)
 INCLUDE_SKIPS = True
 INDEX_ANSWERS = False
 
@@ -17,8 +16,8 @@ filtered_data = get_filtered_data()
 
 card_ids = []
 
-if INCLUDE_SKIPS:
-    card_ids.append("SKIP")
+# if INCLUDE_SKIPS:
+#     card_ids.append("SKIP")
 
 def identify_choice(card_name):
     if card_name in card_ids:
@@ -34,6 +33,9 @@ def build_choices():
         if run["floor_reached"] < 44:
             continue
         for card_choice in run["card_choices"]:
+            if len(card_choice["not_picked"]) != 2:
+                continue
+
             if len(card_choice["not_picked"]) < 2 or len(card_choice["not_picked"]) > 3:
                 continue
             if len(card_choice["not_picked"]) == 3 and card_choice["picked"] != "SKIP":
@@ -60,7 +62,7 @@ def build_choices():
                 new_choice["choices"].append(identify_choice(card_choice["not_picked"][0]))
                 new_choice["choices"].append(identify_choice(card_choice["not_picked"][1]))
                 new_choice["choices"].append(identify_choice(card_choice["not_picked"][2]))
-            new_choice["choices"].append(identify_choice("SKIP"))
+            #new_choice["choices"].append(identify_choice("SKIP"))
             choices.append(new_choice)
     
     return choices
