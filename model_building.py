@@ -1,6 +1,13 @@
 import json
 import numpy as np
 
+print("Loading card_ids")
+def get_card_ids():
+    with open("card_ids.json", "r") as card_ids_json_file:
+        return json.loads(card_ids_json_file.read())
+
+card_ids = get_card_ids()
+
 print("started one-hot encoding")
 def get_choices_data():
     with open("choices.json", "r") as choices_json_file:
@@ -10,7 +17,7 @@ choices_data = get_choices_data()
 
 standard_list = []
 
-for i in range(207):
+for i in range(len(card_ids)):
     standard_list.append(0)
 
 def create_one_hot_encoded_list(choices):
@@ -68,8 +75,8 @@ class ChoicesDataset(Dataset):
             self.X.append(choice["inputs"])
             self.y.append(choice["outputs"])
         
-        self.X = torch.tensor(self.X, dtype=torch.float32, requires_grad=True).to(device)
-        self.y = torch.tensor(self.y, dtype=torch.float32, requires_grad=True).to(device)
+        self.X = torch.tensor(self.X, dtype=torch.float32).to(device)
+        self.y = torch.tensor(self.y, dtype=torch.float32).to(device)
 
  
     # number of rows in the dataset
@@ -213,7 +220,7 @@ def evaluate_model(model: MLP):
 
 
 # make a class prediction for one row of data
-def predict(row, model, choices):
+def predict(row, model):
     # convert row to data
     with torch.no_grad():
         probs = model(row).to(device)  # values sum to 1.0
@@ -239,7 +246,7 @@ train_dl = DataLoader(train, batch_size=32, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
-model = MLP(207).to(device)
+model = MLP(len(card_ids)).to(device)
 
 print("Started training model")
 train_model(train_dl, model)
@@ -247,11 +254,12 @@ print("Training complete")
 
 acc = accuracy(model, test_dl)
 print(f"Accuracy: {round(acc * 100, 2)} %")
+#0 SKIP
 #3 Battle Trance
 #4 Twin Strike
 #5 Armaments
 choices = []
-row = [0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+row = [1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 for i, val in enumerate(row):
     if val == 1:
         choices.append(i)
@@ -261,7 +269,7 @@ row = np.array([row], dtype=np.float32)
 
 row = torch.tensor(row, dtype=torch.float32).to(device)
 
-predict(row, model, choices)
+predict(row, model)
 
 
 torch.save(model.state_dict(), save_model_path + "/model.pth")
