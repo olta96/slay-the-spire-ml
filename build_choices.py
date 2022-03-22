@@ -10,9 +10,11 @@ def get_filtered_data():
 
 filtered_data = get_filtered_data()
 
-card_ids = ["SKIP"]
 
-def identify_choice(card_name):
+
+card_ids = ["SKIP"] 
+
+def identify_choice(card_name): 
     if card_name in card_ids:
         return card_ids.index(card_name)
     
@@ -68,9 +70,6 @@ choices = build_choices()
 
 
 
-
-for i, card_id in enumerate(card_ids):
-    print(i, card_id)
 
 with open("choices.json", "w+") as json_file:
     json_file.write(json.dumps(choices, indent=4))

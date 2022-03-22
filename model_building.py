@@ -1,51 +1,7 @@
+from preprocessing.Preprocesser import Preprocesser
 import json
+
 import numpy as np
-
-print("Loading card_ids")
-def get_card_ids():
-    with open("card_ids.json", "r") as card_ids_json_file:
-        return json.loads(card_ids_json_file.read())
-
-card_ids = get_card_ids()
-
-print("started one-hot encoding")
-def get_choices_data():
-    with open("choices.json", "r") as choices_json_file:
-        return json.loads(choices_json_file.read())
-
-choices_data = get_choices_data()
-
-standard_list = []
-
-for i in range(len(card_ids)):
-    standard_list.append(0)
-
-def create_one_hot_encoded_list(choices):
-    one_hot_encoded_list = standard_list.copy()
-    for choice in choices:
-        one_hot_encoded_list[choice] = 1
-    
-    return one_hot_encoded_list
-
-one_hot_encoded_data = []
-for run in choices_data:
-    one_hot_encoded_data.append(
-        {
-            "inputs": create_one_hot_encoded_list(run["choices"]),
-            "outputs": create_one_hot_encoded_list([run["player_choice"]])
-        }
-    )
-
-print("one-hot encoding complete")
-
-
-
-
-
-
-
-
-
 import torch
 from torch import Tensor
 from torch.nn import Module, Linear, ReLU, Softmax, CrossEntropyLoss
@@ -56,11 +12,62 @@ from numpy import argmax, dtype, vstack
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
-from data_source_path import save_model_path
+from source_folder_path import save_model_path
+
+# print("Loading card_ids")
+# def get_card_ids():
+#     with open("card_ids.json", "r") as card_ids_json_file:
+#         return json.loads(card_ids_json_file.read())
+
+# card_ids = get_card_ids()
+
+# print("started one-hot encoding")
+# def get_choices_data():
+#     with open("choices.json", "r") as choices_json_file:
+#         return json.loads(choices_json_file.read())
+
+# choices_data = get_choices_data()
+
+# standard_list = []
+
+# for i in range(len(card_ids)):
+#     standard_list.append(0)
+
+# def create_one_hot_encoded_list(choices):
+#     one_hot_encoded_list = standard_list.copy()
+#     for choice in choices:
+#         one_hot_encoded_list[choice] = 1
+    
+#     return one_hot_encoded_list
+
+# one_hot_encoded_data = []
+# for run in choices_data:
+#     one_hot_encoded_data.append(
+#         {
+#             "inputs": create_one_hot_encoded_list(run["choices"]),
+#             "outputs": create_one_hot_encoded_list([run["player_choice"]])
+#         }
+#     )
+
+# print("one-hot encoding complete")
+
+ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
+CARD_IDS_JSON_FILENAME = "card_ids.json"
+
+if input(f"Run preprocesser (y/n): ") == "y":
+    preprocesser = Preprocesser(ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME)
+    preprocesser.start()
+    one_hot_encoded_data = preprocesser.get_one_hot_encoded_data()
+    card_ids = preprocesser.get_card_ids()
+else:
+    with open(ONE_HOT_ENCODED_JSON_FILENAME, "r") as json_file:
+        one_hot_encoded_data = json.loads(json_file.read())
+    with open(CARD_IDS_JSON_FILENAME, "r") as json_file:
+        card_ids = json.loads(json_file.read())
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
-
 
 
 # dataset definition
@@ -72,8 +79,8 @@ class ChoicesDataset(Dataset):
         self.y = []
 
         for choice in one_hot_encoded_data:
-            self.X.append(choice["inputs"])
-            self.y.append(choice["outputs"])
+            self.X.append(choice["inputs"]["available_choices"])
+            self.y.append(choice["targets"])
         
         self.X = torch.tensor(self.X, dtype=torch.float32).to(device)
         self.y = torch.tensor(self.y, dtype=torch.float32).to(device)
@@ -85,7 +92,7 @@ class ChoicesDataset(Dataset):
 
     # get a row at an index
     def __getitem__(self, idx):
-        return [self.X[idx], self.y[idx]]
+        return [self.X[idx]["available_choices"], self.y[idx]]
 
     def get_splits(self):
         test_size = round(0.1 * len(self.X))
@@ -149,7 +156,7 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
-    max_epochs = 100
+    max_epochs = 10
     ep_log_interval = 1
     loss_func = torch.nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=0.002)
@@ -164,7 +171,7 @@ def train_model(train_dl, model: MLP):
             # clear the gradients
             optimizer.zero_grad()
             # compute the model output
-            yhat = model(inputs)
+            yhat = model(inputs["available_choices"])
             # calculate loss
             loss = loss_func(yhat, targets)
             epoch_loss += loss.item()
@@ -198,7 +205,7 @@ def evaluate_model(model: MLP):
 
     for i, (inputs, targets) in enumerate(test_dl):
         # evaluate the model on the test set
-        yhat = model(inputs)
+        yhat = model(inputs["available_choices"])
         # retrieve numpy array
         yhat = yhat.detach().numpy()
         actual = targets.numpy()
@@ -239,6 +246,7 @@ dataset = ChoicesDataset(one_hot_encoded_data)
 
 print("Splitting dataset")
 train, test = dataset.get_splits()
+
 
 print("DataLoader loading dataset")
 # create a data loader for train and test sets

@@ -1,6 +1,6 @@
 import json, os
 
-from data_source_path import data_source_path
+from source_folder_path import data_source_path
 from reference_list import ironclad_cards, colorless_cards
 
 FILE_CAP = 150
@@ -28,7 +28,7 @@ def read_json_file(runs, json_file_names):
 loaded_files = []
 read_json_file(loaded_files, source_paths)
 
-print(f"Loaded: {len(loaded_files)} runs.")
+print(f"Loaded: {len(loaded_files)} files.")
 
 
 result_runs = []
@@ -51,52 +51,55 @@ def append_event_choice(event_choices, event_choice):
                 new_event_choice[key] = event_choice[key]
         event_choices.append(new_event_choice)
 
-
+skipped_item_purchased = 0
 def create_run(event):
+    global skipped_item_purchased
     run = {}
-    run["id"] = _id
+    run["play_id"] = event["play_id"]
     run["victory"] = event["victory"]
     run["ascension_level"] = event["ascension_level"]
     run["floor_reached"] = event["floor_reached"]
     run["card_choices"] = event["card_choices"]
     run["master_deck"] = event["master_deck"]
-    run["play_id"] = event["play_id"]
 
-    # run["cards_purchased"] = []
-    # for i in range(len(event["items_purchased"])):
-    #     for purchasable_card in ironclad_cards + colorless_cards:
-    #         if event["items_purchased"][i].startswith(purchasable_card):
-    #             run["cards_purchased"].append({
-    #                 "card": event["items_purchased"][i],
-    #                 "floor": event["item_purchase_floors"][i],
-    #             })
-    #             break
+    run["cards_purchased"] = []
+    if len(event["items_purchased"]) == len(event["item_purchase_floors"]):
+        for i in range(len(event["items_purchased"])):
+            for purchasable_card in ironclad_cards + colorless_cards:
+                if event["items_purchased"][i].startswith(purchasable_card):
+                    run["cards_purchased"].append({
+                        "card": event["items_purchased"][i],
+                        "floor": event["item_purchase_floors"][i],
+                    })
+                    break
+    else:
+        skipped_item_purchased += 1
+        return None
 
-    # run["event_choices"] = []
-    # for event_choice in event["event_choices"]:
-    #     append_event_choice(run["event_choices"], event_choice)
+    run["event_choices"] = []
+    for event_choice in event["event_choices"]:
+        append_event_choice(run["event_choices"], event_choice)
 
-    # run["campfire_choices"] = []
-    # for campfire_choice in event["campfire_choices"]:
-    #     if campfire_choice["key"] == "SMITH":
-    #         run["campfire_choices"].append(campfire_choice)
+    run["campfire_choices"] = []
+    for campfire_choice in event["campfire_choices"]:
+        if campfire_choice["key"] == "SMITH":
+            run["campfire_choices"].append(campfire_choice)
     
     return run
 
 
 print("Started processing runs")
-_id = -1
 for runs in loaded_files:
     for run in runs:
         event = run["event"]
         if event_matches_filters(event):
-            _id += 1
             new_run = create_run(event)
-            result_runs.append(new_run)
+            if new_run is not None:
+                result_runs.append(new_run)
 
-print("Started processing runs")
 with open("filtered.json", "w+") as json_file:
     json_file.write(json.dumps(result_runs, indent=4))
 
 
 print(f"Exported: {len(result_runs)} runs.")
+print(f"Skipped runs: {skipped_item_purchased}")
