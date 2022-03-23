@@ -74,6 +74,7 @@ class RunFilterer:
             "card_choices": unfiltered_run["card_choices"],
             "master_deck": unfiltered_run["master_deck"],
             "cards_purchased": self.get_cards_purchased(unfiltered_run),
+            "cards_purged": self.get_cards_purged(unfiltered_run),
             "event_choices": self.get_event_choices(unfiltered_run),
             "campfire_choices": self.get_campfire_choices(unfiltered_run),
         }
@@ -81,14 +82,22 @@ class RunFilterer:
     def get_cards_purchased(self, unfiltered_run):
         cards_purchased = []
         for i in range(len(unfiltered_run["items_purchased"])):
-            for purchasable_card in AVAILABLE_CARDS:
-                if unfiltered_run["items_purchased"][i].startswith(purchasable_card):
-                    cards_purchased.append({
-                        "card": unfiltered_run["items_purchased"][i],
-                        "floor": unfiltered_run["item_purchase_floors"][i],
-                    })
-                    break
+            if unfiltered_run["items_purchased"][i] in AVAILABLE_CARDS:
+                cards_purchased.append({
+                    "card": unfiltered_run["items_purchased"][i],
+                    "floor": unfiltered_run["item_purchase_floors"][i],
+                })
         return cards_purchased
+
+    def get_cards_purged(self, unfiltered_run):
+        cards_purged = []
+        for i in range(len(unfiltered_run["items_purged"])):
+            if unfiltered_run["items_purged"][i] in AVAILABLE_CARDS:
+                cards_purged.append({
+                    "card": unfiltered_run["items_purged"][i],
+                    "floor": unfiltered_run["items_purged_floors"][i],
+                })
+        return cards_purged
 
     def get_event_choices(self, unfiltered_run):
         event_choices = []

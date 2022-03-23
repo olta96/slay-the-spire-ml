@@ -1,13 +1,10 @@
-MAX_FLOOR = 60
+from preprocessing.reference_list import curse_cards
+
+MAX_FLOOR = 80
 
 class DeckBuilder:
 
     def __init__(self):
-        self.count_master_decks = 0
-        self.count_master_decks_failed = 0
-        self.prints = 0
-        self.print_once = True
-
         self.starting_deck = [
             "Strike_R",
             "Strike_R",
@@ -26,10 +23,6 @@ class DeckBuilder:
         decks = []
         cards = self.starting_deck.copy()
         for floor in range(MAX_FLOOR):
-            self.prints += 1
-            if self.prints == 1:
-                print(run)
-
             for card_choice in run["card_choices"]:
                 if card_choice["floor"] > floor:
                     break
@@ -53,30 +46,25 @@ class DeckBuilder:
                     break
                 if card_purchased["floor"] == floor:
                     self.modify_cards_by_purchase(card_purchased, cards)
+
+            for card_purged in run["cards_purged"]:
+                if card_purged["floor"] > floor:
+                    break
+                if card_purged["floor"] == floor:
+                    self.modify_cards_by_purge(card_purged, cards, decks)
             
             decks.append({
                 "floor": floor,
                 "cards": cards.copy(),
             })
         
-        master_deck_sorted = sorted(run["master_deck"])
-        generated_master_deck_sorted = sorted(decks[-1]["cards"])
 
-        if self.print_once:
-            self.print_once = False
-            print(master_deck_sorted)
-            print("--------------------------------------------------------------")
-            print(generated_master_deck_sorted)
-
-        if master_deck_sorted == generated_master_deck_sorted:
-            self.count_master_decks_failed += 1
+        if self.decks_match(run["master_deck"], decks[-1]["cards"]):
+            return decks
+        elif self.decks_have_similar_length(run["master_deck"], decks[-1]["cards"]):
+            return decks
         else:
-            self.count_master_decks += 1
-
-        print(f"Master decks did not match: {self.count_master_decks_failed}")
-        print(f"Master decks did match: {self.count_master_decks}")
-
-        return decks
+            return None
 
     def modify_cards_by_card_choice(self, card_choice, cards):
         if card_choice["picked"] != "SKIP":
@@ -85,19 +73,11 @@ class DeckBuilder:
     def modify_cards_by_event(self, event, cards, decks):
         if "cards_removed" in event:
             for card_removed in event["cards_removed"]:
-                if card_removed in cards:
-                    cards.remove(card_removed)
-                else:
-                    for deck in decks:
-                        deck["cards"].append(card_removed)
+                self.remove_card(card_removed, cards, decks)
         
         if "cards_transformed" in event:
             for card_transformed in event["cards_transformed"]:
-                if card_transformed in cards:
-                    cards.remove(card_transformed)
-                else:
-                    for deck in decks:
-                        deck["cards"].append(card_transformed)
+                self.remove_card(card_transformed, cards, decks)
 
         if "cards_obtained" in event:
             for card_obtained in event["cards_obtained"]:
@@ -105,27 +85,47 @@ class DeckBuilder:
 
         if "cards_upgraded" in event:
             for card_upgraded in event["cards_upgraded"]:
-                # fulfix: lös "+2"
-                # splitted = card_upgraded.split("+")
-                # if len(splitted):
-
-                if card_upgraded in cards:
-                    cards.remove(card_upgraded)
-                else:
-                    for deck in decks:
-                        deck["cards"].append(card_upgraded)
-
+                self.remove_card(card_upgraded, cards, decks)
                 cards.append(card_upgraded + "+1")
 
 
     def modify_cards_by_campfire(self, campfire_choice, cards, decks):
-        if campfire_choice["data"] in cards:
-            cards.remove(campfire_choice["data"])
-        else:
-            for deck in decks:
-                deck["cards"].append(campfire_choice["data"])
+        self.remove_card(campfire_choice["data"], cards, decks)
         cards.append(campfire_choice["data"] + "+1")
-
 
     def modify_cards_by_purchase(self, card_purchased, cards):
         cards.append(card_purchased["card"])
+
+    def modify_cards_by_purge(self, card_purged, cards, decks):
+        self.remove_card(card_purged["card"], cards, decks)
+
+    def remove_card(self, to_remove, cards, decks):
+        if to_remove in cards:
+            cards.remove(to_remove)
+        else:
+            for deck in decks:
+                deck["cards"].append(to_remove)
+
+    def decks_have_similar_length(self, deck_a, deck_b):
+        return abs(len(deck_a) - len(deck_b)) < 2
+
+    def decks_match(self, deck_a, deck_b):
+        sorted_a = sorted(deck_a)
+        sorted_b = sorted(deck_b)
+
+        for val in sorted_a:
+            if val in curse_cards:
+                sorted_a.remove(val)
+
+        for val in sorted_b:
+            if val in curse_cards:
+                sorted_b.remove(val)
+
+        if len(sorted_a) != len(sorted_b):
+            return False
+
+        for i in range(len(sorted_a)):
+            if sorted_a[i] != sorted_b[i]:
+                return False
+        
+        return True

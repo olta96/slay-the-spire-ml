@@ -1,0 +1,17 @@
+Started reading json files
+0 files read
+10 files read
+20 files read
+30 files read
+40 files read
+50 files read
+Started filtering runs
+Filtered: 778 runs.
+Skipped runs: 1
+Started building choices
+Built: 10150 choices
+Started one hot encoding choices
+Encoded: 10150 choices
+Writing card IDs to card_ids.json
+Writing one hot encoding data to one_hot_encoded_data.json
+Writing logs to preprocessor_logs.txt

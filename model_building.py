@@ -67,21 +67,29 @@ else:
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(device)
+print("Device:", device)
 
-
+row = None
 # dataset definition
 class ChoicesDataset(Dataset):
     # load the dataset
     def __init__(self, one_hot_encoded_data):
+        global row
         # store the inputs and outputs
         self.X = []
         self.y = []
 
         for choice in one_hot_encoded_data:
-            self.X.append(choice["inputs"]["available_choices"])
+            to_append = choice["inputs"]["available_choices"].copy()
+            for counts in choice["inputs"]["deck"]:
+                for count in counts:
+                    to_append.append(count)
+            
+            self.X.append(to_append)
             self.y.append(choice["targets"])
-        
+
+        row = self.X[0].copy()
+
         self.X = torch.tensor(self.X, dtype=torch.float32).to(device)
         self.y = torch.tensor(self.y, dtype=torch.float32).to(device)
 
@@ -92,7 +100,7 @@ class ChoicesDataset(Dataset):
 
     # get a row at an index
     def __getitem__(self, idx):
-        return [self.X[idx]["available_choices"], self.y[idx]]
+        return [self.X[idx], self.y[idx]]
 
     def get_splits(self):
         test_size = round(0.1 * len(self.X))
@@ -110,7 +118,7 @@ class MLP(Module):
 
         self.hid1 = torch.nn.Linear(n_inputs, int(n_inputs / 2))
         self.hid2 = torch.nn.Linear(int(n_inputs / 2), int(n_inputs / 2))
-        self.oupt = torch.nn.Linear(int(n_inputs / 2), n_inputs)
+        self.oupt = torch.nn.Linear(int(n_inputs / 2), len(card_ids))
 
         torch.nn.init.xavier_uniform_(self.hid1.weight)
         torch.nn.init.zeros_(self.hid1.bias)
@@ -156,7 +164,7 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
-    max_epochs = 10
+    max_epochs = 2
     ep_log_interval = 1
     loss_func = torch.nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=0.002)
@@ -171,7 +179,7 @@ def train_model(train_dl, model: MLP):
             # clear the gradients
             optimizer.zero_grad()
             # compute the model output
-            yhat = model(inputs["available_choices"])
+            yhat = model(inputs)
             # calculate loss
             loss = loss_func(yhat, targets)
             epoch_loss += loss.item()
@@ -205,7 +213,7 @@ def evaluate_model(model: MLP):
 
     for i, (inputs, targets) in enumerate(test_dl):
         # evaluate the model on the test set
-        yhat = model(inputs["available_choices"])
+        yhat = model(inputs)
         # retrieve numpy array
         yhat = yhat.detach().numpy()
         actual = targets.numpy()
@@ -254,7 +262,7 @@ train_dl = DataLoader(train, batch_size=32, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
-model = MLP(len(card_ids)).to(device)
+model = MLP(len(card_ids) * 7).to(device)
 
 print("Started training model")
 train_model(train_dl, model)
@@ -262,12 +270,14 @@ print("Training complete")
 
 acc = accuracy(model, test_dl)
 print(f"Accuracy: {round(acc * 100, 2)} %")
-#0 SKIP
-#3 Battle Trance
-#4 Twin Strike
-#5 Armaments
+
 choices = []
-row = [1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+for i in range(1, len(row)):
+    if i == len(row) - 1:
+        break
+    temp = row[i]
+    row[i] = row[i + 1]
+    row[i + 1] = temp
 for i, val in enumerate(row):
     if val == 1:
         choices.append(i)
@@ -278,7 +288,6 @@ row = np.array([row], dtype=np.float32)
 row = torch.tensor(row, dtype=torch.float32).to(device)
 
 predict(row, model)
-
 
 torch.save(model.state_dict(), save_model_path + "/model.pth")
 print(f"Saved PyTorch Model State to {save_model_path}\model.pth")

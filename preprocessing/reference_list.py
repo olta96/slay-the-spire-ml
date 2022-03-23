@@ -267,7 +267,7 @@ curse_cards = [
     "Regret",
     "Shame",
     "Writhe",
-    "Ascender's Bane",
+    "AscendersBane",
     "Curse of the Bell",
     "Necronomicurse",
     "Pride"

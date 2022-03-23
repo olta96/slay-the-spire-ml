@@ -7,10 +7,10 @@ from preprocessing.ChoiceBuilder import ChoiceBuilder
 from source_folder_path import source_folder_path
 from preprocessing.OneHotEncoder import OneHotEncoder
 
-
 class Preprocesser:
     
-    FILE_CAP = 10
+    FILE_CAP = 50
+    LOGS_FILENAME = "preprocessor_logs.txt"
 
     def __init__(self, one_hot_encoded_json_filename, cards_ids_filename):
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
@@ -36,32 +36,33 @@ class Preprocesser:
     def start(self):
         self.build_source_paths()
 
-        Logger.getLogger().log("Started reading json files")
+        Logger.get_logger().log("Started reading json files")
         self.read_source()
 
-        Logger.getLogger().log("Started filtering runs")
+        Logger.get_logger().log("Started filtering runs")
         self.filter_loaded_files()
-        Logger.getLogger().log(f"Filtered: {len(self.filtered_runs)} runs.")
-        Logger.getLogger().log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
+        Logger.get_logger().log(f"Filtered: {len(self.filtered_runs)} runs.")
+        Logger.get_logger().log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
 
-        Logger.getLogger().log("Started building choices")
+        Logger.get_logger().log("Started building choices")
         self.build_choices()
-        Logger.getLogger().log(f"Built: {len(self.choices)} choices")
+        Logger.get_logger().log(f"Built: {len(self.choices)} choices")
 
-        Logger.getLogger().log("Started one hot encoding choices")
+        Logger.get_logger().log("Started one hot encoding choices")
         self.encode_choices()
-        Logger.getLogger().log(f"Encoded: {len(self.one_hot_encoded_data)} choices")
+        Logger.get_logger().log(f"Encoded: {len(self.one_hot_encoded_data)} choices")
 
-        Logger.getLogger().log(f"Writing card IDs to {self.cards_ids_filename}")
+        Logger.get_logger().log(f"Writing card IDs to {self.cards_ids_filename}")
         self.write_card_ids()
 
-        Logger.getLogger().log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
+        Logger.get_logger().log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
         self.write_one_hot_encoded_data()
+
+        Logger.get_logger().log(f"Writing logs to {self.LOGS_FILENAME}")
+        self.write_logs()
 
     def build_source_paths(self):
         for i, file in enumerate(os.listdir(source_folder_path)):
-            if i % 10 == 0:
-                Logger.getLogger().log("Loaded", i, "files")
             self.source_filenames.append(file)
             if i == self.FILE_CAP:
                 break
@@ -69,7 +70,7 @@ class Preprocesser:
     def read_source(self):
         for i, source_filename in enumerate(self.source_filenames):
             if i % 10 == 0:
-                Logger.getLogger().log(i, "files read")
+                Logger.get_logger().log(i, "files read")
             source_file_path = source_folder_path + "/" + source_filename
             self.loaded_files.append(self.file_handler.read_json(source_file_path))
 
@@ -88,7 +89,10 @@ class Preprocesser:
         self.one_hot_encoded_data = self.one_hot_encoder.encode(self.choices)
 
     def write_card_ids(self):
-        self.file_handler.write_json(self.cards_ids_filename, self.get_card_ids())
+        self.file_handler.write_json(self.cards_ids_filename, self.get_card_ids(), indent=4)
 
     def write_one_hot_encoded_data(self):
         self.file_handler.write_json(self.one_hot_encoded_json_filename, self.one_hot_encoded_data)
+
+    def write_logs(self):
+        self.file_handler.write(self.LOGS_FILENAME, Logger.get_logger().get_log_messages())

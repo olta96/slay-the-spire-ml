@@ -10,18 +10,22 @@ class ChoiceBuilder:
         self.deck_builder = DeckBuilder()
 
     def build(self, filtered_runs):
-
         choices = []
 
         for filtered_run in filtered_runs:
 
             decks = self.deck_builder.build(filtered_run)
+            if decks is None:
+                continue
 
             for card_choice in filtered_run["card_choices"]:
                 if self.is_malformed(card_choice):
                     continue
                 
                 new_choice = self.build_card_choice(card_choice, decks)
+                if new_choice is None:
+                    continue
+
                 choices.append(new_choice)
         
         return choices
@@ -40,10 +44,14 @@ class ChoiceBuilder:
 
         choices.append(self.card_identifier.identify("SKIP"))
 
+        cards_by_floor = self.get_deck_by_floor(decks, card_choice["floor"])
+        if cards_by_floor is None:
+            return None
+
         return {
             "available_choices": choices,
             "player_choice": self.card_identifier.identify(card_choice["picked"]),
-            "deck": self.card_identifier.identify(*self.get_deck_by_floor(decks, card_choice["floor"])),
+            "deck": self.card_identifier.identify(*cards_by_floor),
         }
 
     def is_malformed(self, card_choice):
@@ -59,7 +67,7 @@ class ChoiceBuilder:
     def get_deck_by_floor(self, decks, floor):
         for deck in decks:
             if deck["floor"] == floor:
-                return deck
+                return deck["cards"]
         
         return None
 
