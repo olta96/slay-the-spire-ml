@@ -164,7 +164,7 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
-    max_epochs = 2
+    max_epochs = 10
     ep_log_interval = 1
     loss_func = torch.nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=0.002)
@@ -272,12 +272,6 @@ acc = accuracy(model, test_dl)
 print(f"Accuracy: {round(acc * 100, 2)} %")
 
 choices = []
-for i in range(1, len(row)):
-    if i == len(row) - 1:
-        break
-    temp = row[i]
-    row[i] = row[i + 1]
-    row[i + 1] = temp
 for i, val in enumerate(row):
     if val == 1:
         choices.append(i)
