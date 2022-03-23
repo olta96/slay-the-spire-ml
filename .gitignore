@@ -129,10 +129,14 @@ dmypy.json
 .pyre/
 
 # Path to Source Original Data
-data_source_path.py
+source_folder_path.py
 
 # Original data
 Monthly_2020_11/
 
+# Models
+Models/
+
 #One-Hot
 one_hot_encoded.json
+one_hot_encoded_data.json
