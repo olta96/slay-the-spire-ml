@@ -14,45 +14,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from source_folder_path import save_model_path
 
-# print("Loading card_ids")
-# def get_card_ids():
-#     with open("card_ids.json", "r") as card_ids_json_file:
-#         return json.loads(card_ids_json_file.read())
-
-# card_ids = get_card_ids()
-
-# print("started one-hot encoding")
-# def get_choices_data():
-#     with open("choices.json", "r") as choices_json_file:
-#         return json.loads(choices_json_file.read())
-
-# choices_data = get_choices_data()
-
-# standard_list = []
-
-# for i in range(len(card_ids)):
-#     standard_list.append(0)
-
-# def create_one_hot_encoded_list(choices):
-#     one_hot_encoded_list = standard_list.copy()
-#     for choice in choices:
-#         one_hot_encoded_list[choice] = 1
-    
-#     return one_hot_encoded_list
-
-# one_hot_encoded_data = []
-# for run in choices_data:
-#     one_hot_encoded_data.append(
-#         {
-#             "inputs": create_one_hot_encoded_list(run["choices"]),
-#             "outputs": create_one_hot_encoded_list([run["player_choice"]])
-#         }
-#     )
-
-# print("one-hot encoding complete")
 
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = "card_ids.json"
+
 
 if input(f"Run preprocesser (y/n): ") == "y":
     preprocesser = Preprocesser(ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME)
@@ -69,12 +34,17 @@ else:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
 
-row = None
+number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids)
+print("Number of input nodes:", number_of_inputs)
+
+# For predicting
+test_row = None
+
 # dataset definition
 class ChoicesDataset(Dataset):
     # load the dataset
     def __init__(self, one_hot_encoded_data):
-        global row
+        global test_row
         # store the inputs and outputs
         self.X = []
         self.y = []
@@ -88,7 +58,7 @@ class ChoicesDataset(Dataset):
             self.X.append(to_append)
             self.y.append(choice["targets"])
 
-        row = self.X[0].copy()
+        test_row = self.X[0].copy()
 
         self.X = torch.tensor(self.X, dtype=torch.float32).to(device)
         self.y = torch.tensor(self.y, dtype=torch.float32).to(device)
@@ -164,7 +134,7 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
-    max_epochs = 10
+    max_epochs = 1
     ep_log_interval = 1
     loss_func = torch.nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=0.002)
@@ -190,8 +160,6 @@ def train_model(train_dl, model: MLP):
 
         if epoch % ep_log_interval == 0:
             print("epoch = %4d   loss = %0.4f" % (epoch, epoch_loss))
-
-    print("Done ")
 
 def accuracy(model, ldr):
   # assumes model.eval()
@@ -262,7 +230,7 @@ train_dl = DataLoader(train, batch_size=32, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
-model = MLP(len(card_ids) * 7).to(device)
+model = MLP(number_of_inputs).to(device)
 
 print("Started training model")
 train_model(train_dl, model)
@@ -271,17 +239,18 @@ print("Training complete")
 acc = accuracy(model, test_dl)
 print(f"Accuracy: {round(acc * 100, 2)} %")
 
-choices = []
-for i, val in enumerate(row):
+print("Test row available choices:")
+for i, val in enumerate(test_row):
+    if i >= len(card_ids):
+        break
     if val == 1:
-        choices.append(i)
-        print(i)
+        print(f"\t{i}: {card_ids[i]}")
 
-row = np.array([row], dtype=np.float32)
+test_row = np.array([test_row], dtype=np.float32)
 
-row = torch.tensor(row, dtype=torch.float32).to(device)
+test_row = torch.tensor(test_row, dtype=torch.float32).to(device)
 
-predict(row, model)
+predict(test_row, model)
 
 torch.save(model.state_dict(), save_model_path + "/model.pth")
 print(f"Saved PyTorch Model State to {save_model_path}\model.pth")

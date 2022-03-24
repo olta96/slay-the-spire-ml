@@ -11,6 +11,7 @@ class Preprocesser:
     
     FILE_CAP = 50
     LOGS_FILENAME = "preprocessor_logs.txt"
+    DECK_MAX_CARD_COUNT = 6
 
     def __init__(self, one_hot_encoded_json_filename, cards_ids_filename):
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
@@ -19,7 +20,7 @@ class Preprocesser:
         self.run_filterer = RunFilterer()
         self.card_identifier = CardIdentifier()
         self.choice_builder = ChoiceBuilder(self.card_identifier)
-        self.one_hot_encoder = OneHotEncoder(self.card_identifier)
+        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.DECK_MAX_CARD_COUNT)
 
         self.source_filenames = []
         self.loaded_files = []
@@ -32,6 +33,9 @@ class Preprocesser:
 
     def get_card_ids(self):
         return self.card_identifier.get_card_ids()
+
+    def get_deck_max_card_count(self):
+        return self.DECK_MAX_CARD_COUNT
 
     def start(self):
         self.build_source_paths()

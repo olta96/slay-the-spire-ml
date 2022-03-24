@@ -3,7 +3,8 @@ import copy
 
 class OneHotEncoder:
 
-    def __init__(self, card_identifier):
+    def __init__(self, card_identifier, max_card_count):
+        self.max_card_count = max_card_count
         self.card_identifier = card_identifier
         self.intial_one_hot_available_choices = None
         self.intial_one_hot_deck = None
@@ -41,7 +42,7 @@ class OneHotEncoder:
         self.intial_one_hot_deck = []
         for _ in range(len(card_ids)):
             self.intial_one_hot_deck.append([])
-            for _ in range(6):
+            for _ in range(self.max_card_count):
                 self.intial_one_hot_deck[-1].append(0)
 
     def create_one_hot_with_choices(self, choices):
@@ -60,7 +61,7 @@ class OneHotEncoder:
             counts[card] += 1
 
         for index, count in enumerate(counts):
-            if count > 6:
+            if count > self.max_card_count:
                 return None
             if count == 0:
                 continue
