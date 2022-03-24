@@ -134,10 +134,10 @@ class MLP(Module):
 # train the model
 def train_model(train_dl, model: MLP):
     # define the optimization
-    max_epochs = 1
+    max_epochs = 100
     ep_log_interval = 1
     loss_func = torch.nn.CrossEntropyLoss()
-    optimizer = AdamW(model.parameters(), lr=0.002)
+    optimizer = Adam(model.parameters(), lr=0.001)
 
 
     # enumerate epochs

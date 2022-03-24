@@ -1,0 +1,124 @@
+FILE-LIMIT: 100
+max-epochs: 100
+
+Test_1[
+lr: 0.002
+requires_grad = false
+AdamW + CrossEntropy =  Loss: 92.20
+			            Accuracy: 73.77%
+]
+
+Test_2[
+lr: 0.003
+requires_grad = false
+AdamW + CrossEntropy =  Loss: 170.41
+			            Accuracy: 72.69%
+
+Test_3[
+lr: 0.002
+requires_grad = true
+AdamW + CrossEntropy =  Loss: 85.34
+			            Accuracy: 73.54%
+]
+
+Test4 [
+lr: 0.002
+requires_grad = false
+Adam + CrossEntropy =   Loss: 65.48
+			            Accuracy: 72.91%
+
+]
+
+
+Test5 [
+lr: 0.001
+requires_grad = false
+Adam + CrossEntropy =   Loss: 26.98
+			            Accuracy: 75.44%
+]
+
+Test6 [
+lr: 0.001 
+requires_grad = false
+AdamW + CrossEntropy =  Loss: 33.99
+			            Accuracy: 75.89%
+]
+
+FILE-LIMIT: 200
+max-epochs: 100
+
+
+Test7 (REF: Test1 [
+lr: 0.002
+requires_grad = false
+AdamW + CrossEntropy =  Loss: 308.47
+			            Accuracy: 76.82% 
+]
+
+Test8 (REF: Test2 [
+lr: 0.003
+requires_grad: false
+AdamW + CrossEntropy =  Loss: 624.69
+			            Accuracy: 74.55%
+
+]
+
+Test9 (REF: Test4 [
+lr: 0.002
+requires_grad: false
+Adam + CrossEntropy =   Loss: 205.71
+			            Accuracy: 77.77% 
+]
+
+Test10 (REF: Test5 [
+lr: 0.001 
+requires_grad: false 
+Adam + CrossEntropy =  Loss: 108.76
+			            Accuracy: 79.36%
+]
+
+Test11 (REF: Test6 [
+lr: 0.001
+requires_grad: false
+AdamW + CrossEntropy =   Loss: 84.31
+			            Accuracy: 80.05%
+]
+
+
+FILE-LIMIT: 200
+max-epoch: 200
+
+Test12 (REF: Test1,Test7) [
+lr: 0.002
+requires_grad = false
+AdamW + CrossEntropy =  Loss: 308.88
+			            Accuracy: 76.43%
+]
+
+Test13(REF: Test3,Test8) [
+lr: 0.003
+requires_grad: false
+AdamW + CrossEntropy =  Loss: 611.75
+			            Accuracy: 76.04%
+]
+
+Test14 (REF: Test4.Test9 [
+lr: 0.002
+requires_grad: false
+Adam + CrossEntropy =   Loss: 167.38
+			            Accuracy: 78.2%
+]
+
+Test15 (REF: Test5.Test10 [
+lr: 0.001
+requires_grad: false
+Adam + CrossEntropy =   Loss: 70.10
+			            Accuracy: 78.92%
+]
+
+Test16 (REF: Test6.Test11 [
+lr: 0.001
+requires_grad: false
+AdamW + CrossEntropy =  Loss: 94.37
+			            Accuracy: 78.48%
+]

@@ -9,7 +9,7 @@ from preprocessing.OneHotEncoder import OneHotEncoder
 
 class Preprocesser:
     
-    FILE_CAP = 50
+    FILE_CAP = 200
     LOGS_FILENAME = "preprocessor_logs.txt"
     DECK_MAX_CARD_COUNT = 6
 
