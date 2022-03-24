@@ -6,7 +6,7 @@ class FileHandler:
         with open(file_path, "r") as json_file:
             return json.loads(json_file.read())
 
-    def write_json(self, filename, to_write, indent=0):
+    def write_json(self, filename, to_write, indent=None):
         with open(filename, "w+") as json_file:
             json_file.write(json.dumps(to_write, indent=indent))
 

@@ -3,15 +3,11 @@ import json
 
 import numpy as np
 import torch
-from torch import Tensor
-from torch.nn import Module, Linear, ReLU, Softmax, CrossEntropyLoss
+from torch.nn import Module
 from torch.utils.data import Dataset, random_split, DataLoader
-from torch.nn.init import kaiming_uniform_, xavier_uniform_
-from torch.optim import SGD, Adam, AdamW
-from numpy import argmax, dtype, vstack
+from torch.optim import Adam
+from numpy import argmax, vstack
 from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
 from source_folder_path import save_model_path
 
 
@@ -97,36 +93,14 @@ class MLP(Module):
         torch.nn.init.xavier_uniform_(self.oupt.weight)
         torch.nn.init.zeros_(self.oupt.bias)
 
-        # # input to first hidden layer
-        # self.hidden1 = Linear(n_inputs, 10)
-        # xavier_uniform_(self.hidden1.weight)
-        # self.act1 = ReLU()
-        # # second hidden layer
-        # self.hidden2 = Linear(10, 8)
-        # xavier_uniform_(self.hidden2.weight)
-        # self.act2 = ReLU()
-        # # third hidden layer and output
-        # self.hidden3 = Linear(8, n_inputs)
-        # xavier_uniform_(self.hidden3.weight)
-        # self.act3 = Softmax(dim=1)
  
     # forward propagate input
     def forward(self, X):
         z = torch.tanh(self.hid1(X))
         z = torch.tanh(self.hid2(z))
-        z = self.oupt(z) # NOTE?
+        # No softmax, happens in CrossEntropyLoss
+        z = self.oupt(z)
         return z
-
-        # # input to first hidden layer
-        # X = self.hidden1(X)
-        # X = self.act1(X)
-        # # second hidden layer
-        # X = self.hidden2(X)
-        # X = self.act2(X)
-        # # output layer
-        # X = self.hidden3(X)
-        # X = self.act3(X)
-        # return X
 
 
 
