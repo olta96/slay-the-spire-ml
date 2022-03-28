@@ -12,6 +12,7 @@ class Preprocesser:
     FILE_CAP = 200
     LOGS_FILENAME = "preprocessor_logs.txt"
     DECK_MAX_CARD_COUNT = 6
+    FILE_BATCH_SIZE = 10
 
     def __init__(self, one_hot_encoded_json_filename, cards_ids_filename):
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
@@ -23,7 +24,6 @@ class Preprocesser:
         self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.DECK_MAX_CARD_COUNT)
 
         self.source_filenames = []
-        self.loaded_files = []
         self.filtered_runs = []
         self.choices = None
         self.one_hot_encoded_data = None
@@ -40,11 +40,9 @@ class Preprocesser:
     def start(self):
         self.build_source_paths()
 
-        Logger.get_logger().log("Started reading json files")
-        self.read_source()
+        Logger.get_logger().log("Started reading and filtering json files")
+        self.read_and_filter_source()
 
-        Logger.get_logger().log("Started filtering runs")
-        self.filter_loaded_files()
         Logger.get_logger().log(f"Filtered: {len(self.filtered_runs)} runs.")
         Logger.get_logger().log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
 
@@ -71,20 +69,25 @@ class Preprocesser:
             if i == self.FILE_CAP:
                 break
 
-    def read_source(self):
+    def read_and_filter_source(self):
+        loaded_files = []
         for i, source_filename in enumerate(self.source_filenames):
-            if i % 10 == 0:
+            if i % self.FILE_BATCH_SIZE == 0:
                 Logger.get_logger().log(i, "files read")
+                self.filter_loaded_files(loaded_files)
+                loaded_files = []
             source_file_path = source_folder_path + "/" + source_filename
-            self.loaded_files.append(self.file_handler.read_json(source_file_path))
+            loaded_files.append(self.file_handler.read_json(source_file_path))
+        self.filter_loaded_files(loaded_files)
 
-    def filter_loaded_files(self):
-        for runs in self.loaded_files:
+    def filter_loaded_files(self, loaded_files):
+        for runs in loaded_files:
             for run_dict in runs:
                 unfiltered_run = run_dict["event"]
                 filtered_run = self.run_filterer.get_filtered_run(unfiltered_run)
                 if filtered_run is not None:
                     self.filtered_runs.append(filtered_run)
+        Logger.get_logger().log(f"{len(loaded_files)} files filtered")
 
     def build_choices(self):
         self.choices = self.choice_builder.build(self.filtered_runs)
