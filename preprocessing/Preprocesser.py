@@ -84,7 +84,11 @@ class Preprocesser:
         for runs in loaded_files:
             for run_dict in runs:
                 unfiltered_run = run_dict["event"]
-                filtered_run = self.run_filterer.get_filtered_run(unfiltered_run)
+                filtered_run = None
+                try:
+                    filtered_run = self.run_filterer.get_filtered_run(unfiltered_run)
+                except Exception as e:
+                    Logger.get_logger().log("Failed to filter a run. (skipping)", e)
                 if filtered_run is not None:
                     self.filtered_runs.append(filtered_run)
         Logger.get_logger().log(f"{len(loaded_files)} files filtered")
