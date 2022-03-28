@@ -23,7 +23,6 @@ class DeckBuilder:
             "Defend_R",
             "Defend_R",
             "Bash",
-            "AscendersBane",
         ]
 
     def build(self, run):
@@ -90,7 +89,8 @@ class DeckBuilder:
 
         if "cards_obtained" in event:
             for card_obtained in event["cards_obtained"]:
-                cards.append(card_obtained)
+                if card_obtained not in curse_cards:
+                    cards.append(card_obtained)
 
         if "cards_upgraded" in event:
             for card_upgraded in event["cards_upgraded"]:
@@ -115,12 +115,23 @@ class DeckBuilder:
     def remove_card(self, to_remove, cards, decks):
         if to_remove in cards:
             cards.remove(to_remove)
-        else:
+        elif to_remove not in curse_cards:
             for deck in decks:
                 deck["cards"].append(to_remove)
 
     def decks_have_similar_length(self, deck_a, deck_b):
-        return abs(len(deck_a) - len(deck_b)) < 2
+        deck_a_copy = deck_a.copy()
+        deck_b_copy = deck_b.copy()
+
+        for val in deck_a_copy:
+            if val in curse_cards:
+                deck_a_copy.remove(val)
+
+        for val in deck_b_copy:
+            if val in curse_cards:
+                deck_b_copy.remove(val)
+
+        return abs(len(deck_a_copy) - len(deck_b_copy)) < 2
 
     def decks_match(self, deck_a, deck_b):
         sorted_a = sorted(deck_a)
