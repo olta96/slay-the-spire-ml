@@ -5,9 +5,9 @@ AVAILABLE_CHOICES = AVAILABLE_CARDS + ["SKIP"]
 
 class ChoiceBuilder:
     
-    def __init__(self, card_identifier):
+    def __init__(self, card_identifier, master_decks_match_exact):
         self.card_identifier = card_identifier
-        self.deck_builder = DeckBuilder()
+        self.deck_builder = DeckBuilder(master_decks_match_exact)
 
     def build(self, filtered_runs):
         choices = []

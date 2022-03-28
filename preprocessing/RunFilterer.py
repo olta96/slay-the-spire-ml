@@ -1,44 +1,45 @@
 from preprocessing.reference_list import AVAILABLE_CARDS
 
-CHARACTER = "IRONCLAD"
-MIN_ASCENSION_LEVEL = 10
-MIN_FLOOR_REACHED = 44
-ENDLESS = False
-ASCENSION_MODE = True
-CHOSE_SEED = False
-
-def matches_character_chosen(character_chosen):
-    return character_chosen == CHARACTER
-
-def matches_ascension_level(ascension_level):
-    return ascension_level >= MIN_ASCENSION_LEVEL
-
-def matches_floor_reached(floor_reached):
-    return floor_reached >= MIN_FLOOR_REACHED 
-
-def matches_is_endless(is_endless):
-    return is_endless == ENDLESS
-
-def matches_is_ascension_mode(is_ascension_mode):
-    return is_ascension_mode == ASCENSION_MODE
-
-def matches_chose_seed(chose_seed):
-    return chose_seed == CHOSE_SEED
-
-
-
 class RunFilterer:
 
-    def __init__(self) -> None:
-        self.skipped_run_count = 0
+    def __init__(self, config_filters):
+        self.character = config_filters["character"]
+        self.min_ascension_level = config_filters["min_ascension_level"]
+        self.min_floor_reached = config_filters["min_floor_reached"]
+        self.endless = config_filters["endless"]
+        self.ascension_mode = config_filters["ascension_mode"]
+        self.chose_seed = config_filters["chose_seed"]
+
         self.filters = {
-            "character_chosen": matches_character_chosen,
-            "ascension_level": matches_ascension_level,
-            "floor_reached": matches_floor_reached,
-            "is_endless": matches_is_endless,
-            "is_ascension_mode": matches_is_ascension_mode,
-            "chose_seed": matches_chose_seed
+            "character_chosen": self.matches_character_chosen,
+            "ascension_level": self.matches_ascension_level,
+            "floor_reached": self.matches_floor_reached,
+            "is_endless": self.matches_is_endless,
+            "is_ascension_mode": self.matches_is_ascension_mode,
+            "chose_seed": self.matches_chose_seed
         }
+        
+        self.skipped_run_count = 0
+
+
+    def matches_character_chosen(self, character_chosen):
+        return character_chosen == self.character
+
+    def matches_ascension_level(self, ascension_level):
+        return ascension_level >= self.min_ascension_level
+
+    def matches_floor_reached(self, floor_reached):
+        return floor_reached >= self.min_floor_reached 
+
+    def matches_is_endless(self, is_endless):
+        return is_endless == self.endless
+
+    def matches_is_ascension_mode(self, is_ascension_mode):
+        return is_ascension_mode == self.ascension_mode
+
+    def matches_chose_seed(self, chose_seed):
+        return chose_seed == self.chose_seed
+
 
     def get_filtered_run(self, unfiltered_run):
         if self.run_matches_filters(unfiltered_run) and not self.is_malformed(unfiltered_run):

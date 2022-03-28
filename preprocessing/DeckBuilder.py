@@ -1,17 +1,9 @@
-import enum
 from preprocessing.reference_list import curse_cards
-
-MAX_FLOOR = 80
-
-class MasterDeckMatchingOption(enum.Enum):
-    EXACT_MATCH = enum.auto()
-    SIMILAR = enum.auto()
 
 class DeckBuilder:
 
-    DECK_MATCHING_OPTION = MasterDeckMatchingOption.EXACT_MATCH
-
-    def __init__(self):
+    def __init__(self, master_deck_exact_match):
+        self.master_deck_exact_match = master_deck_exact_match
         self.starting_deck = [
             "Strike_R",
             "Strike_R",
@@ -28,7 +20,7 @@ class DeckBuilder:
     def build(self, run):
         decks = []
         cards = self.starting_deck.copy()
-        for floor in range(MAX_FLOOR):
+        for floor in range(run["floor_reached"] + 1):
             for card_choice in run["card_choices"]:
                 if card_choice["floor"] > floor:
                     break
@@ -69,7 +61,7 @@ class DeckBuilder:
 
         if self.decks_match(original_master_deck, generated_master_deck):
             return decks
-        elif self.DECK_MATCHING_OPTION == MasterDeckMatchingOption.SIMILAR and self.decks_have_similar_length(original_master_deck, generated_master_deck):
+        elif not self.master_deck_exact_match and self.decks_have_similar_length(original_master_deck, generated_master_deck):
             return decks
         else:
             return None

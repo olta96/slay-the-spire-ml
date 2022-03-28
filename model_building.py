@@ -5,18 +5,24 @@ import numpy as np
 import torch
 from torch.nn import Module
 from torch.utils.data import Dataset, random_split, DataLoader
-from torch.optim import Adam
+from torch.optim import Adam, AdamW
 from numpy import argmax, vstack
 from sklearn.metrics import accuracy_score
 from source_folder_path import save_model_path
 
+
+def read_config_json():
+    with open("config.json") as config_file:
+        return json.loads(config_file.read())
+
+config_options = read_config_json()
 
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = "card_ids.json"
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
-    preprocesser = Preprocesser(ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME)
+    preprocesser = Preprocesser(config_options["preprocessor"], ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME)
     preprocesser.start()
     one_hot_encoded_data = preprocesser.get_one_hot_encoded_data()
     card_ids = preprocesser.get_card_ids()
@@ -106,12 +112,19 @@ class MLP(Module):
 
 
 # train the model
-def train_model(train_dl, model: MLP):
+def train_model(train_dl, model, test_dl):
     # define the optimization
-    max_epochs = 100
-    ep_log_interval = 1
+    max_epochs = config_options["max_epochs"]
+    epoch_log_interval = config_options["epoch_log_interval"]
     loss_func = torch.nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=0.001)
+    
+    lr = config_options["learning_rate"]
+    if config_options["optimizer"] == "Adam":
+        optimizer = Adam(model.parameters(), lr=lr)
+    elif config_options["optimizer"] == "AdamW":
+        optimizer = AdamW(model.parameters(), lr=lr)
+    else:
+        raise f"Unknown optimizer function: {config_options['optimizer']}"
 
 
     # enumerate epochs
@@ -132,8 +145,10 @@ def train_model(train_dl, model: MLP):
             # update model weights
             optimizer.step()
 
-        if epoch % ep_log_interval == 0:
-            print("epoch = %4d   loss = %0.4f" % (epoch, epoch_loss))
+        if epoch % epoch_log_interval == 0:
+            acc = accuracy(model, test_dl)
+            acc_percentage = round(acc * 100, 2)
+            print("epoch = %4d   accuracy = %0.2f %%   loss = %0.4f" % (epoch, acc_percentage, epoch_loss))
 
 def accuracy(model, ldr):
   # assumes model.eval()
@@ -207,7 +222,7 @@ print("Creating model")
 model = MLP(number_of_inputs).to(device)
 
 print("Started training model")
-train_model(train_dl, model)
+train_model(train_dl, model, test_dl)
 print("Training complete")
 
 acc = accuracy(model, test_dl)

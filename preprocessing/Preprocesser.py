@@ -8,20 +8,20 @@ from source_folder_path import source_folder_path
 from preprocessing.OneHotEncoder import OneHotEncoder
 
 class Preprocesser:
-    
-    FILE_CAP = -1
-    LOGS_FILENAME = "preprocessor_logs.txt"
-    DECK_MAX_CARD_COUNT = 6
-    FILE_BATCH_SIZE = 10
 
-    def __init__(self, one_hot_encoded_json_filename, cards_ids_filename):
+    def __init__(self, config_options, one_hot_encoded_json_filename, cards_ids_filename):
+        self.file_cap = config_options["file_cap"]
+        self.logs_filename = config_options["logs_filename"]
+        self.deck_max_card_count = config_options["deck_max_card_count"]
+        self.file_batch_size = config_options["file_batch_size"]
+
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
         self.cards_ids_filename = cards_ids_filename
         self.file_handler = FileHandler()
-        self.run_filterer = RunFilterer()
+        self.run_filterer = RunFilterer(config_options["filters"])
         self.card_identifier = CardIdentifier()
-        self.choice_builder = ChoiceBuilder(self.card_identifier)
-        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.DECK_MAX_CARD_COUNT)
+        self.choice_builder = ChoiceBuilder(self.card_identifier, config_options["strict_mode"])
+        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.deck_max_card_count)
 
         self.source_filenames = []
         self.filtered_runs = []
@@ -35,7 +35,7 @@ class Preprocesser:
         return self.card_identifier.get_card_ids()
 
     def get_deck_max_card_count(self):
-        return self.DECK_MAX_CARD_COUNT
+        return self.deck_max_card_count
 
     def start(self):
         self.build_source_paths()
@@ -60,19 +60,19 @@ class Preprocesser:
         Logger.get_logger().log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
         self.write_one_hot_encoded_data()
 
-        Logger.get_logger().log(f"Writing logs to {self.LOGS_FILENAME}")
+        Logger.get_logger().log(f"Writing logs to {self.logs_filename}")
         self.write_logs()
 
     def build_source_paths(self):
         for i, file in enumerate(os.listdir(source_folder_path)):
             self.source_filenames.append(file)
-            if i == self.FILE_CAP:
+            if i == self.file_cap:
                 break
 
     def read_and_filter_source(self):
         loaded_files = []
         for i, source_filename in enumerate(self.source_filenames):
-            if i % self.FILE_BATCH_SIZE == 0:
+            if i % self.file_batch_size == 0:
                 Logger.get_logger().log(i, "files read")
                 self.filter_loaded_files(loaded_files)
                 loaded_files = []
@@ -106,4 +106,4 @@ class Preprocesser:
         self.file_handler.write_json(self.one_hot_encoded_json_filename, self.one_hot_encoded_data)
 
     def write_logs(self):
-        self.file_handler.write(self.LOGS_FILENAME, Logger.get_logger().get_log_messages())
+        self.file_handler.write(self.logs_filename, Logger.get_logger().get_log_messages())
