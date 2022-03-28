@@ -113,11 +113,11 @@ class MLP(Module):
 
 # train the model
 def train_model(train_dl, model, test_dl):
-    # define the optimization
     max_epochs = config_options["max_epochs"]
     epoch_log_interval = config_options["epoch_log_interval"]
     loss_func = torch.nn.CrossEntropyLoss()
     
+    # define the optimization
     lr = config_options["learning_rate"]
     if config_options["optimizer"] == "Adam":
         optimizer = Adam(model.parameters(), lr=lr)
