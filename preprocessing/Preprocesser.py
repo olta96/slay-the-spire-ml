@@ -9,7 +9,7 @@ from preprocessing.OneHotEncoder import OneHotEncoder
 
 class Preprocesser:
     
-    FILE_CAP = 200
+    FILE_CAP = -1
     LOGS_FILENAME = "preprocessor_logs.txt"
     DECK_MAX_CARD_COUNT = 6
     FILE_BATCH_SIZE = 10
@@ -91,7 +91,7 @@ class Preprocesser:
                     Logger.get_logger().log("Failed to filter a run. (skipping)", e)
                 if filtered_run is not None:
                     self.filtered_runs.append(filtered_run)
-        Logger.get_logger().log(f"{len(self.filtered_runs)} files filtered")
+        Logger.get_logger().log(f"{len(self.filtered_runs)} runs filtered")
 
     def build_choices(self):
         self.choices = self.choice_builder.build(self.filtered_runs)

@@ -122,3 +122,15 @@ requires_grad: false
 AdamW + CrossEntropy =  Loss: 94.37
 			            Accuracy: 78.48%
 ]
+
+
+FILE-LIMIT: ALL (1585)
+max-epoch: 100
+
+
+Test17 [
+lr: 0.001
+requires_grad: false
+Adam + CrossEntropy =   Loss: 258.47
+			            Accuracy: 83.5%
+]
