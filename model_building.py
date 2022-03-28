@@ -151,18 +151,18 @@ def train_model(train_dl, model, test_dl):
             print("epoch = %4d   accuracy = %0.2f %%   loss = %0.4f" % (epoch, acc_percentage, epoch_loss))
 
 def accuracy(model, ldr):
-  # assumes model.eval()
-  n_correct = 0; n_wrong = 0
-  # using loader avoids resize() issues
-  for _, (X, Y) in enumerate(ldr):
-    with torch.no_grad():
-      oupt = model(X)  # probs form    
-    if torch.argmax(Y) == torch.argmax(oupt):
-      n_correct += 1
-    else:
-      n_wrong += 1
-  acc = (n_correct * 1.0) / (n_correct + n_wrong)
-  return acc
+    # assumes model.eval()
+    n_correct = 0; n_wrong = 0
+    # using loader avoids resize() issues
+    for _, (X, Y) in enumerate(ldr):
+        with torch.no_grad():
+            oupt = model(X)  # probs form    
+        if torch.argmax(Y) == torch.argmax(oupt):
+            n_correct += 1
+        else:
+            n_wrong += 1
+    acc = (n_correct * 1.0) / (n_correct + n_wrong)
+    return acc
 
 # evaluate the model
 def evaluate_model(model: MLP):
