@@ -100,7 +100,11 @@ class DeckBuilder:
 
     def modify_cards_by_campfire(self, campfire_choice, cards, decks):
         self.remove_card(campfire_choice["data"], cards, decks)
-        cards.append(campfire_choice["data"] + "+1")
+        if "+" in campfire_choice["data"]:
+            splitted = campfire_choice["data"].split("+")
+            cards.append(splitted[0] + "+" + str(int(splitted[1]) + 1))
+        else:
+            cards.append(campfire_choice["data"] + "+1")
 
     def modify_cards_by_purchase(self, card_purchased, cards):
         cards.append(card_purchased["card"])
