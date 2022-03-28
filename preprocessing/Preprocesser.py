@@ -91,7 +91,7 @@ class Preprocesser:
                     Logger.get_logger().log("Failed to filter a run. (skipping)", e)
                 if filtered_run is not None:
                     self.filtered_runs.append(filtered_run)
-        Logger.get_logger().log(f"{len(loaded_files)} files filtered")
+        Logger.get_logger().log(f"{len(self.filtered_runs)} files filtered")
 
     def build_choices(self):
         self.choices = self.choice_builder.build(self.filtered_runs)
