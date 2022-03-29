@@ -59,9 +59,8 @@ class DeckBuilder:
         original_master_deck = run["master_deck"]
         generated_master_deck = decks[-1]["cards"]
 
-        if self.decks_match(original_master_deck, generated_master_deck):
-            return decks
-        elif not self.master_deck_exact_match and self.decks_have_similar_length(original_master_deck, generated_master_deck):
+        if self.decks_match(original_master_deck, generated_master_deck) or\
+        not self.master_deck_exact_match and self.decks_have_similar_length(original_master_deck, generated_master_deck):
             return decks
         else:
             return None
@@ -112,30 +111,17 @@ class DeckBuilder:
                 deck["cards"].append(to_remove)
 
     def decks_have_similar_length(self, deck_a, deck_b):
-        deck_a_copy = deck_a.copy()
-        deck_b_copy = deck_b.copy()
+        deck_a = self.remove_curse_cards_from_deck(deck_a, in_place=False)
+        deck_b = self.remove_curse_cards_from_deck(deck_b, in_place=False)
 
-        for val in deck_a_copy:
-            if val in curse_cards:
-                deck_a_copy.remove(val)
-
-        for val in deck_b_copy:
-            if val in curse_cards:
-                deck_b_copy.remove(val)
-
-        return abs(len(deck_a_copy) - len(deck_b_copy)) < 2
+        return abs(len(deck_a) - len(deck_b)) < 2
 
     def decks_match(self, deck_a, deck_b):
         sorted_a = sorted(deck_a)
         sorted_b = sorted(deck_b)
 
-        for val in sorted_a:
-            if val in curse_cards:
-                sorted_a.remove(val)
-
-        for val in sorted_b:
-            if val in curse_cards:
-                sorted_b.remove(val)
+        self.remove_curse_cards_from_deck(sorted_a, in_place=True)
+        self.remove_curse_cards_from_deck(sorted_b, in_place=True)
 
         if len(sorted_a) != len(sorted_b):
             return False
@@ -145,3 +131,13 @@ class DeckBuilder:
                 return False
         
         return True
+
+    def remove_curse_cards_from_deck(self, deck, in_place=True):
+        if not in_place:
+            deck = deck.copy()
+
+        for val in deck:
+            if val in curse_cards:
+                deck.remove(val)
+        
+        return deck
