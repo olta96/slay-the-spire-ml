@@ -19,24 +19,28 @@ config_options = read_config_json()
 
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = "card_ids.json"
+RELIC_IDS_JSON_FILENAME = "relic_ids.json"
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
-    preprocesser = Preprocesser(config_options["preprocessor"], ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME)
+    preprocesser = Preprocesser(config_options["preprocessor"], ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME, RELIC_IDS_JSON_FILENAME)
     preprocesser.start()
     one_hot_encoded_data = preprocesser.get_one_hot_encoded_data()
     card_ids = preprocesser.get_card_ids()
+    relic_ids = preprocesser.get_card_ids()
 else:
     with open(ONE_HOT_ENCODED_JSON_FILENAME, "r") as json_file:
         one_hot_encoded_data = json.loads(json_file.read())
     with open(CARD_IDS_JSON_FILENAME, "r") as json_file:
         card_ids = json.loads(json_file.read())
+    with open(RELIC_IDS_JSON_FILENAME, "r") as json_file:
+        relic_ids = json.loads(json_file.read())
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
 
-number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids)
+number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids)
 print("Number of input nodes:", number_of_inputs)
 
 # For predicting
@@ -53,6 +57,8 @@ class ChoicesDataset(Dataset):
 
         for choice in one_hot_encoded_data:
             to_append = choice["inputs"]["available_choices"].copy()
+            for relic in choice["inputs"]["relics"]:
+                to_append.append(relic)
             for counts in choice["inputs"]["deck"]:
                 for count in counts:
                     to_append.append(count)

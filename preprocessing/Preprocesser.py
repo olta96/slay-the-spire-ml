@@ -1,6 +1,7 @@
 import os
 from preprocessing.Logger import Logger
 from preprocessing.FileHandler import FileHandler
+from preprocessing.RelicIdentifier import RelicIdentifier
 from preprocessing.RunFilterer import RunFilterer
 from preprocessing.CardIdentifier import CardIdentifier
 from preprocessing.ChoiceBuilder import ChoiceBuilder
@@ -9,19 +10,21 @@ from preprocessing.OneHotEncoder import OneHotEncoder
 
 class Preprocesser:
 
-    def __init__(self, config_options, one_hot_encoded_json_filename, cards_ids_filename):
+    def __init__(self, config_options, one_hot_encoded_json_filename, card_ids_filename, relic_ids_filename):
         self.file_cap = config_options["file_cap"]
         self.logs_filename = config_options["logs_filename"]
         self.deck_max_card_count = config_options["deck_max_card_count"]
         self.file_batch_size = config_options["file_batch_size"]
 
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
-        self.cards_ids_filename = cards_ids_filename
+        self.card_ids_filename = card_ids_filename
+        self.relic_ids_filename = relic_ids_filename
         self.file_handler = FileHandler()
         self.run_filterer = RunFilterer(config_options["filters"])
         self.card_identifier = CardIdentifier()
-        self.choice_builder = ChoiceBuilder(self.card_identifier, config_options["strict_mode"])
-        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.deck_max_card_count)
+        self.relic_identifier = RelicIdentifier()
+        self.choice_builder = ChoiceBuilder(self.card_identifier, self.relic_identifier, config_options)
+        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.relic_identifier, self.deck_max_card_count)
 
         self.source_filenames = []
         self.filtered_runs = []
@@ -34,33 +37,44 @@ class Preprocesser:
     def get_card_ids(self):
         return self.card_identifier.get_card_ids()
 
+    def get_relic_ids(self):
+        return self.relic_identifier.get_relic_ids()
+
     def get_deck_max_card_count(self):
         return self.deck_max_card_count
 
     def start(self):
+        logger = Logger.get_logger()
+
         self.build_source_paths()
 
-        Logger.get_logger().log("Started reading and filtering json files")
+        logger.log("Started reading and filtering json files")
         self.read_and_filter_source()
 
-        Logger.get_logger().log(f"Filtered: {len(self.filtered_runs)} runs.")
-        Logger.get_logger().log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
+        self.all_relics = list(self.all_relics)
+        self.file_handler.write_json("all_relics.json", self.all_relics, indent=4)
 
-        Logger.get_logger().log("Started building choices")
+        logger.log(f"Filtered: {len(self.filtered_runs)} runs.")
+        logger.log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
+
+        logger.log("Started building choices")
         self.build_choices()
-        Logger.get_logger().log(f"Built: {len(self.choices)} choices")
+        logger.log(f"Built: {len(self.choices)} choices")
 
-        Logger.get_logger().log("Started one hot encoding choices")
+        logger.log("Started one hot encoding choices")
         self.encode_choices()
-        Logger.get_logger().log(f"Encoded: {len(self.one_hot_encoded_data)} choices")
+        logger.log(f"Encoded: {len(self.one_hot_encoded_data)} choices")
 
-        Logger.get_logger().log(f"Writing card IDs to {self.cards_ids_filename}")
+        logger.log(f"Writing card IDs to {self.card_ids_filename}")
         self.write_card_ids()
 
-        Logger.get_logger().log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
+        logger.log(f"Writing relic IDs to {self.relic_ids_filename}")
+        self.write_relic_ids()
+
+        logger.log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
         self.write_one_hot_encoded_data()
 
-        Logger.get_logger().log(f"Writing logs to {self.logs_filename}")
+        logger.log(f"Writing logs to {self.logs_filename}")
         self.write_logs()
 
     def build_source_paths(self):
@@ -84,6 +98,7 @@ class Preprocesser:
         for runs in loaded_files:
             for run_dict in runs:
                 unfiltered_run = run_dict["event"]
+                self.append_all_relics_found(unfiltered_run)
                 filtered_run = None
                 try:
                     filtered_run = self.run_filterer.get_filtered_run(unfiltered_run)
@@ -93,6 +108,31 @@ class Preprocesser:
                     self.filtered_runs.append(filtered_run)
         Logger.get_logger().log(f"{len(self.filtered_runs)} runs filtered")
 
+    def append_all_relics_found(self, unfiltered_run):
+        if not hasattr(self, "all_relics"):
+            self.all_relics = set()
+
+        all_relics_length = len(self.all_relics)
+
+        if "character_chosen" in unfiltered_run and unfiltered_run["character_chosen"] == "IRONCLAD":
+            if "relics" in unfiltered_run:
+                for relic in unfiltered_run["relics"]:
+                    self.all_relics.add(relic)
+            if "relics_obtained" in unfiltered_run:
+                for relic in unfiltered_run["relics_obtained"]:
+                    self.all_relics.add(relic["key"])
+            if "event_choices" in unfiltered_run:
+                for event_choice in unfiltered_run["event_choices"]:
+                    if "relics_lost" in event_choice:
+                        for relic in event_choice["relics_lost"]:
+                            self.all_relics.add(relic)
+                    if "relics_obtained" in event_choice:
+                        for relic in event_choice["relics_obtained"]:
+                            self.all_relics.add(relic)
+        
+        if all_relics_length < len(self.all_relics):
+            print("Added relic")
+
     def build_choices(self):
         self.choices = self.choice_builder.build(self.filtered_runs)
 
@@ -100,7 +140,10 @@ class Preprocesser:
         self.one_hot_encoded_data = self.one_hot_encoder.encode(self.choices)
 
     def write_card_ids(self):
-        self.file_handler.write_json(self.cards_ids_filename, self.get_card_ids(), indent=4)
+        self.file_handler.write_json(self.card_ids_filename, self.get_card_ids(), indent=4)
+
+    def write_relic_ids(self):
+        self.file_handler.write_json(self.relic_ids_filename, self.get_relic_ids(), indent=4)
 
     def write_one_hot_encoded_data(self):
         self.file_handler.write_json(self.one_hot_encoded_json_filename, self.one_hot_encoded_data)

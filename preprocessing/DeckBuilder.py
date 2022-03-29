@@ -114,7 +114,7 @@ class DeckBuilder:
         deck_a = self.remove_curse_cards_from_deck(deck_a, in_place=False)
         deck_b = self.remove_curse_cards_from_deck(deck_b, in_place=False)
 
-        return abs(len(deck_a) - len(deck_b)) < 2
+        return abs(len(deck_a) - len(deck_b)) <= 1
 
     def decks_match(self, deck_a, deck_b):
         sorted_a = sorted(deck_a)

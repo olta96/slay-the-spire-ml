@@ -1,4 +1,4 @@
-from preprocessing.reference_list import AVAILABLE_CARDS
+from preprocessing.reference_list import AVAILABLE_CARDS, AVAILABLE_RELICS
 
 class RunFilterer:
 
@@ -78,7 +78,21 @@ class RunFilterer:
             "cards_purged": self.get_cards_purged(unfiltered_run),
             "event_choices": self.get_event_choices(unfiltered_run),
             "campfire_choices": self.get_campfire_choices(unfiltered_run),
+            "relics": unfiltered_run["relics"],
+            "relics_obtained": unfiltered_run["relics_obtained"],
+            "relics_purchased": self.get_relics_purchased(unfiltered_run),
+            "boss_relics": unfiltered_run["boss_relics"],
         }
+
+    def get_relics_purchased(self, unfiltered_run):
+        relics_purchased = []
+        for i in range(len(unfiltered_run["items_purchased"])):
+            if unfiltered_run["items_purchased"][i] in AVAILABLE_RELICS:
+                relics_purchased.append({
+                    "relic": unfiltered_run["items_purchased"][i],
+                    "floor": unfiltered_run["item_purchase_floors"][i],
+                })
+        return relics_purchased
 
     def get_cards_purchased(self, unfiltered_run):
         cards_purchased = []
