@@ -51,9 +51,6 @@ class Preprocesser:
         logger.log("Started reading and filtering json files")
         self.read_and_filter_source()
 
-        # self.all_relics = list(self.all_relics)
-        # self.file_handler.write_json("all_relics.json", self.all_relics, indent=4)
-
         logger.log(f"Filtered: {len(self.filtered_runs)} runs.")
         logger.log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")
 
@@ -98,7 +95,6 @@ class Preprocesser:
         for runs in loaded_files:
             for run_dict in runs:
                 unfiltered_run = run_dict["event"]
-                self.append_all_relics_found(unfiltered_run)
                 filtered_run = None
                 try:
                     filtered_run = self.run_filterer.get_filtered_run(unfiltered_run)
@@ -107,31 +103,6 @@ class Preprocesser:
                 if filtered_run is not None:
                     self.filtered_runs.append(filtered_run)
         Logger.get_logger().log(f"{len(self.filtered_runs)} runs filtered")
-
-    def append_all_relics_found(self, unfiltered_run):
-        if not hasattr(self, "all_relics"):
-            self.all_relics = set()
-
-        all_relics_length = len(self.all_relics)
-
-        if "character_chosen" in unfiltered_run and unfiltered_run["character_chosen"] == "IRONCLAD":
-            if "relics" in unfiltered_run:
-                for relic in unfiltered_run["relics"]:
-                    self.all_relics.add(relic)
-            if "relics_obtained" in unfiltered_run:
-                for relic in unfiltered_run["relics_obtained"]:
-                    self.all_relics.add(relic["key"])
-            if "event_choices" in unfiltered_run:
-                for event_choice in unfiltered_run["event_choices"]:
-                    if "relics_lost" in event_choice:
-                        for relic in event_choice["relics_lost"]:
-                            self.all_relics.add(relic)
-                    if "relics_obtained" in event_choice:
-                        for relic in event_choice["relics_obtained"]:
-                            self.all_relics.add(relic)
-        
-        if all_relics_length < len(self.all_relics):
-            print("Added relic")
 
     def build_choices(self):
         self.choices = self.choice_builder.build(self.filtered_runs)
