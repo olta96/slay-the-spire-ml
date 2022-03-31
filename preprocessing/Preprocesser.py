@@ -51,8 +51,8 @@ class Preprocesser:
         logger.log("Started reading and filtering json files")
         self.read_and_filter_source()
 
-        self.all_relics = list(self.all_relics)
-        self.file_handler.write_json("all_relics.json", self.all_relics, indent=4)
+        # self.all_relics = list(self.all_relics)
+        # self.file_handler.write_json("all_relics.json", self.all_relics, indent=4)
 
         logger.log(f"Filtered: {len(self.filtered_runs)} runs.")
         logger.log(f"Skipped runs: {self.run_filterer.get_skipped_run_count()}")

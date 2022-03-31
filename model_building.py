@@ -27,7 +27,7 @@ if input(f"Run preprocesser (y/n): ") == "y":
     preprocesser.start()
     one_hot_encoded_data = preprocesser.get_one_hot_encoded_data()
     card_ids = preprocesser.get_card_ids()
-    relic_ids = preprocesser.get_card_ids()
+    relic_ids = preprocesser.get_relic_ids()
 else:
     with open(ONE_HOT_ENCODED_JSON_FILENAME, "r") as json_file:
         one_hot_encoded_data = json.loads(json_file.read())
