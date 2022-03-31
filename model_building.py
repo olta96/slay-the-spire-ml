@@ -1,5 +1,6 @@
 from preprocessing.Preprocesser import Preprocesser
 import json
+import copy
 
 import numpy as np
 import torch
@@ -20,14 +21,16 @@ config_options = read_config_json()
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = "card_ids.json"
 RELIC_IDS_JSON_FILENAME = "relic_ids.json"
+MAX_FLOOR_REACHED_JSON_FILENAME = "max_floor_reached.json"
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
-    preprocesser = Preprocesser(config_options["preprocessor"], ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME, RELIC_IDS_JSON_FILENAME)
+    preprocesser = Preprocesser(config_options["preprocessor"], ONE_HOT_ENCODED_JSON_FILENAME, CARD_IDS_JSON_FILENAME, RELIC_IDS_JSON_FILENAME, MAX_FLOOR_REACHED_JSON_FILENAME)
     preprocesser.start()
     one_hot_encoded_data = preprocesser.get_one_hot_encoded_data()
     card_ids = preprocesser.get_card_ids()
     relic_ids = preprocesser.get_relic_ids()
+    max_floor_reached = preprocesser.get_max_floor_reached()
 else:
     with open(ONE_HOT_ENCODED_JSON_FILENAME, "r") as json_file:
         one_hot_encoded_data = json.loads(json_file.read())
@@ -35,12 +38,14 @@ else:
         card_ids = json.loads(json_file.read())
     with open(RELIC_IDS_JSON_FILENAME, "r") as json_file:
         relic_ids = json.loads(json_file.read())
+    with open(MAX_FLOOR_REACHED_JSON_FILENAME, "r") as json_file:
+        max_floor_reached = json.loads(json_file.read())["max_floor_reached"]
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
 
-number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids)
+number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + max_floor_reached
 print("Number of input nodes:", number_of_inputs)
 
 # For predicting
@@ -57,6 +62,8 @@ class ChoicesDataset(Dataset):
 
         for choice in one_hot_encoded_data:
             to_append = choice["inputs"]["available_choices"].copy()
+            for floor in choice["inputs"]["floor"]:
+                to_append.append(floor)
             for relic in choice["inputs"]["relics"]:
                 to_append.append(relic)
             for counts in choice["inputs"]["deck"]:
@@ -94,22 +101,22 @@ class MLP(Module):
     def __init__(self, n_inputs):
         super(MLP, self).__init__()
 
-        self.hid1 = torch.nn.Linear(n_inputs, int(n_inputs / 2))
-        self.hid2 = torch.nn.Linear(int(n_inputs / 2), int(n_inputs / 2))
-        self.oupt = torch.nn.Linear(int(n_inputs / 2), len(card_ids))
+        self.hid1 = torch.nn.Linear(n_inputs, int(n_inputs * 0.9))
+        #self.hid2 = torch.nn.Linear(int(n_inputs * 0.9), int(n_inputs * 0.8))
+        self.oupt = torch.nn.Linear(int(n_inputs * 0.9), len(card_ids))
 
         torch.nn.init.xavier_uniform_(self.hid1.weight)
         torch.nn.init.zeros_(self.hid1.bias)
-        torch.nn.init.xavier_uniform_(self.hid2.weight)
-        torch.nn.init.zeros_(self.hid2.bias)
+        #torch.nn.init.xavier_uniform_(self.hid2.weight)
+        #torch.nn.init.zeros_(self.hid2.bias)
         torch.nn.init.xavier_uniform_(self.oupt.weight)
         torch.nn.init.zeros_(self.oupt.bias)
 
  
     # forward propagate input
     def forward(self, X):
-        z = torch.tanh(self.hid1(X))
-        z = torch.tanh(self.hid2(z))
+        z = torch.sigmoid(self.hid1(X))
+        #z = torch.sigmoid(self.hid2(z))
         # No softmax, happens in CrossEntropyLoss
         z = self.oupt(z)
         return z
@@ -119,6 +126,9 @@ class MLP(Module):
 
 # train the model
 def train_model(train_dl, model, test_dl):
+    most_accurate_model = None
+    accuracy_of_most_accurate_model = 0
+
     max_epochs = config_options["max_epochs"]
     epoch_log_interval = config_options["epoch_log_interval"]
     loss_func = torch.nn.CrossEntropyLoss()
@@ -155,6 +165,11 @@ def train_model(train_dl, model, test_dl):
             acc = accuracy(model, test_dl)
             acc_percentage = round(acc * 100, 2)
             print("epoch = %4d   accuracy = %0.2f %%   loss = %0.4f" % (epoch, acc_percentage, epoch_loss))
+            if acc > accuracy_of_most_accurate_model:
+                most_accurate_model = copy.deepcopy(model)
+                accuracy_of_most_accurate_model = acc
+        
+    return most_accurate_model, accuracy_of_most_accurate_model
 
 def accuracy(model, ldr):
     # assumes model.eval()
@@ -221,18 +236,21 @@ train, test = dataset.get_splits()
 
 print("DataLoader loading dataset")
 # create a data loader for train and test sets
-train_dl = DataLoader(train, batch_size=32, shuffle=True)
+train_dl = DataLoader(train, batch_size=64, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
 model = MLP(number_of_inputs).to(device)
 
 print("Started training model")
-train_model(train_dl, model, test_dl)
+most_accurate_model, most_accurate_model_acc = train_model(train_dl, model, test_dl)
 print("Training complete")
 
 acc = accuracy(model, test_dl)
-print(f"Accuracy: {round(acc * 100, 2)} %")
+print(f"Current Model Accuracy for test dataset: {round(acc * 100, 2)} %")
+acc = accuracy(model, train_dl)
+print(f"Current Model Accuracy for train dataset: {round(acc * 100, 2)} %")
+print(f"Most Accurate Model Accuracy: {round(most_accurate_model_acc * 100, 2)} %")
 
 print("Test row available choices:")
 for i, val in enumerate(test_row):

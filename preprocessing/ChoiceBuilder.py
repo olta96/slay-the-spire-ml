@@ -11,6 +11,10 @@ class ChoiceBuilder:
         self.relic_identifier = relic_identifier
         self.deck_builder = DeckBuilder(config_options["strict_mode_decks"])
         self.relics_builder = RelicsBuilder(config_options["strict_mode_relics"])
+        self.max_floor_reached = 0
+
+    def get_max_floor_reached(self):
+        return self.max_floor_reached
 
     def build(self, filtered_runs):
         choices = []
@@ -59,11 +63,14 @@ class ChoiceBuilder:
         if relics_by_floor is None:
             return None
 
+        self.max_floor_reached = max(self.max_floor_reached, card_choice["floor"])
+
         return {
             "available_choices": choices,
             "player_choice": self.card_identifier.identify(card_choice["picked"]),
             "deck": self.card_identifier.identify(*cards_by_floor),
-            "relics": self.relic_identifier.identify(*relics_by_floor, always_return_list=True)
+            "relics": self.relic_identifier.identify(*relics_by_floor, always_return_list=True),
+            "floor": int(card_choice["floor"]),
         }
 
     def is_malformed(self, card_choice):

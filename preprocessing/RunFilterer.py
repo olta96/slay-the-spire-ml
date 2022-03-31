@@ -6,6 +6,7 @@ class RunFilterer:
         self.character = config_filters["character"]
         self.min_ascension_level = config_filters["min_ascension_level"]
         self.min_floor_reached = config_filters["min_floor_reached"]
+        self.max_floor_reached = config_filters["max_floor_reached"]
         self.endless = config_filters["endless"]
         self.ascension_mode = config_filters["ascension_mode"]
         self.chose_seed = config_filters["chose_seed"]
@@ -29,7 +30,7 @@ class RunFilterer:
         return ascension_level >= self.min_ascension_level
 
     def matches_floor_reached(self, floor_reached):
-        return floor_reached >= self.min_floor_reached 
+        return floor_reached >= self.min_floor_reached and floor_reached <= self.max_floor_reached
 
     def matches_is_endless(self, is_endless):
         return is_endless == self.endless

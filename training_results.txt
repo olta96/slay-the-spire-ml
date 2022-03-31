@@ -1,5 +1,7 @@
 FILE-LIMIT: 100
 max-epochs: 100
+BATCH-SIZE: 32
+Tanh
 
 Test_1[
 lr: 0.002
@@ -46,7 +48,8 @@ AdamW + CrossEntropy =  Loss: 33.99
 
 FILE-LIMIT: 200
 max-epochs: 100
-
+BATCH-SIZE: 32
+Tanh
 
 Test7 (REF: Test1 [
 lr: 0.002
@@ -87,6 +90,7 @@ AdamW + CrossEntropy =   Loss: 84.31
 
 FILE-LIMIT: 200
 max-epoch: 200
+Tanh
 
 Test12 (REF: Test1,Test7) [
 lr: 0.002
@@ -126,6 +130,8 @@ AdamW + CrossEntropy =  Loss: 94.37
 
 FILE-LIMIT: ALL (1585)
 max-epoch: 100
+BATCH-SIZE: 32
+Tanh
 
 
 Test17 [
@@ -133,4 +139,16 @@ lr: 0.001
 requires_grad: false
 Adam + CrossEntropy =   Loss: 258.47
 			            Accuracy: 83.5%
+]
+
+
+FILE-LIMIT: ALL (1585)
+max-epoch: 100 
+Sigmoid 
+
+Test18 [
+
+Adam + CrossEntropy =   Loss: 10.04
+			            Accuracy-test: 79.34 %
+						Accuracy-train: 2.76 %
 ]

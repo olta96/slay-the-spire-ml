@@ -2,16 +2,12 @@ class RelicsBuilder:
     
     BOSS_RELIC_CHOICES = [
         {
-            "floor": 0,
+            "floor": 17,
             "index": 0,
         },
         {
-            "floor": 0,
+            "floor": 34,
             "index": 1,
-        },
-        {
-            "floor": 0,
-            "index": 2,
         },
     ]
 

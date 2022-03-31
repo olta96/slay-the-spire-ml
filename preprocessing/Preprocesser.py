@@ -10,7 +10,7 @@ from preprocessing.OneHotEncoder import OneHotEncoder
 
 class Preprocesser:
 
-    def __init__(self, config_options, one_hot_encoded_json_filename, card_ids_filename, relic_ids_filename):
+    def __init__(self, config_options, one_hot_encoded_json_filename, card_ids_filename, relic_ids_filename, max_floor_reached_filename):
         self.file_cap = config_options["file_cap"]
         self.logs_filename = config_options["logs_filename"]
         self.deck_max_card_count = config_options["deck_max_card_count"]
@@ -19,6 +19,7 @@ class Preprocesser:
         self.one_hot_encoded_json_filename = one_hot_encoded_json_filename
         self.card_ids_filename = card_ids_filename
         self.relic_ids_filename = relic_ids_filename
+        self.max_floor_reached_filename = max_floor_reached_filename
         self.file_handler = FileHandler()
         self.run_filterer = RunFilterer(config_options["filters"])
         self.card_identifier = CardIdentifier()
@@ -39,6 +40,9 @@ class Preprocesser:
 
     def get_relic_ids(self):
         return self.relic_identifier.get_relic_ids()
+
+    def get_max_floor_reached(self):
+        return self.choice_builder.get_max_floor_reached()
 
     def get_deck_max_card_count(self):
         return self.deck_max_card_count
@@ -67,6 +71,9 @@ class Preprocesser:
 
         logger.log(f"Writing relic IDs to {self.relic_ids_filename}")
         self.write_relic_ids()
+
+        logger.log(f"Writing max floor reached to {self.max_floor_reached_filename}")
+        self.write_max_floor_reached()
 
         logger.log(f"Writing one hot encoding data to {self.one_hot_encoded_json_filename}")
         self.write_one_hot_encoded_data()
@@ -108,13 +115,16 @@ class Preprocesser:
         self.choices = self.choice_builder.build(self.filtered_runs)
 
     def encode_choices(self):
-        self.one_hot_encoded_data = self.one_hot_encoder.encode(self.choices)
+        self.one_hot_encoded_data = self.one_hot_encoder.encode(self.choices, self.get_max_floor_reached())
 
     def write_card_ids(self):
         self.file_handler.write_json(self.card_ids_filename, self.get_card_ids(), indent=4)
 
     def write_relic_ids(self):
         self.file_handler.write_json(self.relic_ids_filename, self.get_relic_ids(), indent=4)
+
+    def write_max_floor_reached(self):
+        self.file_handler.write_json(self.max_floor_reached_filename, {"max_floor_reached": self.get_max_floor_reached()}, indent=4)
 
     def write_one_hot_encoded_data(self):
         self.file_handler.write_json(self.one_hot_encoded_json_filename, self.one_hot_encoded_data)
