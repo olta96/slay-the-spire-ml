@@ -63,7 +63,7 @@ class ChoiceBuilder:
             "available_choices": choices,
             "player_choice": self.card_identifier.identify(card_choice["picked"]),
             "deck": self.card_identifier.identify(*cards_by_floor),
-            "relics": self.relic_identifier.identify(*relics_by_floor)
+            "relics": self.relic_identifier.identify(*relics_by_floor, always_return_list=True)
         }
 
     def is_malformed(self, card_choice):

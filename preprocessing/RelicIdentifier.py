@@ -6,7 +6,7 @@ class RelicIdentifier:
     def get_relic_ids(self):
         return self.relic_ids
 
-    def identify(self, *relic_names):
+    def identify(self, *relic_names, always_return_list=False):
         identified_relics = []
 
         for relic_name in relic_names:
@@ -16,6 +16,9 @@ class RelicIdentifier:
                 self.relic_ids.append(relic_name)
                 identified_relics.append(len(self.relic_ids) - 1)
         
+        if always_return_list:
+            return identified_relics
+
         if len(relic_names) == 1:
             return identified_relics[0]
         else:
