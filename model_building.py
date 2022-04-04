@@ -48,7 +48,7 @@ print("Device:", device)
 number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + max_floor_reached
 number_of_outputs = len(card_ids)
 print("Number of input nodes:", number_of_inputs)
-print("Number of input nodes:", number_of_outputs)
+print("Number of output nodes:", number_of_outputs)
 
 # For predicting
 test_row = None
