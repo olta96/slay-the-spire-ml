@@ -26,7 +26,7 @@ def setup_one_hot_encoder():
 
     card_identifier = CardIdentifier(card_ids)
     relic_identifier = RelicIdentifier(relic_ids)
-    one_hot_encoder = OneHotEncoder(card_identifier, relic_identifier, config_options["deck_max_card_count"])
+    one_hot_encoder = OneHotEncoder(card_identifier, relic_identifier, config_options["preprocessor"]["deck_max_card_count"])
 
     return card_identifier, relic_identifier, one_hot_encoder
 
