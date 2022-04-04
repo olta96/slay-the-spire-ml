@@ -20,5 +20,6 @@
     "learning_rate": 0.001,
     "epoch_log_interval": 5,
     "card_ids_json_filename": "card_ids.json",
-    "relic_ids_json_filename": "relic_ids.json"
+    "relic_ids_json_filename": "relic_ids.json",
+    "max_floor_reached_json_filename": "max_floor_reached.json"
 }

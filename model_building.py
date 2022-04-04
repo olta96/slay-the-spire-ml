@@ -4,12 +4,12 @@ import copy
 
 import numpy as np
 import torch
-from torch.nn import Module
 from torch.utils.data import Dataset, random_split, DataLoader
 from torch.optim import Adam, AdamW
 from numpy import argmax, vstack
 from sklearn.metrics import accuracy_score
 from source_folder_path import save_model_path
+from MLP import MLP
 
 
 def read_config_json():
@@ -21,7 +21,7 @@ config_options = read_config_json()
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = config_options["card_ids_json_filename"]
 RELIC_IDS_JSON_FILENAME = config_options["relic_ids_json_filename"]
-MAX_FLOOR_REACHED_JSON_FILENAME = "max_floor_reached.json"
+MAX_FLOOR_REACHED_JSON_FILENAME = config_options["max_floor_reached_json_filename"]
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
@@ -46,7 +46,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
 
 number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + max_floor_reached
+number_of_outputs = len(card_ids)
 print("Number of input nodes:", number_of_inputs)
+print("Number of input nodes:", number_of_outputs)
 
 # For predicting
 test_row = None
@@ -92,34 +94,6 @@ class ChoicesDataset(Dataset):
         train_size = len(self.X) - test_size
         return random_split(self, [train_size, test_size])
 
-
-
-
-# model definition
-class MLP(Module):
-    # define model elements
-    def __init__(self, n_inputs):
-        super(MLP, self).__init__()
-
-        self.hid1 = torch.nn.Linear(n_inputs, int(n_inputs * 0.9))
-        #self.hid2 = torch.nn.Linear(int(n_inputs * 0.9), int(n_inputs * 0.8))
-        self.oupt = torch.nn.Linear(int(n_inputs * 0.9), len(card_ids))
-
-        torch.nn.init.xavier_uniform_(self.hid1.weight)
-        torch.nn.init.zeros_(self.hid1.bias)
-        #torch.nn.init.xavier_uniform_(self.hid2.weight)
-        #torch.nn.init.zeros_(self.hid2.bias)
-        torch.nn.init.xavier_uniform_(self.oupt.weight)
-        torch.nn.init.zeros_(self.oupt.bias)
-
- 
-    # forward propagate input
-    def forward(self, X):
-        z = torch.sigmoid(self.hid1(X))
-        #z = torch.sigmoid(self.hid2(z))
-        # No softmax, happens in CrossEntropyLoss
-        z = self.oupt(z)
-        return z
 
 
 
@@ -240,7 +214,7 @@ train_dl = DataLoader(train, batch_size=64, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 
 print("Creating model")
-model = MLP(number_of_inputs).to(device)
+model = MLP(number_of_inputs, number_of_outputs).to(device)
 
 print("Started training model")
 most_accurate_model, most_accurate_model_acc = train_model(train_dl, model, test_dl)
