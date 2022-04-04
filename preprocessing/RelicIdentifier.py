@@ -1,7 +1,10 @@
 class RelicIdentifier:
     
-    def __init__(self):
-        self.relic_ids = []
+    def __init__(self, relic_ids=None):
+        if relic_ids is None:
+            self.relic_ids = []
+        else:
+            self.relic_ids = relic_ids
 
     def get_relic_ids(self):
         return self.relic_ids

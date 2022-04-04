@@ -1,7 +1,10 @@
 class CardIdentifier:
     
-    def __init__(self):
-        self.card_ids = ["SKIP"]
+    def __init__(self, card_ids=None):
+        if card_ids is None:
+            self.card_ids = ["SKIP"]
+        else:
+            self.card_ids = card_ids
 
     def get_card_ids(self):
         return self.card_ids

@@ -19,8 +19,8 @@ def read_config_json():
 config_options = read_config_json()
 
 ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
-CARD_IDS_JSON_FILENAME = "card_ids.json"
-RELIC_IDS_JSON_FILENAME = "relic_ids.json"
+CARD_IDS_JSON_FILENAME = config_options["card_ids_json_filename"]
+RELIC_IDS_JSON_FILENAME = config_options["relic_ids_json_filename"]
 MAX_FLOOR_REACHED_JSON_FILENAME = "max_floor_reached.json"
 
 
