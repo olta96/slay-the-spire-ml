@@ -52,7 +52,7 @@ def setup_one_hot_encoder():
 
 card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs = setup_one_hot_encoder()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 print("Device:", device)
 
 model = MLP(number_of_inputs, number_of_outputs)
@@ -99,7 +99,7 @@ def one_hot_encode_state(state):
         for count in counts:
             flattened.append(count)
 
-    return flattened
+    return one_hot_encoded, flattened
 
 
 
@@ -113,23 +113,59 @@ def predict(state_inputs):
     probs = probs.cpu()
     probs = probs.numpy()
     np.set_printoptions(precision=4, suppress=True)
-    print(probs)
+    # print(probs)
 
     # returns the 4 indices with the highest values using numpy
     return np.argsort(probs)[0][-4:]
 
 
 
+def sort_and_match_cards(cards_a, cards_b):
+    sorted_a = sorted(cards_a)
+    sorted_b = sorted(cards_b)
+
+    if len(sorted_a) == len(sorted_b):
+        return sorted_a == sorted_b
+
+    for card_a in sorted_a:
+        for card_b in sorted_b:
+            if card_a != card_b:
+                return False
+
+    return True
+
+
+def validate_cards(original_state, one_hot_encoded_state):
+    original_deck = original_state["deck"].copy()
+    original_choices = original_state["available_choices"].copy()
+    one_hot_deck_ids = one_hot_encoded_state["deck"]
+    one_hot_choices_ids = one_hot_encoded_state["available_choices"]
+
+    one_hot_deck = []
+    one_hot_choices = []
+
+    for i, one_hot_deck_id in enumerate(one_hot_deck_ids):
+        if one_hot_deck_id == 1:
+            one_hot_deck.append(card_identifier.get_card_ids()[i])
+    
+    for i, one_hot_choices_id in enumerate(one_hot_choices_ids):
+        if one_hot_choices_id == 1:
+            one_hot_choices.append(card_identifier.get_card_ids()[i])
+
+    return sort_and_match_cards(original_deck, one_hot_deck) and sort_and_match_cards(original_choices, one_hot_choices)
+
 app = flask.Flask(__name__)
 
 @app.route('/make_choice', methods=["POST"])
 def make_choice():
     state = flask.request.get_json()
-    one_hot_encoded_state = one_hot_encode_state(state)
-    model_answers = predict(one_hot_encoded_state)
+    print(state)
+    one_hot_encoded_state, flattened = one_hot_encode_state(state)
+    model_answers = predict(flattened)
     model_answers_ids = []
     for i in range(len(model_answers)):
         model_answers_ids.append(card_identifier.get_card_ids()[model_answers[i]])
+    print("State did validate" if validate_cards(state, one_hot_encoded_state) else "State did not validate")
     print("Model answer:", model_answers_ids[3])
     print("Did not choose:", model_answers_ids[2])
     print("Did not choose:", model_answers_ids[1])
