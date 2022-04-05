@@ -13,8 +13,12 @@ public class StateBuilder {
     private int floor;
 
     public StateBuilder setDeck(ArrayList<AbstractCard> deck) {
-        for (AbstractCard toAdd : deck)
-            this.deck.add(toAdd.cardID);
+        for (AbstractCard toAdd : deck) {
+            if (toAdd.upgraded)
+                this.deck.add(toAdd.cardID + "+" + toAdd.timesUpgraded);
+            else
+                this.deck.add(toAdd.cardID);
+        }
         return this;
     }
 
@@ -25,8 +29,12 @@ public class StateBuilder {
     }
 
     public StateBuilder setChoices(ArrayList<AbstractCard> choices) {
-        for (AbstractCard toAdd : choices)
-            this.choices.add(toAdd.cardID);
+        for (AbstractCard toAdd : choices) {
+            if (toAdd.upgraded)
+                this.choices.add(toAdd.cardID + "+" + toAdd.timesUpgraded);
+            else
+                this.choices.add(toAdd.cardID);
+        }
         return this;
     }
 
