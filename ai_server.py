@@ -72,6 +72,20 @@ def one_hot_encode_state(state):
             i -= 1
         i += 1
 
+    i = 0
+    while i < len(state["deck"]):
+        if state["deck"][i] not in card_identifier.get_card_ids():
+            state["deck"].pop(i)
+            i -= 1
+        i += 1
+
+    i = 0
+    while i < len(state["available_choices"]):
+        if state["available_choices"][i] not in card_identifier.get_card_ids():
+            state["available_choices"].pop(i)
+            i -= 1
+        i += 1
+
     choice = {
         "deck": card_identifier.identify(*state["deck"]),
         "relics": relic_identifier.identify(*state["relics"], always_return_list=True),
