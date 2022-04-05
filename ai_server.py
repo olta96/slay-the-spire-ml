@@ -117,15 +117,24 @@ def one_hot_encode_state(state):
 
 
 def print_propbs(probs):
+    probs_ids = []
+    for i in range(len(probs[0])):
+        probs_ids.append({
+            "card_id": card_identifier.get_card_ids()[i],
+            "value": probs[0][i]
+        })
+
+    # sort probs_ids by card_id
+    probs_ids = sorted(probs_ids, key=lambda x: x["card_id"])
+
     i = 0
     j = 0
-    while i < len(probs[0]):
+    while i < len(probs_ids):
         while j < 4:
-            # print with string format to get the right spacing card_identifier.get_card_ids()[i] and round probs[0][i] with two decimals. End with ", "
-            print("{:<20} {:>10.2f}".format(card_identifier.get_card_ids()[i], probs[0][i]), end=", ")
+            print("{:<20} {:>10.2f}".format(probs_ids[i]["card_id"], probs_ids[i]["value"]), end=", ")
             i += 1
             j += 1
-            if i == len(probs[0]):
+            if i == len(probs_ids):
                 break
         j = 0
         print("")
