@@ -65,9 +65,12 @@ def one_hot_encode_state(state):
     card_ids_len = len(card_identifier.get_card_ids())
     relic_ids_len = len(relic_identifier.get_relic_ids())
 
-    for relic in state["relics"]:
-        if relic not in relic_identifier.get_relic_ids():
-            state["relics"].remove(relic)
+    i = 0
+    while i < len(state["relics"]):
+        if state["relics"][i] not in relic_identifier.get_relic_ids():
+            state["relics"].pop(i)
+            i -= 1
+        i += 1
 
     choice = {
         "deck": card_identifier.identify(*state["deck"]),
@@ -111,7 +114,9 @@ def predict(state_inputs):
     probs = probs.numpy()
     np.set_printoptions(precision=4, suppress=True)
     print(probs)
-    return int(argmax(probs))
+
+    # returns the 4 indices with the highest values using numpy
+    return np.argsort(probs)[0][-4:]
 
 
 
@@ -121,10 +126,15 @@ app = flask.Flask(__name__)
 def make_choice():
     state = flask.request.get_json()
     one_hot_encoded_state = one_hot_encode_state(state)
-    model_answer = predict(one_hot_encoded_state)
-    model_answer_id = card_identifier.get_card_ids()[model_answer]
-    print("Model answer:", model_answer_id)
-    return flask.jsonify({"model_answer": model_answer_id})
+    model_answers = predict(one_hot_encoded_state)
+    model_answers_ids = []
+    for i in range(len(model_answers)):
+        model_answers_ids.append(card_identifier.get_card_ids()[model_answers[i]])
+    print("Model answer:", model_answers_ids[3])
+    print("Did not choose:", model_answers_ids[2])
+    print("Did not choose:", model_answers_ids[1])
+    print("Did not choose:", model_answers_ids[0])
+    return flask.jsonify({"model_answer": model_answers_ids[3]})
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
