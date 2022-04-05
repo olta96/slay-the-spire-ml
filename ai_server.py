@@ -103,7 +103,7 @@ def one_hot_encode_state(state):
 
 
 
-def predict(state_inputs):
+def predict(state_inputs, allowed_choices):
     state_inputs = np.array([state_inputs], dtype=np.float32)
 
     state_inputs = torch.tensor(state_inputs, dtype=torch.float32).to(device)
@@ -113,10 +113,14 @@ def predict(state_inputs):
     probs = probs.cpu()
     probs = probs.numpy()
     np.set_printoptions(precision=4, suppress=True)
-    # print(probs)
+    print(probs)
+
+    answers = []
+    for allowed_choice in allowed_choices:
+        answers.append(probs[allowed_choice])
 
     # returns the 4 indices with the highest values using numpy
-    return np.argsort(probs)[0][-4:]
+    return np.argsort(answers)[0][-4:]
 
 
 
@@ -156,20 +160,31 @@ def validate_cards(original_state, one_hot_encoded_state):
 
 app = flask.Flask(__name__)
 
-@app.route('/make_choice', methods=["POST"])
-def make_choice():
-    state = flask.request.get_json()
-    print(state)
-    one_hot_encoded_state, flattened = one_hot_encode_state(state)
-    model_answers = predict(flattened)
-    model_answers_ids = []
-    for i in range(len(model_answers)):
-        model_answers_ids.append(card_identifier.get_card_ids()[model_answers[i]])
-    print("State did validate" if validate_cards(state, one_hot_encoded_state) else "State did not validate")
+def print_model_answers(model_answers_ids):
     print("Model answer:", model_answers_ids[3])
     print("Did not choose:", model_answers_ids[2])
     print("Did not choose:", model_answers_ids[1])
     print("Did not choose:", model_answers_ids[0])
+
+@app.route('/make_choice', methods=["POST"])
+def make_choice():
+    state = flask.request.get_json()
+    print(state)
+    
+    one_hot_encoded_state, flattened = one_hot_encode_state(state)
+    
+    allowed_choices = [0]
+    for choice in state["available_choices"]:
+        allowed_choices.append(card_identifier.get_card_ids().index(choice))
+    model_answers = predict(flattened, allowed_choices)
+    
+    model_answers_ids = []
+    for i in range(len(model_answers)):
+        model_answers_ids.append(card_identifier.get_card_ids()[model_answers[i]])
+    
+    print("State did validate" if validate_cards(state, one_hot_encoded_state) else "State did not validate")
+    print_model_answers(model_answers_ids)
+    
     return flask.jsonify({"model_answer": model_answers_ids[3]})
 
 if __name__ == "__main__":
