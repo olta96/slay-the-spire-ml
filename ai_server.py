@@ -117,10 +117,9 @@ def predict(state_inputs, allowed_choices):
 
     answers = []
     for allowed_choice in allowed_choices:
-        answers.append(probs[allowed_choice])
+        answers.append({"card_id": card_identifier.get_card_ids()[allowed_choice], "value": probs[0][allowed_choice]})
 
-    # returns the 4 indices with the highest values using numpy
-    return np.argsort(answers)[0][-4:]
+    return sorted(answers, key=lambda x: x["value"], reverse=True)
 
 
 
@@ -161,10 +160,10 @@ def validate_cards(original_state, one_hot_encoded_state):
 app = flask.Flask(__name__)
 
 def print_model_answers(model_answers_ids):
-    print("Model answer:", model_answers_ids[3])
-    print("Did not choose:", model_answers_ids[2])
-    print("Did not choose:", model_answers_ids[1])
-    print("Did not choose:", model_answers_ids[0])
+    print("Model answer:", model_answers_ids[0]["card_id"])
+    print("Did not choose:", model_answers_ids[1]["card_id"])
+    print("Did not choose:", model_answers_ids[2]["card_id"])
+    print("Did not choose:", model_answers_ids[3])["card_id"]
 
 @app.route('/make_choice', methods=["POST"])
 def make_choice():
@@ -176,16 +175,12 @@ def make_choice():
     allowed_choices = [0]
     for choice in state["available_choices"]:
         allowed_choices.append(card_identifier.get_card_ids().index(choice))
-    model_answers = predict(flattened, allowed_choices)
-    
-    model_answers_ids = []
-    for i in range(len(model_answers)):
-        model_answers_ids.append(card_identifier.get_card_ids()[model_answers[i]])
+    model_answers_ids = predict(flattened, allowed_choices)
     
     print("State did validate" if validate_cards(state, one_hot_encoded_state) else "State did not validate")
     print_model_answers(model_answers_ids)
     
-    return flask.jsonify({"model_answer": model_answers_ids[3]})
+    return flask.jsonify({"model_answer": model_answers_ids[0]["card_id"]})
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
