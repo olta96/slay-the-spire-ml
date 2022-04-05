@@ -163,7 +163,7 @@ def print_model_answers(model_answers_ids):
     print("Model answer:", model_answers_ids[0]["card_id"])
     print("Did not choose:", model_answers_ids[1]["card_id"])
     print("Did not choose:", model_answers_ids[2]["card_id"])
-    print("Did not choose:", model_answers_ids[3])["card_id"]
+    print("Did not choose:", model_answers_ids[3]["card_id"])
 
 @app.route('/make_choice', methods=["POST"])
 def make_choice():
