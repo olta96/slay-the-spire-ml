@@ -116,6 +116,19 @@ def one_hot_encode_state(state):
     return one_hot_encoded, flattened
 
 
+def print_propbs(probs):
+    i = 0
+    j = 0
+    while i < len(probs[0]):
+        while j < 4:
+            # print with string format to get the right spacing card_identifier.get_card_ids()[i] and round probs[0][i] with two decimals. End with ", "
+            print("{:<20} {:>10.2f}".format(card_identifier.get_card_ids()[i], probs[0][i]), end=", ")
+            i += 1
+            j += 1
+            if i == len(probs[0]):
+                break
+        j = 0
+        print("")
 
 def predict(state_inputs, allowed_choices):
     state_inputs = np.array([state_inputs], dtype=np.float32)
@@ -126,8 +139,9 @@ def predict(state_inputs, allowed_choices):
         probs = model(state_inputs).to(device)
     probs = probs.cpu()
     probs = probs.numpy()
-    np.set_printoptions(precision=4, suppress=True)
-    print(probs)
+    print_propbs(probs)
+    # np.set_printoptions(precision=4, suppress=True)
+    # print(probs)
 
     answers = []
     for allowed_choice in allowed_choices:
