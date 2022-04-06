@@ -62,6 +62,10 @@ model.eval()
 
 
 
+USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use softmax for deck prediction? (y/n) ") == "y"
+
+
+
 def one_hot_encode_state(state):
     card_ids_len = len(card_identifier.get_card_ids())
     relic_ids_len = len(relic_identifier.get_relic_ids())
@@ -147,6 +151,18 @@ def print_probs(probs):
         j = 0
         print("")
 
+def convert_probs_to_percentages(probs):
+    # calculate total of probs
+    total = 0
+    for i in range(len(probs[0])):
+        total += probs[0][i]
+    
+    # convert probs to percentages of total
+    for i in range(len(probs[0])):
+        probs[0][i] = probs[0][i] / total * 100
+
+    return probs
+
 def predict(state_inputs, allowed_choices):
     state_inputs = np.array([state_inputs], dtype=np.float32)
 
@@ -154,7 +170,10 @@ def predict(state_inputs, allowed_choices):
 
     with torch.no_grad():
         probs = model(state_inputs).to(device)
-    probs = torch.nn.functional.softmax(probs, dim=1)
+    if USE_SOFTMAX_FOR_DECK_PREDICTION:
+        probs = torch.nn.functional.softmax(probs, dim=1)
+    else:
+        probs = convert_probs_to_percentages(probs)
     probs = probs.cpu()
     probs = probs.numpy()
     print_probs(probs)
