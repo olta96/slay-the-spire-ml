@@ -116,7 +116,7 @@ def one_hot_encode_state(state):
     return one_hot_encoded, flattened
 
 
-def print_propbs(probs):
+def print_probs(probs):
     probs_ids = []
     for i in range(len(probs[0])):
         probs_ids.append({
@@ -131,7 +131,7 @@ def print_propbs(probs):
     j = 0
     while i < len(probs_ids):
         while j < 4:
-            print("{:<20} {:>10.2f}".format(probs_ids[i]["card_id"], probs_ids[i]["value"]), end=", ")
+            print("{:<20} {:>10.4f}".format(probs_ids[i]["card_id"], probs_ids[i]["value"]), end=", ")
             i += 1
             j += 1
             if i == len(probs_ids):
@@ -146,11 +146,10 @@ def predict(state_inputs, allowed_choices):
 
     with torch.no_grad():
         probs = model(state_inputs).to(device)
+    probs = torch.nn.functional.softmax(probs, dim=1)
     probs = probs.cpu()
     probs = probs.numpy()
-    print_propbs(probs)
-    # np.set_printoptions(precision=4, suppress=True)
-    # print(probs)
+    print_probs(probs)
 
     answers = []
     for allowed_choice in allowed_choices:
@@ -197,10 +196,10 @@ def validate_cards(original_state, one_hot_encoded_state):
 app = flask.Flask(__name__)
 
 def print_model_answers(model_answers_ids):
-    print("Model answer:", model_answers_ids[0]["card_id"])
-    print("Did not choose:", model_answers_ids[1]["card_id"])
-    print("Did not choose:", model_answers_ids[2]["card_id"])
-    print("Did not choose:", model_answers_ids[3]["card_id"])
+    print(f"\n\tModel answer: {model_answers_ids[0]['card_id']} ({'{:.4f}'.format(model_answers_ids[0]['value'])})\n")
+    print(f"Did not choose: {model_answers_ids[1]['card_id']} ({'{:.4f}'.format(model_answers_ids[1]['value'])})")
+    print(f"Did not choose: {model_answers_ids[2]['card_id']} ({'{:.4f}'.format(model_answers_ids[2]['value'])})")
+    print(f"Did not choose: {model_answers_ids[3]['card_id']} ({'{:.4f}'.format(model_answers_ids[3]['value'])})")
 
 @app.route('/make_choice', methods=["POST"])
 def make_choice():
