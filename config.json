@@ -6,10 +6,30 @@
         "deck_max_card_count": 6,
         "file_batch_size": 10,
         "logs_filename": "preprocessor_logs.txt",
+        "acts": [
+            {
+                "from_floor_inclusive": 0,
+                "to_floor_inclusive": 17
+            },
+            {
+                "from_floor_inclusive": 18,
+                "to_floor_inclusive": 34
+            },
+            {
+                "from_floor_inclusive": 35,
+                "to_floor_inclusive": 51
+            },
+            {
+                "from_floor_inclusive": 52,
+                "to_floor_inclusive": 55
+            }
+        ],
+        "one_hot_encode_floor": false,
         "filters": {
             "character": "IRONCLAD",
             "min_ascension_level": 10,
             "min_floor_reached": 44,
+            "max_floor_reached": 55,
             "endless": false,
             "ascension_mode": true,
             "chose_seed": false

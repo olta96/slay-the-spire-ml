@@ -1,5 +1,4 @@
 import flask, json, torch, numpy as np
-from numpy import argmax
 
 from source_folder_path import save_model_path
 
@@ -34,23 +33,25 @@ def setup_one_hot_encoder():
 
     card_identifier = CardIdentifier(card_ids)
     relic_identifier = RelicIdentifier(relic_ids)
-    one_hot_encoder = OneHotEncoder(card_identifier, relic_identifier, config_options["preprocessor"]["deck_max_card_count"])
+    one_hot_encoder = OneHotEncoder(card_identifier, relic_identifier, config_options["preprocessor"]["deck_max_card_count"], config_options["preprocessor"]["one_hot_encode_floor"], config_options["preprocessor"]["acts"])
 
     def read_one_hot_encoded_data():
         with open("one_hot_encoded_data.json") as one_hot_encoded_data_json_file:
             return json.loads(one_hot_encoded_data_json_file.read())
 
-    number_of_inputs = (len(read_one_hot_encoded_data()[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + max_floor_reached
+    number_of_inputs = (len(read_one_hot_encoded_data()[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + len(config_options["preprocessor"]["acts"])
+    if config_options["preprocessor"]["one_hot_encode_floor"]:
+        number_of_inputs += max_floor_reached
     number_of_outputs = len(card_ids)
 
-    return card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs
+    return card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, config_options["preprocessor"]["one_hot_encode_floor"], config_options["preprocessor"]["acts"]
 
 
 
 
 
 
-card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs = setup_one_hot_encoder()
+card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, include_floor, acts = setup_one_hot_encoder()
 
 device = torch.device("cpu")
 print("Device:", device)
@@ -105,13 +106,18 @@ def one_hot_encode_state(state):
     one_hot_encoded = one_hot_encoder.encode([choice], max_floor_reached)[0]["inputs"]
 
     flattened = one_hot_encoded["available_choices"].copy()
-    for floor in one_hot_encoded["floor"]:
-        flattened.append(floor)
+
+    for act in one_hot_encoded["acts"]:
+        flattened.append(act)
     for relic in one_hot_encoded["relics"]:
         flattened.append(relic)
     for counts in one_hot_encoded["deck"]:
         for count in counts:
             flattened.append(count)
+
+    if include_floor:
+        for floor in one_hot_encoded["floor"]:
+            flattened.append(floor)
 
     return one_hot_encoded, flattened
 
@@ -173,8 +179,16 @@ def sort_and_match_cards(cards_a, cards_b):
 
     return True
 
+def validate_cards_and_act(original_state, one_hot_encoded_state):
+    original_floor = original_state["floor"]
+    for i, act in enumerate(acts):
+        if original_floor >= act["from_floor_inclusive"] and original_floor <= act["to_floor_inclusive"]:
+            if one_hot_encoded_state["acts"][i] != 1:
+                return False
+        else:
+            if one_hot_encoded_state["acts"][i] != 0:
+                return False
 
-def validate_cards(original_state, one_hot_encoded_state):
     original_deck = original_state["deck"].copy()
     original_choices = original_state["available_choices"].copy()
     one_hot_deck_ids = one_hot_encoded_state["deck"]
@@ -213,7 +227,7 @@ def make_choice():
         allowed_choices.append(card_identifier.get_card_ids().index(choice))
     model_answers_ids = predict(flattened, allowed_choices)
     
-    print("State did validate" if validate_cards(state, one_hot_encoded_state) else "State did not validate")
+    print("State did validate" if validate_cards_and_act(state, one_hot_encoded_state) else "State did not validate")
     print_model_answers(model_answers_ids)
     
     return flask.jsonify({"model_answer": model_answers_ids[0]["card_id"]})

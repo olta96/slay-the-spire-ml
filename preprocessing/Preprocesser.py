@@ -25,7 +25,7 @@ class Preprocesser:
         self.card_identifier = CardIdentifier()
         self.relic_identifier = RelicIdentifier()
         self.choice_builder = ChoiceBuilder(self.card_identifier, self.relic_identifier, config_options)
-        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.relic_identifier, self.deck_max_card_count)
+        self.one_hot_encoder = OneHotEncoder(self.card_identifier, self.relic_identifier, self.deck_max_card_count, config_options["one_hot_encode_floor"], config_options["acts"])
 
         self.source_filenames = []
         self.filtered_runs = []

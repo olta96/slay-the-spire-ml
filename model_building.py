@@ -22,6 +22,7 @@ ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = config_options["card_ids_json_filename"]
 RELIC_IDS_JSON_FILENAME = config_options["relic_ids_json_filename"]
 MAX_FLOOR_REACHED_JSON_FILENAME = config_options["max_floor_reached_json_filename"]
+SHOULD_INCLUDE_FLOOR = config_options["preprocessor"]["one_hot_encode_floor"]
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
@@ -45,10 +46,18 @@ else:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:", device)
 
-number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + max_floor_reached
+
+
+number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + len(config_options["preprocessor"]["acts"])
+if SHOULD_INCLUDE_FLOOR:
+    number_of_inputs += max_floor_reached
+
 number_of_outputs = len(card_ids)
+
 print("Number of input nodes:", number_of_inputs)
 print("Number of output nodes:", number_of_outputs)
+
+
 
 # For predicting
 test_row = None
@@ -64,13 +73,17 @@ class ChoicesDataset(Dataset):
 
         for choice in one_hot_encoded_data:
             to_append = choice["inputs"]["available_choices"].copy()
-            for floor in choice["inputs"]["floor"]:
-                to_append.append(floor)
+            for act in choice["inputs"]["acts"]:
+                to_append.append(act)
             for relic in choice["inputs"]["relics"]:
                 to_append.append(relic)
             for counts in choice["inputs"]["deck"]:
                 for count in counts:
                     to_append.append(count)
+
+            if SHOULD_INCLUDE_FLOOR:
+                for floor in choice["inputs"]["floor"]:
+                    to_append.append(floor)
             
             self.X.append(to_append)
             self.y.append(choice["targets"])
