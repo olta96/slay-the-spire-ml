@@ -152,6 +152,12 @@ def print_probs(probs):
         print("")
 
 def convert_probs_to_percentages(probs):
+    smallest_value = min(probs[0])
+
+    # add smallest_value to all values
+    for i in range(len(probs[0])):
+        probs[0][i] += smallest_value
+
     # calculate total of probs
     total = 0
     for i in range(len(probs[0])):
@@ -159,7 +165,7 @@ def convert_probs_to_percentages(probs):
     
     # convert probs to percentages of total
     for i in range(len(probs[0])):
-        probs[0][i] = probs[0][i] / total * 100
+        probs[0][i] = (probs[0][i] / total) * 100
 
     return probs
 
