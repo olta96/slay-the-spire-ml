@@ -23,6 +23,7 @@ CARD_IDS_JSON_FILENAME = config_options["card_ids_json_filename"]
 RELIC_IDS_JSON_FILENAME = config_options["relic_ids_json_filename"]
 MAX_FLOOR_REACHED_JSON_FILENAME = config_options["max_floor_reached_json_filename"]
 SHOULD_INCLUDE_FLOOR = config_options["preprocessor"]["one_hot_encode_floor"]
+DATASET_SPLIT_TRAIN_SIZE = config_options["dataset_split_train_size"]
 
 
 if input(f"Run preprocesser (y/n): ") == "y":
@@ -72,20 +73,22 @@ class ChoicesDataset(Dataset):
         self.y = []
 
         for choice in one_hot_encoded_data:
-            to_append = choice["inputs"]["available_choices"].copy()
+            inputs_flattened = []
             for act in choice["inputs"]["acts"]:
-                to_append.append(act)
+                inputs_flattened.append(act)
+            for available_choice in choice["inputs"]["available_choices"]:
+                inputs_flattened.append(available_choice)
             for relic in choice["inputs"]["relics"]:
-                to_append.append(relic)
+                inputs_flattened.append(relic)
             for counts in choice["inputs"]["deck"]:
                 for count in counts:
-                    to_append.append(count)
+                    inputs_flattened.append(count)
 
             if SHOULD_INCLUDE_FLOOR:
                 for floor in choice["inputs"]["floor"]:
-                    to_append.append(floor)
+                    inputs_flattened.append(floor)
             
-            self.X.append(to_append)
+            self.X.append(inputs_flattened)
             self.y.append(choice["targets"])
 
         test_row = self.X[0].copy()
@@ -102,10 +105,34 @@ class ChoicesDataset(Dataset):
     def __getitem__(self, idx):
         return [self.X[idx], self.y[idx]]
 
-    def get_splits(self):
-        test_size = round(0.1 * len(self.X))
-        train_size = len(self.X) - test_size
-        return random_split(self, [train_size, test_size])
+    def group_by_acts(self):
+        groups = []
+        for _act in config_options["preprocessor"]["acts"]:
+            groups.append([])
+        
+        for i, (inputs, _) in enumerate(self):
+            for j in range(len(config_options["preprocessor"]["acts"])):
+                if inputs[j] == 1:
+                    groups[j].append(self[i])
+
+        return groups
+
+    def get_splits(self, random=False):
+        if random:
+            test_size = round((1 - DATASET_SPLIT_TRAIN_SIZE) * len(self.X))
+            train_size = len(self.X) - test_size
+            return random_split(self, [train_size, test_size])
+        else:
+            act_groups = self.group_by_acts()
+            train_set = []
+            test_set = []
+            for act_group in act_groups:
+                test_size = round((1 - DATASET_SPLIT_TRAIN_SIZE) * len(act_group))
+                train_size = len(act_group) - test_size
+                train_set.extend(act_group[:train_size])
+                test_set.extend(act_group[train_size:])
+
+            return train_set, test_set
 
 
 

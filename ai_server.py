@@ -105,10 +105,12 @@ def one_hot_encode_state(state):
 
     one_hot_encoded = one_hot_encoder.encode([choice], max_floor_reached)[0]["inputs"]
 
-    flattened = one_hot_encoded["available_choices"].copy()
+    flattened = []
 
     for act in one_hot_encoded["acts"]:
         flattened.append(act)
+    for available_choice in one_hot_encoded["available_choices"]:
+        flattened.append(available_choice)
     for relic in one_hot_encoded["relics"]:
         flattened.append(relic)
     for counts in one_hot_encoded["deck"]:
