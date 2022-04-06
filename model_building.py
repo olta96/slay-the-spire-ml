@@ -117,6 +117,17 @@ class ChoicesDataset(Dataset):
 
         return groups
 
+    def balance_acts(self, act_groups):
+        size_of_smallets_act_group = len(act_groups[0])
+        for act_group in act_groups:
+            if len(act_group) < size_of_smallets_act_group:
+                size_of_smallets_act_group = len(act_group)
+
+        for i in range(len(act_groups)):
+            act_groups[i] = act_groups[i][:size_of_smallets_act_group]
+
+        return act_groups
+
     def get_splits(self, random=False):
         if random:
             test_size = round((1 - DATASET_SPLIT_TRAIN_SIZE) * len(self.X))
@@ -124,6 +135,8 @@ class ChoicesDataset(Dataset):
             return random_split(self, [train_size, test_size])
         else:
             act_groups = self.group_by_acts()
+            act_groups.pop() # remove the last act since it is very small and rare
+            act_groups = self.balance_acts(act_groups)
             train_set = []
             test_set = []
             for act_group in act_groups:
