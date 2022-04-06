@@ -263,8 +263,9 @@ train, test = dataset.get_splits()
 
 print("DataLoader loading dataset")
 # create a data loader for train and test sets
-train_dl = DataLoader(train, batch_size=64, shuffle=True)
+train_dl = DataLoader(train, batch_size=128, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
+train_dl_for_accuracy = DataLoader(train, batch_size=1, shuffle=False)
 
 print("Creating model")
 model = MLP(number_of_inputs, number_of_outputs).to(device)
@@ -275,7 +276,7 @@ print("Training complete")
 
 acc = accuracy(model, test_dl)
 print(f"Current Model Accuracy for test dataset: {round(acc * 100, 2)} %")
-acc = accuracy(model, train_dl)
+acc = accuracy(model, train_dl_for_accuracy)
 print(f"Current Model Accuracy for train dataset: {round(acc * 100, 2)} %")
 print(f"Most Accurate Model Accuracy: {round(most_accurate_model_acc * 100, 2)} %")
 

@@ -1,412 +1,425 @@
 Card appearances:
 	SKIP: 100.0 %
-	Shrug It Off: 6.59 %
-	Twin Strike: 6.55 %
-	Pommel Strike: 6.5 %
-	Heavy Blade: 6.43 %
-	Perfected Strike: 6.38 %
-	Wild Strike: 6.38 %
-	Havoc: 6.37 %
-	Headbutt: 6.34 %
-	Iron Wave: 6.32 %
-	Cleave: 6.28 %
-	Body Slam: 6.27 %
-	Armaments: 6.26 %
-	Sword Boomerang: 6.24 %
-	Anger: 6.24 %
-	Flex: 6.24 %
-	Thunderclap: 6.23 %
-	Warcry: 6.2 %
-	Clash: 6.19 %
-	True Grit: 6.18 %
-	Clothesline: 6.08 %
-	Battle Trance: 2.56 %
-	Shockwave: 2.46 %
-	Inflame: 2.45 %
-	Pummel: 2.44 %
-	Offering: 2.43 %
-	Spot Weakness: 2.41 %
-	Carnage: 2.39 %
-	Rampage: 2.37 %
-	Second Wind: 2.36 %
-	Uppercut: 2.36 %
-	Blood for Blood: 2.35 %
-	Flame Barrier: 2.34 %
-	Metallicize: 2.34 %
-	Disarm: 2.34 %
-	Dark Embrace: 2.33 %
-	Rage: 2.32 %
+	Pommel Strike: 6.76 %
+	Shrug It Off: 6.64 %
+	Headbutt: 6.61 %
+	Perfected Strike: 6.59 %
+	Iron Wave: 6.56 %
+	Armaments: 6.56 %
+	Wild Strike: 6.55 %
+	Thunderclap: 6.54 %
+	Heavy Blade: 6.54 %
+	Twin Strike: 6.5 %
+	Flex: 6.5 %
+	Warcry: 6.46 %
+	Cleave: 6.43 %
+	Sword Boomerang: 6.43 %
+	Anger: 6.39 %
+	True Grit: 6.39 %
+	Clothesline: 6.37 %
+	Body Slam: 6.34 %
+	Havoc: 6.29 %
+	Clash: 6.09 %
+	Battle Trance: 2.59 %
+	Shockwave: 2.56 %
+	Inflame: 2.51 %
+	Uppercut: 2.44 %
+	Carnage: 2.43 %
+	Second Wind: 2.43 %
+	Whirlwind: 2.43 %
+	Pummel: 2.42 %
+	Reckless Charge: 2.41 %
+	Spot Weakness: 2.4 %
+	Seeing Red: 2.4 %
+	Infernal Blade: 2.39 %
+	Offering: 2.39 %
+	Evolve: 2.39 %
+	Metallicize: 2.38 %
+	Burning Pact: 2.38 %
+	Rage: 2.36 %
+	Reaper: 2.36 %
+	Disarm: 2.35 %
+	Flame Barrier: 2.35 %
+	Impervious: 2.35 %
+	Dual Wield: 2.33 %
+	Sever Soul: 2.33 %
+	Power Through: 2.33 %
+	Ghostly Armor: 2.32 %
+	Blood for Blood: 2.31 %
+	Rupture: 2.31 %
 	Searing Blow: 2.31 %
-	Feel No Pain: 2.3 %
-	Infernal Blade: 2.3 %
-	Whirlwind: 2.29 %
-	Reaper: 2.29 %
-	Fire Breathing: 2.28 %
-	Hemokinesis: 2.27 %
-	Sever Soul: 2.27 %
+	Sentinel: 2.31 %
+	Dropkick: 2.3 %
+	Immolate: 2.29 %
+	Dark Embrace: 2.28 %
+	Entrench: 2.28 %
+	Feel No Pain: 2.27 %
 	Limit Break: 2.27 %
-	Power Through: 2.27 %
-	Reckless Charge: 2.26 %
-	Dropkick: 2.25 %
-	Ghostly Armor: 2.25 %
-	Seeing Red: 2.25 %
-	Impervious: 2.24 %
-	Bloodletting: 2.23 %
-	Demon Form: 2.22 %
-	Dual Wield: 2.21 %
-	Combust: 2.21 %
-	Evolve: 2.21 %
-	Entrench: 2.2 %
-	Sentinel: 2.2 %
-	Burning Pact: 2.19 %
-	Rupture: 2.17 %
-	Immolate: 2.16 %
-	Barricade: 2.15 %
-	Intimidate: 2.15 %
-	Juggernaut: 2.09 %
+	Demon Form: 2.27 %
+	Intimidate: 2.27 %
+	Combust: 2.27 %
+	Bloodletting: 2.25 %
+	Double Tap: 2.23 %
+	Fire Breathing: 2.21 %
+	Rampage: 2.21 %
+	Hemokinesis: 2.19 %
+	Bludgeon: 2.13 %
+	Juggernaut: 2.12 %
+	Feed: 2.12 %
 	Berserk: 2.09 %
-	Bludgeon: 2.05 %
-	Corruption: 2.04 %
-	Feed: 2.03 %
-	Exhume: 2.03 %
-	Double Tap: 2.01 %
-	Fiend Fire: 2.0 %
-	Brutality: 1.99 %
-	Heavy Blade+1: 1.59 %
-	Perfected Strike+1: 1.58 %
-	Pommel Strike+1: 1.57 %
-	Sword Boomerang+1: 1.57 %
-	Shrug It Off+1: 1.56 %
-	Anger+1: 1.53 %
-	Armaments+1: 1.52 %
-	Twin Strike+1: 1.51 %
-	Body Slam+1: 1.51 %
-	Iron Wave+1: 1.51 %
-	Wild Strike+1: 1.51 %
-	Cleave+1: 1.51 %
-	Thunderclap+1: 1.5 %
-	Flex+1: 1.5 %
-	Clothesline+1: 1.5 %
-	Warcry+1: 1.47 %
-	Headbutt+1: 1.47 %
-	True Grit+1: 1.47 %
-	Havoc+1: 1.46 %
-	Clash+1: 1.45 %
-	Battle Trance+1: 0.65 %
-	Shockwave+1: 0.59 %
-	Ghostly Armor+1: 0.59 %
-	Whirlwind+1: 0.59 %
-	Carnage+1: 0.59 %
-	Spot Weakness+1: 0.58 %
-	Disarm+1: 0.58 %
-	Evolve+1: 0.58 %
-	Bloodletting+1: 0.58 %
-	Rampage+1: 0.58 %
-	Second Wind+1: 0.58 %
-	Rage+1: 0.58 %
-	Flame Barrier+1: 0.57 %
-	Seeing Red+1: 0.57 %
-	Sentinel+1: 0.57 %
-	Rupture+1: 0.56 %
-	Dual Wield+1: 0.56 %
-	Entrench+1: 0.55 %
-	Blood for Blood+1: 0.55 %
-	Sever Soul+1: 0.55 %
-	Intimidate+1: 0.55 %
-	Power Through+1: 0.55 %
-	Dropkick+1: 0.54 %
-	Uppercut+1: 0.54 %
-	Burning Pact+1: 0.54 %
-	Pummel+1: 0.54 %
-	Dark Embrace+1: 0.54 %
+	Fiend Fire: 2.09 %
+	Barricade: 2.08 %
+	Brutality: 2.05 %
+	Exhume: 2.04 %
+	Corruption: 2.0 %
+	Heavy Blade+1: 1.44 %
+	Body Slam+1: 1.44 %
+	Shrug It Off+1: 1.41 %
+	Wild Strike+1: 1.41 %
+	Headbutt+1: 1.4 %
+	Pommel Strike+1: 1.39 %
+	Perfected Strike+1: 1.38 %
+	Sword Boomerang+1: 1.37 %
+	Armaments+1: 1.37 %
+	True Grit+1: 1.37 %
+	Flex+1: 1.37 %
+	Cleave+1: 1.37 %
+	Twin Strike+1: 1.37 %
+	Warcry+1: 1.36 %
+	Anger+1: 1.35 %
+	Clash+1: 1.34 %
+	Thunderclap+1: 1.34 %
+	Iron Wave+1: 1.32 %
+	Havoc+1: 1.31 %
+	Clothesline+1: 1.28 %
+	Battle Trance+1: 0.6 %
+	Seeing Red+1: 0.55 %
+	Searing Blow+1: 0.54 %
 	Metallicize+1: 0.53 %
-	Reckless Charge+1: 0.53 %
-	Fire Breathing+1: 0.53 %
+	Whirlwind+1: 0.53 %
+	Shockwave+1: 0.53 %
+	Disarm+1: 0.52 %
+	Ghostly Armor+1: 0.51 %
+	Rage+1: 0.51 %
 	Inflame+1: 0.51 %
-	Hemokinesis+1: 0.51 %
 	Infernal Blade+1: 0.51 %
-	Searing Blow+1: 0.49 %
-	Feel No Pain+1: 0.48 %
-	Combust+1: 0.42 %
-	Exhume+1: 0.24 %
-	Impervious+1: 0.23 %
-	Reaper+1: 0.23 %
-	Fiend Fire+1: 0.23 %
-	Feed+1: 0.22 %
-	Limit Break+1: 0.21 %
-	Offering+1: 0.21 %
-	Immolate+1: 0.21 %
-	Double Tap+1: 0.2 %
-	Bludgeon+1: 0.17 %
-	Brutality+1: 0.17 %
-	Barricade+1: 0.15 %
-	Corruption+1: 0.15 %
-	Demon Form+1: 0.15 %
-	Juggernaut+1: 0.14 %
-	Madness: 0.14 %
-	Berserk+1: 0.14 %
-	Apotheosis: 0.13 %
-	Panacea: 0.12 %
+	Rupture+1: 0.5 %
+	Flame Barrier+1: 0.5 %
+	Dark Embrace+1: 0.49 %
+	Fire Breathing+1: 0.49 %
+	Intimidate+1: 0.48 %
+	Sentinel+1: 0.48 %
+	Sever Soul+1: 0.48 %
+	Dropkick+1: 0.48 %
+	Reckless Charge+1: 0.48 %
+	Power Through+1: 0.47 %
+	Second Wind+1: 0.47 %
+	Blood for Blood+1: 0.47 %
+	Bloodletting+1: 0.47 %
+	Burning Pact+1: 0.47 %
+	Spot Weakness+1: 0.46 %
+	Combust+1: 0.46 %
+	Dual Wield+1: 0.46 %
+	Uppercut+1: 0.45 %
+	Carnage+1: 0.45 %
+	Pummel+1: 0.44 %
+	Hemokinesis+1: 0.44 %
+	Feel No Pain+1: 0.44 %
+	Rampage+1: 0.44 %
+	Entrench+1: 0.43 %
+	Evolve+1: 0.43 %
+	Apotheosis: 0.2 %
+	Feed+1: 0.16 %
+	Reaper+1: 0.16 %
+	Immolate+1: 0.15 %
+	Panacea: 0.15 %
+	Dark Shackles: 0.14 %
+	Double Tap+1: 0.14 %
+	Limit Break+1: 0.14 %
+	Offering+1: 0.14 %
+	Juggernaut+1: 0.13 %
+	Blind: 0.13 %
+	Bandage Up: 0.13 %
+	Purity: 0.13 %
+	Corruption+1: 0.13 %
+	Exhume+1: 0.13 %
 	Dramatic Entrance: 0.12 %
-	Thinking Ahead: 0.12 %
-	Purity: 0.11 %
-	Dark Shackles: 0.11 %
-	Mind Blast: 0.11 %
-	Bandage Up: 0.11 %
-	Flash of Steel: 0.11 %
-	Secret Technique: 0.11 %
-	Finesse: 0.1 %
-	Impatience: 0.1 %
+	Flash of Steel: 0.12 %
+	Impervious+1: 0.12 %
+	Finesse: 0.12 %
+	Demon Form+1: 0.12 %
+	Barricade+1: 0.11 %
+	Transmutation: 0.11 %
+	Mayhem: 0.11 %
+	Deep Breath: 0.11 %
+	Bludgeon+1: 0.11 %
+	Swift Strike: 0.11 %
+	Enlightenment: 0.11 %
+	Sadistic Nature: 0.1 %
+	Mind Blast: 0.1 %
 	Trip: 0.1 %
+	Fiend Fire+1: 0.1 %
+	Impatience: 0.1 %
 	Master of Strategy: 0.1 %
-	Discovery: 0.1 %
-	Blind: 0.1 %
-	Mayhem: 0.1 %
+	The Bomb: 0.1 %
 	Good Instincts: 0.1 %
-	Forethought: 0.09 %
-	Deep Breath: 0.09 %
-	Swift Strike: 0.09 %
-	Sadistic Nature: 0.09 %
-	Secret Weapon: 0.08 %
-	The Bomb: 0.08 %
-	Magnetism: 0.08 %
-	Enlightenment: 0.08 %
-	Panache: 0.08 %
-	Metamorphosis: 0.08 %
-	Chrysalis: 0.07 %
-	Transmutation: 0.07 %
+	Discovery: 0.1 %
+	Brutality+1: 0.1 %
+	Magnetism: 0.1 %
+	Berserk+1: 0.1 %
+	Metamorphosis: 0.09 %
+	Thinking Ahead: 0.09 %
+	Chrysalis: 0.09 %
+	Secret Technique: 0.08 %
+	Forethought: 0.08 %
+	Madness: 0.08 %
+	Secret Weapon: 0.07 %
+	Panache: 0.07 %
 	Violence: 0.07 %
-	Mind Blast+1: 0.02 %
-	Blind+1: 0.02 %
-	Finesse+1: 0.02 %
-	Master of Strategy+1: 0.02 %
-	Deep Breath+1: 0.02 %
-	Bandage Up+1: 0.02 %
-	Trip+1: 0.02 %
-	Purity+1: 0.02 %
-	Impatience+1: 0.02 %
-	Swift Strike+1: 0.02 %
-	Good Instincts+1: 0.01 %
-	Discovery+1: 0.01 %
-	Chrysalis+1: 0.01 %
-	Apotheosis+1: 0.01 %
-	Dark Shackles+1: 0.01 %
-	Secret Weapon+1: 0.01 %
-	Panacea+1: 0.01 %
-	Panache+1: 0.01 %
-	Enlightenment+1: 0.01 %
-	Flash of Steel+1: 0.01 %
-	Transmutation+1: 0.01 %
-	Mayhem+1: 0.01 %
+	Thinking Ahead+1: 0.02 %
+	Flash of Steel+1: 0.02 %
 	Dramatic Entrance+1: 0.01 %
-	Forethought+1: 0.01 %
-	Thinking Ahead+1: 0.01 %
-	Madness+1: 0.01 %
-	Metamorphosis+1: 0.01 %
-	Sadistic Nature+1: 0.01 %
-	Secret Technique+1: 0.0 %
-	Violence+1: 0.0 %
-	Magnetism+1: 0.0 %
-Card picked:
-	SKIP: 31.01 %
-	Shrug It Off: 2.85 %
-	Pommel Strike: 1.43 %
-	Battle Trance: 1.4 %
-	Offering: 1.39 %
-	Reaper: 1.32 %
-	Inflame: 1.31 %
-	Heavy Blade: 1.24 %
-	Limit Break: 1.22 %
-	Shockwave: 1.17 %
-	Flame Barrier: 1.15 %
-	Demon Form: 1.14 %
-	Spot Weakness: 1.14 %
-	Impervious: 1.14 %
-	Armaments: 1.12 %
-	Twin Strike: 1.1 %
-	Cleave: 1.07 %
-	Body Slam: 1.05 %
-	Disarm: 1.05 %
-	Flex: 1.0 %
-	Sword Boomerang: 1.0 %
-	True Grit: 0.97 %
-	Headbutt: 0.97 %
-	Feed: 0.96 %
-	Metallicize: 0.91 %
-	Shrug It Off+1: 0.91 %
-	Immolate: 0.89 %
-	Barricade: 0.86 %
-	Whirlwind: 0.85 %
-	Feel No Pain: 0.84 %
-	Thunderclap: 0.83 %
-	Perfected Strike: 0.83 %
-	Uppercut: 0.77 %
-	Power Through: 0.76 %
-	Double Tap: 0.76 %
-	Iron Wave: 0.7 %
-	Ghostly Armor: 0.68 %
-	Clothesline: 0.63 %
-	Anger: 0.6 %
-	Seeing Red: 0.6 %
-	Corruption: 0.6 %
-	Pummel: 0.59 %
-	Juggernaut: 0.59 %
-	Heavy Blade+1: 0.58 %
-	Carnage: 0.58 %
-	True Grit+1: 0.57 %
-	Pommel Strike+1: 0.57 %
-	Fire Breathing: 0.57 %
-	Wild Strike: 0.56 %
-	Fiend Fire: 0.54 %
-	Evolve: 0.52 %
-	Burning Pact: 0.52 %
-	Second Wind: 0.52 %
-	Exhume: 0.5 %
-	Dropkick: 0.48 %
-	Armaments+1: 0.47 %
-	Warcry+1: 0.45 %
-	Berserk: 0.45 %
-	Body Slam+1: 0.44 %
-	Bludgeon: 0.44 %
-	Dark Embrace: 0.44 %
-	Entrench: 0.44 %
-	Rampage: 0.42 %
-	Rage: 0.42 %
-	Warcry: 0.41 %
-	Flex+1: 0.4 %
-	Sword Boomerang+1: 0.38 %
-	Infernal Blade: 0.37 %
-	Clash: 0.36 %
-	Iron Wave+1: 0.36 %
-	Shockwave+1: 0.34 %
-	Battle Trance+1: 0.34 %
-	Flame Barrier+1: 0.34 %
-	Intimidate: 0.32 %
-	Disarm+1: 0.32 %
-	Twin Strike+1: 0.3 %
-	Inflame+1: 0.3 %
-	Dual Wield: 0.29 %
-	Seeing Red+1: 0.29 %
-	Sentinel: 0.28 %
-	Metallicize+1: 0.27 %
-	Entrench+1: 0.27 %
-	Headbutt+1: 0.27 %
-	Spot Weakness+1: 0.27 %
-	Blood for Blood: 0.27 %
-	Clothesline+1: 0.25 %
-	Power Through+1: 0.25 %
-	Havoc: 0.25 %
-	Uppercut+1: 0.22 %
-	Feel No Pain+1: 0.22 %
-	Thunderclap+1: 0.22 %
-	Whirlwind+1: 0.22 %
-	Ghostly Armor+1: 0.21 %
-	Perfected Strike+1: 0.21 %
-	Cleave+1: 0.21 %
-	Havoc+1: 0.2 %
-	Burning Pact+1: 0.2 %
-	Brutality: 0.19 %
-	Sever Soul: 0.19 %
-	Reckless Charge: 0.19 %
-	Dual Wield+1: 0.18 %
-	Second Wind+1: 0.18 %
-	Pummel+1: 0.17 %
-	Sentinel+1: 0.17 %
-	Rage+1: 0.17 %
-	Fire Breathing+1: 0.17 %
-	Dark Embrace+1: 0.17 %
-	Evolve+1: 0.17 %
-	Rupture: 0.17 %
-	Infernal Blade+1: 0.17 %
-	Combust: 0.17 %
-	Wild Strike+1: 0.16 %
-	Hemokinesis: 0.16 %
-	Impervious+1: 0.16 %
-	Intimidate+1: 0.15 %
-	Bloodletting: 0.14 %
-	Reaper+1: 0.14 %
-	Dropkick+1: 0.14 %
-	Offering+1: 0.13 %
-	Searing Blow: 0.12 %
-	Anger+1: 0.12 %
-	Limit Break+1: 0.12 %
-	Apotheosis: 0.11 %
-	Carnage+1: 0.11 %
-	Clash+1: 0.11 %
-	Feed+1: 0.1 %
-	Bloodletting+1: 0.1 %
-	Blood for Blood+1: 0.09 %
-	Double Tap+1: 0.09 %
-	Demon Form+1: 0.09 %
-	Immolate+1: 0.08 %
-	Fiend Fire+1: 0.08 %
-	Rupture+1: 0.08 %
-	Exhume+1: 0.07 %
-	Barricade+1: 0.07 %
-	Rampage+1: 0.07 %
-	Master of Strategy: 0.06 %
-	Sever Soul+1: 0.06 %
-	Dark Shackles: 0.06 %
-	Panacea: 0.05 %
-	Reckless Charge+1: 0.05 %
-	Juggernaut+1: 0.05 %
-	Finesse: 0.05 %
-	Combust+1: 0.05 %
-	Bludgeon+1: 0.05 %
-	Madness: 0.05 %
-	Corruption+1: 0.05 %
-	Bandage Up: 0.05 %
-	Berserk+1: 0.05 %
-	Mayhem: 0.04 %
-	Thinking Ahead: 0.04 %
-	Flash of Steel: 0.04 %
-	Secret Technique: 0.04 %
-	Dramatic Entrance: 0.04 %
-	Secret Weapon: 0.03 %
-	Hemokinesis+1: 0.03 %
-	The Bomb: 0.03 %
-	Metamorphosis: 0.03 %
-	Trip: 0.03 %
-	Violence: 0.03 %
-	Panache: 0.02 %
-	Purity: 0.02 %
-	Chrysalis: 0.02 %
-	Discovery: 0.02 %
-	Brutality+1: 0.02 %
-	Searing Blow+1: 0.02 %
-	Sadistic Nature: 0.02 %
-	Enlightenment: 0.02 %
-	Deep Breath: 0.02 %
-	Mind Blast: 0.02 %
-	Blind: 0.02 %
-	Transmutation: 0.02 %
-	Blind+1: 0.01 %
-	Magnetism: 0.01 %
-	Impatience: 0.01 %
-	Master of Strategy+1: 0.01 %
-	Apotheosis+1: 0.01 %
 	Finesse+1: 0.01 %
+	Magnetism+1: 0.01 %
 	Mind Blast+1: 0.01 %
-	Discovery+1: 0.01 %
-	Deep Breath+1: 0.01 %
-	Chrysalis+1: 0.01 %
-	Purity+1: 0.01 %
-	Flash of Steel+1: 0.01 %
-	Panacea+1: 0.01 %
-	Forethought: 0.01 %
+	Blind+1: 0.01 %
+	Apotheosis+1: 0.01 %
+	Secret Weapon+1: 0.01 %
+	Madness+1: 0.01 %
+	Dark Shackles+1: 0.01 %
+	Violence+1: 0.01 %
+	Impatience+1: 0.01 %
 	Transmutation+1: 0.01 %
-	Swift Strike: 0.01 %
-	Swift Strike+1: 0.01 %
-	Panache+1: 0.0 %
-	Dark Shackles+1: 0.0 %
-	Mayhem+1: 0.0 %
-	Enlightenment+1: 0.0 %
+	Enlightenment+1: 0.01 %
+	Mayhem+1: 0.01 %
+	Discovery+1: 0.01 %
+	Trip+1: 0.0 %
 	Metamorphosis+1: 0.0 %
-	Bandage Up+1: 0.0 %
-	Good Instincts: 0.0 %
-	Dramatic Entrance+1: 0.0 %
-	Sadistic Nature+1: 0.0 %
-	Madness+1: 0.0 %
 	Secret Technique+1: 0.0 %
-	Magnetism+1: 0.0 %
+	Sadistic Nature+1: 0.0 %
+	Panache+1: 0.0 %
+	Master of Strategy+1: 0.0 %
+	Purity+1: 0.0 %
+	The Bomb+1: 0.0 %
+	Forethought+1: 0.0 %
+	Panacea+1: 0.0 %
 	Good Instincts+1: 0.0 %
+	Bandage Up+1: 0.0 %
+	Deep Breath+1: 0.0 %
+	Swift Strike+1: 0.0 %
+	Chrysalis+1: 0.0 %
+
+Card picked:
+	SKIP: 30.41 %
+	Shrug It Off: 2.97 %
+	Pommel Strike: 1.63 %
+	Inflame: 1.42 %
+	Battle Trance: 1.36 %
+	Heavy Blade: 1.35 %
+	Reaper: 1.35 %
+	Twin Strike: 1.33 %
+	Demon Form: 1.28 %
+	Limit Break: 1.26 %
+	Offering: 1.25 %
+	Armaments: 1.23 %
+	Spot Weakness: 1.23 %
+	Impervious: 1.22 %
+	Cleave: 1.22 %
+	Perfected Strike: 1.21 %
+	Flame Barrier: 1.19 %
+	Shockwave: 1.15 %
+	Headbutt: 1.1 %
+	Sword Boomerang: 1.06 %
+	Metallicize: 1.03 %
+	Flex: 1.01 %
+	Whirlwind: 0.99 %
+	Immolate: 0.99 %
+	True Grit: 0.97 %
+	Feed: 0.95 %
+	Disarm: 0.95 %
+	Iron Wave: 0.91 %
+	Shrug It Off+1: 0.9 %
+	Double Tap: 0.89 %
+	Thunderclap: 0.87 %
+	Body Slam: 0.85 %
+	Uppercut: 0.84 %
+	Ghostly Armor: 0.79 %
+	Clothesline: 0.76 %
+	Barricade: 0.74 %
+	Power Through: 0.71 %
+	Anger: 0.71 %
+	Wild Strike: 0.7 %
+	Seeing Red: 0.68 %
+	Pummel: 0.65 %
+	Feel No Pain: 0.61 %
+	Juggernaut: 0.59 %
+	Carnage: 0.58 %
+	Pommel Strike+1: 0.55 %
+	Fiend Fire: 0.54 %
+	Heavy Blade+1: 0.53 %
+	Bludgeon: 0.52 %
+	Fire Breathing: 0.51 %
+	True Grit+1: 0.5 %
+	Evolve: 0.49 %
+	Berserk: 0.47 %
+	Warcry: 0.47 %
+	Dropkick: 0.47 %
+	Corruption: 0.46 %
+	Rage: 0.46 %
+	Burning Pact: 0.45 %
+	Entrench: 0.45 %
+	Rampage: 0.44 %
+	Exhume: 0.43 %
+	Clash: 0.42 %
+	Armaments+1: 0.39 %
+	Infernal Blade: 0.39 %
+	Second Wind: 0.39 %
+	Body Slam+1: 0.39 %
+	Warcry+1: 0.37 %
+	Sword Boomerang+1: 0.34 %
+	Flex+1: 0.34 %
+	Blood for Blood: 0.32 %
+	Battle Trance+1: 0.32 %
+	Intimidate: 0.32 %
+	Twin Strike+1: 0.31 %
+	Dark Embrace: 0.31 %
+	Dual Wield: 0.3 %
+	Iron Wave+1: 0.29 %
+	Inflame+1: 0.29 %
+	Shockwave+1: 0.29 %
+	Metallicize+1: 0.29 %
+	Disarm+1: 0.28 %
+	Flame Barrier+1: 0.28 %
+	Headbutt+1: 0.28 %
+	Perfected Strike+1: 0.27 %
+	Sentinel: 0.26 %
+	Seeing Red+1: 0.26 %
+	Ghostly Armor+1: 0.24 %
+	Combust: 0.23 %
+	Havoc: 0.23 %
+	Thunderclap+1: 0.23 %
+	Whirlwind+1: 0.22 %
+	Spot Weakness+1: 0.22 %
+	Brutality: 0.22 %
+	Reckless Charge: 0.2 %
+	Cleave+1: 0.2 %
+	Bloodletting: 0.19 %
+	Clothesline+1: 0.19 %
+	Uppercut+1: 0.19 %
+	Havoc+1: 0.19 %
+	Power Through+1: 0.19 %
+	Rage+1: 0.18 %
+	Rupture: 0.18 %
+	Entrench+1: 0.17 %
+	Wild Strike+1: 0.17 %
+	Apotheosis: 0.17 %
+	Feel No Pain+1: 0.16 %
+	Pummel+1: 0.16 %
+	Burning Pact+1: 0.16 %
+	Intimidate+1: 0.15 %
+	Hemokinesis: 0.15 %
+	Infernal Blade+1: 0.15 %
+	Second Wind+1: 0.15 %
+	Fire Breathing+1: 0.15 %
+	Searing Blow: 0.15 %
+	Sever Soul: 0.14 %
+	Dark Embrace+1: 0.13 %
+	Sentinel+1: 0.13 %
+	Dual Wield+1: 0.13 %
+	Carnage+1: 0.12 %
+	Anger+1: 0.12 %
+	Dropkick+1: 0.11 %
+	Reaper+1: 0.11 %
+	Clash+1: 0.11 %
+	Evolve+1: 0.1 %
+	Limit Break+1: 0.08 %
+	Feed+1: 0.08 %
+	Blood for Blood+1: 0.08 %
+	Double Tap+1: 0.08 %
+	Offering+1: 0.08 %
+	Rampage+1: 0.08 %
+	Demon Form+1: 0.07 %
+	Impervious+1: 0.07 %
+	Dark Shackles: 0.07 %
+	Immolate+1: 0.07 %
+	Bloodletting+1: 0.06 %
+	Flash of Steel: 0.06 %
+	Master of Strategy: 0.06 %
+	Panacea: 0.06 %
+	Barricade+1: 0.06 %
+	Mayhem: 0.05 %
+	Juggernaut+1: 0.05 %
+	Purity: 0.05 %
+	Reckless Charge+1: 0.05 %
+	Bandage Up: 0.05 %
+	Finesse: 0.05 %
+	Dramatic Entrance: 0.04 %
+	Exhume+1: 0.04 %
+	Rupture+1: 0.04 %
+	Sever Soul+1: 0.04 %
+	The Bomb: 0.04 %
+	Combust+1: 0.04 %
+	Corruption+1: 0.04 %
+	Deep Breath: 0.04 %
+	Trip: 0.04 %
+	Enlightenment: 0.04 %
+	Hemokinesis+1: 0.04 %
+	Fiend Fire+1: 0.03 %
+	Discovery: 0.03 %
+	Secret Technique: 0.03 %
+	Blind: 0.03 %
+	Violence: 0.02 %
+	Berserk+1: 0.02 %
+	Thinking Ahead: 0.02 %
+	Chrysalis: 0.02 %
+	Metamorphosis: 0.02 %
+	Searing Blow+1: 0.02 %
+	Magnetism: 0.02 %
+	Mind Blast: 0.02 %
+	Brutality+1: 0.02 %
+	Good Instincts: 0.02 %
+	Bludgeon+1: 0.02 %
+	Madness: 0.02 %
+	Sadistic Nature: 0.02 %
+	Secret Weapon: 0.01 %
+	Impatience: 0.01 %
+	Transmutation: 0.01 %
+	Panache: 0.01 %
+	Swift Strike: 0.01 %
+	Finesse+1: 0.01 %
+	Forethought: 0.01 %
+	Thinking Ahead+1: 0.01 %
+	Flash of Steel+1: 0.01 %
+	Mayhem+1: 0.01 %
+	Magnetism+1: 0.01 %
+	Blind+1: 0.0 %
+	Madness+1: 0.0 %
+	Enlightenment+1: 0.0 %
+	Apotheosis+1: 0.0 %
+	Panache+1: 0.0 %
+	Master of Strategy+1: 0.0 %
+	Transmutation+1: 0.0 %
+	Impatience+1: 0.0 %
+	Metamorphosis+1: 0.0 %
+	Dark Shackles+1: 0.0 %
+	The Bomb+1: 0.0 %
+	Trip+1: 0.0 %
+	Good Instincts+1: 0.0 %
+	Violence+1: 0.0 %
+	Deep Breath+1: 0.0 %
+	Mind Blast+1: 0.0 %
+	Swift Strike+1: 0.0 %
+	Chrysalis+1: 0.0 %
+	Secret Weapon+1: 0.0 %
+
+Act distribution:
+	1: 40.83 %
+	2: 32.93 %
+	3: 25.95 %
+	4: 0.28 %
+
+Skips rate per act:
+	1: 17.44 %
+	2: 33.89 %
+	3: 46.34 %
+	4: 34.38 %

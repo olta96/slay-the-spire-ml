@@ -62,7 +62,7 @@ model.eval()
 
 
 
-USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use softmax for deck prediction? (y/n) ") == "y"
+USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use sigmoid for deck prediction? (y/n) ") == "y"
 
 
 
@@ -152,21 +152,11 @@ def print_probs(probs):
         print("")
 
 def convert_probs_to_percentages(probs):
-    smallest_value = min(probs[0])
-
-    # add smallest_value to all values
-    for i in range(len(probs[0])):
-        probs[0][i] += smallest_value
-
-    # calculate total of probs
     total = 0
     for i in range(len(probs[0])):
-        total += probs[0][i]
-    
-    # convert probs to percentages of total
+        total += abs(probs[0][i])
     for i in range(len(probs[0])):
-        probs[0][i] = (probs[0][i] / total) * 100
-
+        probs[0][i] = abs(probs[0][i]) / total * 100
     return probs
 
 def predict(state_inputs, allowed_choices):
@@ -177,7 +167,7 @@ def predict(state_inputs, allowed_choices):
     with torch.no_grad():
         probs = model(state_inputs).to(device)
     if USE_SOFTMAX_FOR_DECK_PREDICTION:
-        probs = torch.nn.functional.softmax(probs, dim=1)
+        probs = torch.sigmoid(probs)
     else:
         probs = convert_probs_to_percentages(probs)
     probs = probs.cpu()

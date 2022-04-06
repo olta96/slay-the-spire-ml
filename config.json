@@ -24,7 +24,7 @@
                 "to_floor_inclusive": 55
             }
         ],
-        "one_hot_encode_floor": false,
+        "one_hot_encode_floor": true,
         "filters": {
             "character": "IRONCLAD",
             "min_ascension_level": 10,
@@ -35,7 +35,7 @@
             "chose_seed": false
         }
     },
-    "max_epochs": 5,
+    "max_epochs": 25,
     "optimizer": "Adam",
     "learning_rate": 0.001,
     "epoch_log_interval": 5,
