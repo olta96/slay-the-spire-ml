@@ -18,6 +18,7 @@ one_hot_data = get_one_hot_encoded_data()
 
 card_appearance_counts = {}
 act_counts = {}
+skip_per_act_counts = {}
 for choice in one_hot_data:
     for card_id, value in enumerate(choice["inputs"]["available_choices"]):
         if value:
@@ -31,6 +32,23 @@ for choice in one_hot_data:
                 act_counts[act_id] = 1
             else:
                 act_counts[act_id] += 1
+
+            if choice["targets"][0] == 1:
+                if act_id not in skip_per_act_counts:
+                    skip_per_act_counts[act_id] = {
+                        "picked_skip": 1,
+                        "didnt_pick_skip": 0
+                    }
+                else:
+                    skip_per_act_counts[act_id]["picked_skip"] += 1
+            else:
+                if act_id not in skip_per_act_counts:
+                    skip_per_act_counts[act_id] = {
+                        "picked_skip": 0,
+                        "didnt_pick_skip": 1
+                    }
+                else:
+                    skip_per_act_counts[act_id]["didnt_pick_skip"] += 1
 
 chosen_card_counts = {}
 for choice in one_hot_data:
@@ -56,7 +74,11 @@ for card_id in chosen_card_counts:
 
 toWrite += "\n\nAct distribution:"
 for act_id in act_counts:
-    toWrite += f"\n\t{act_id}: {round((act_counts[act_id] / len(one_hot_data)) * 100, 2)} %"
+    toWrite += f"\n\t{act_id + 1}: {round((act_counts[act_id] / len(one_hot_data)) * 100, 2)} %"
+
+toWrite += "\n\nSkips rate per act:"
+for act_id in skip_per_act_counts:
+    toWrite += f"\n\t{act_id + 1}: {round((skip_per_act_counts[act_id]['picked_skip'] / (skip_per_act_counts[act_id]['picked_skip'] + skip_per_act_counts[act_id]['didnt_pick_skip'])) * 100, 2)} %"
 
 with open("stats.txt", "w") as stats_file:
     stats_file.write(toWrite)
