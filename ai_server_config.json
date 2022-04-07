@@ -1,0 +1,4 @@
+{
+    "use_softmax_for_deck_prediction": true,
+    "store_results": true
+}

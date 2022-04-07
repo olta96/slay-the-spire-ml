@@ -1,4 +1,5 @@
-import flask, json, torch, numpy as np
+import flask, json, torch, numpy as np, os
+from datetime import datetime
 
 from source_folder_path import save_model_path
 
@@ -7,6 +8,12 @@ from MLP import MLP
 from preprocessing.CardIdentifier import CardIdentifier
 from preprocessing.RelicIdentifier import RelicIdentifier
 from preprocessing.OneHotEncoder import OneHotEncoder
+
+
+
+app = flask.Flask(__name__)
+
+
 
 def setup_one_hot_encoder():
     def read_config_json():
@@ -67,7 +74,19 @@ model.eval()
 
 
 
-USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use softmax for deck prediction? (y/n) ") == "y"
+def read_ai_server_config():
+    with open("ai_server_config.json") as ai_server_config_json_file:
+        config = json.loads(ai_server_config_json_file.read())
+        return config["use_softmax_for_deck_prediction"], config["store_results"]
+
+USE_SOFTMAX_FOR_DECK_PREDICTION, STORE_RESULTS = read_ai_server_config()
+
+if STORE_RESULTS:
+    results_path = f"mod_results/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
+    if not os.path.exists("mod_results"):
+        os.makedirs("mod_results")
+    with open(results_path, "w+") as results_file:
+        results_file.write(json.dumps([], indent=4))
 
 
 
@@ -236,8 +255,6 @@ def validate_cards_and_act(original_state, one_hot_encoded_state):
 
     return sort_and_match_cards(original_deck, one_hot_deck) and sort_and_match_cards(original_choices, one_hot_choices)
 
-app = flask.Flask(__name__)
-
 def print_model_answers(model_answers_ids):
     print(f"\n\tModel answer: {model_answers_ids[0]['card_id']} ({'{:.4f}'.format(model_answers_ids[0]['value'])})\n")
     print(f"Did not choose: {model_answers_ids[1]['card_id']} ({'{:.4f}'.format(model_answers_ids[1]['value'])})")
@@ -248,6 +265,14 @@ def print_model_answers(model_answers_ids):
 def make_choice():
     state = flask.request.get_json()
     print(state)
+
+    if STORE_RESULTS:
+        print(f"Storing result to {results_path}")
+        with open(results_path, "r") as results_file:
+            results = json.loads(results_file.read())
+        with (open(results_path, "w")) as results_file:
+            results.append(state)
+            results_file.write(json.dumps(results, indent=4))
     
     one_hot_encoded_state, flattened = one_hot_encode_state(state)
     
@@ -259,7 +284,20 @@ def make_choice():
     print("State did validate" if validate_cards_and_act(state, one_hot_encoded_state) else "State did not validate")
     print_model_answers(model_answers_ids)
     
+    if STORE_RESULTS:
+        print(f"Storing result to {results_path}")
+        with open(results_path, "r") as results_file:
+            results = json.loads(results_file.read())
+        with (open(results_path, "w")) as results_file:
+            results[-1]["model_answers"] = {
+                "top": (model_answers_ids[0]["card_id"], "{:.4f}".format(model_answers_ids[0]["value"])),
+                "second": (model_answers_ids[1]["card_id"], "{:.4f}".format(model_answers_ids[1]["value"])),
+                "third": (model_answers_ids[2]["card_id"], "{:.4f}".format(model_answers_ids[2]["value"])),
+                "fourth": (model_answers_ids[3]["card_id"], "{:.4f}".format(model_answers_ids[3]["value"])),
+            }
+            results_file.write(json.dumps(results, indent=4))
+
     return flask.jsonify({"model_answer": model_answers_ids[0]["card_id"]})
 
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+
+app.run(host="127.0.0.1", port=5000)
