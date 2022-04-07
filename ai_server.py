@@ -179,6 +179,7 @@ def predict(state_inputs, allowed_choices):
         for answer in answers:
             for_softmaxing.append(answer["value"])
         print(for_softmaxing)
+        for_softmaxing[0] -= .01
         for_softmaxing = torch.softmax(torch.tensor([for_softmaxing], dtype=torch.float32), dim=1).cpu().numpy()
         for i, answer in enumerate(answers):
             answer["value"] = for_softmaxing[0][i]
