@@ -22,6 +22,7 @@ ONE_HOT_ENCODED_JSON_FILENAME = "one_hot_encoded_data.json"
 CARD_IDS_JSON_FILENAME = config_options["card_ids_json_filename"]
 RELIC_IDS_JSON_FILENAME = config_options["relic_ids_json_filename"]
 MAX_FLOOR_REACHED_JSON_FILENAME = config_options["max_floor_reached_json_filename"]
+SHOULD_INCLUDE_RELICS = config_options["include_relics"]
 SHOULD_INCLUDE_FLOOR = config_options["preprocessor"]["one_hot_encode_floor"]
 DATASET_SPLIT_TRAIN_SIZE = config_options["dataset_split_train_size"]
 
@@ -49,7 +50,9 @@ print("Device:", device)
 
 
 
-number_of_inputs = (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + len(config_options["preprocessor"]["acts"])
+number_of_inputs = len(config_options["preprocessor"]["acts"]) + (len(one_hot_encoded_data[0]["inputs"]["deck"][0]) + 1) * len(card_ids)
+if SHOULD_INCLUDE_RELICS:
+    number_of_inputs += len(relic_ids)
 if SHOULD_INCLUDE_FLOOR:
     number_of_inputs += max_floor_reached
 
@@ -78,11 +81,13 @@ class ChoicesDataset(Dataset):
                 inputs_flattened.append(act)
             for available_choice in choice["inputs"]["available_choices"]:
                 inputs_flattened.append(available_choice)
-            for relic in choice["inputs"]["relics"]:
-                inputs_flattened.append(relic)
             for counts in choice["inputs"]["deck"]:
                 for count in counts:
                     inputs_flattened.append(count)
+
+            if SHOULD_INCLUDE_RELICS:
+                for relic in choice["inputs"]["relics"]:
+                    inputs_flattened.append(relic)
 
             if SHOULD_INCLUDE_FLOOR:
                 for floor in choice["inputs"]["floor"]:

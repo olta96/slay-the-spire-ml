@@ -14,7 +14,7 @@ public class StateBuilder {
 
     public StateBuilder setDeck(ArrayList<AbstractCard> deck) {
         for (AbstractCard toAdd : deck) {
-            if (toAdd.upgraded)
+            if (toAdd.upgraded || toAdd.timesUpgraded > 0)
                 this.deck.add(toAdd.cardID + "+" + toAdd.timesUpgraded);
             else
                 this.deck.add(toAdd.cardID);
@@ -30,7 +30,7 @@ public class StateBuilder {
 
     public StateBuilder setChoices(ArrayList<AbstractCard> choices) {
         for (AbstractCard toAdd : choices) {
-            if (toAdd.upgraded)
+            if (toAdd.upgraded || toAdd.timesUpgraded > 0)
                 this.choices.add(toAdd.cardID + "+" + toAdd.timesUpgraded);
             else
                 this.choices.add(toAdd.cardID);

@@ -39,19 +39,24 @@ def setup_one_hot_encoder():
         with open("one_hot_encoded_data.json") as one_hot_encoded_data_json_file:
             return json.loads(one_hot_encoded_data_json_file.read())
 
-    number_of_inputs = (len(read_one_hot_encoded_data()[0]["inputs"]["deck"][0]) + 1) * len(card_ids) + len(relic_ids) + len(config_options["preprocessor"]["acts"])
-    if config_options["preprocessor"]["one_hot_encode_floor"]:
+    include_relics = config_options["include_relics"]
+    include_floor = config_options["preprocessor"]["one_hot_encode_floor"]
+
+    number_of_inputs = len(config_options["preprocessor"]["acts"]) + (len(read_one_hot_encoded_data()[0]["inputs"]["deck"][0]) + 1) * len(card_ids)
+    if include_relics:
+        number_of_inputs += len(relic_ids)
+    if include_floor:
         number_of_inputs += max_floor_reached
     number_of_outputs = len(card_ids)
 
-    return card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, config_options["preprocessor"]["one_hot_encode_floor"], config_options["preprocessor"]["acts"]
+    return card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, include_relics, include_floor, config_options["preprocessor"]["acts"]
 
 
 
 
 
 
-card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, include_floor, acts = setup_one_hot_encoder()
+card_identifier, relic_identifier, one_hot_encoder, max_floor_reached, number_of_inputs, number_of_outputs, include_relics, include_floor, acts = setup_one_hot_encoder()
 
 device = torch.device("cpu")
 print("Device:", device)
@@ -115,11 +120,13 @@ def one_hot_encode_state(state):
         flattened.append(act)
     for available_choice in one_hot_encoded["available_choices"]:
         flattened.append(available_choice)
-    for relic in one_hot_encoded["relics"]:
-        flattened.append(relic)
     for counts in one_hot_encoded["deck"]:
         for count in counts:
             flattened.append(count)
+
+    if include_relics:
+        for relic in one_hot_encoded["relics"]:
+            flattened.append(relic)
 
     if include_floor:
         for floor in one_hot_encoded["floor"]:
@@ -179,7 +186,6 @@ def predict(state_inputs, allowed_choices):
         for answer in answers:
             for_softmaxing.append(answer["value"])
         print(for_softmaxing)
-        for_softmaxing[0] -= .01
         for_softmaxing = torch.softmax(torch.tensor([for_softmaxing], dtype=torch.float32), dim=1).cpu().numpy()
         for i, answer in enumerate(answers):
             answer["value"] = for_softmaxing[0][i]

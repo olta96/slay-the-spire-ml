@@ -42,5 +42,6 @@
     "card_ids_json_filename": "card_ids.json",
     "relic_ids_json_filename": "relic_ids.json",
     "max_floor_reached_json_filename": "max_floor_reached.json",
-    "dataset_split_train_size": 0.9
+    "dataset_split_train_size": 0.9,
+    "include_relics": false
 }
