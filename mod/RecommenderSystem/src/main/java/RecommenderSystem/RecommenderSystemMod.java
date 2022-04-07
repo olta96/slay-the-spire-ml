@@ -1,7 +1,6 @@
 package RecommenderSystem;
 
 import basemod.BaseMod;
-import basemod.DevConsole;
 import basemod.interfaces.PostDungeonUpdateSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net;
@@ -75,10 +74,6 @@ public class RecommenderSystemMod implements PostBattleSubscriber, PostDungeonUp
         Gdx.net.sendHttpRequest(request, new Net.HttpResponseListener() {
             @Override
             public void handleHttpResponse(Net.HttpResponse httpResponse) {
-                DevConsole.enabled = true;
-                DevConsole.visible = true;
-                DevConsole.log.clear();
-                DevConsole.log(httpResponse.getResultAsString());
             }
 
             @Override
