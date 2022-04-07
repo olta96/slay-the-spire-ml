@@ -12,17 +12,16 @@ class MLP(Module):
         self.oupt = torch.nn.Linear(int(n_inputs * 0.8), n_outputs)
 
         torch.nn.init.xavier_uniform_(self.hid1.weight)
-        torch.nn.init.zeros_(self.hid1.bias)
+        
         torch.nn.init.xavier_uniform_(self.hid2.weight)
-        torch.nn.init.zeros_(self.hid2.bias)
+        
         torch.nn.init.xavier_uniform_(self.oupt.weight)
-        torch.nn.init.zeros_(self.oupt.bias)
 
  
     # forward propagate input
     def forward(self, X):
-        z = torch.sigmoid(self.hid1(X))
-        z = torch.sigmoid(self.hid2(z))
+        z = torch.tanh(self.hid1(X))
+        z = torch.tanh(self.hid2(z))
         # No softmax, happens in CrossEntropyLoss
         z = self.oupt(z)
         return z

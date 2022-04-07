@@ -268,7 +268,7 @@ train, test = dataset.get_splits()
 
 print("DataLoader loading dataset")
 # create a data loader for train and test sets
-train_dl = DataLoader(train, batch_size=128, shuffle=True)
+train_dl = DataLoader(train, batch_size=1028, shuffle=True)
 test_dl = DataLoader(test, batch_size=1, shuffle=False)
 train_dl_for_accuracy = DataLoader(train, batch_size=1, shuffle=False)
 
