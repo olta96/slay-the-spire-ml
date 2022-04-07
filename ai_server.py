@@ -62,7 +62,7 @@ model.eval()
 
 
 
-USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use sigmoid for deck prediction? (y/n) ") == "y"
+USE_SOFTMAX_FOR_DECK_PREDICTION = input("Use softmax for deck prediction? (y/n) ") == "y"
 
 
 
@@ -166,10 +166,6 @@ def predict(state_inputs, allowed_choices):
 
     with torch.no_grad():
         probs = model(state_inputs).to(device)
-    if USE_SOFTMAX_FOR_DECK_PREDICTION:
-        probs = torch.sigmoid(probs)
-    else:
-        probs = convert_probs_to_percentages(probs)
     probs = probs.cpu()
     probs = probs.numpy()
     print_probs(probs)
@@ -177,6 +173,15 @@ def predict(state_inputs, allowed_choices):
     answers = []
     for allowed_choice in allowed_choices:
         answers.append({"card_id": card_identifier.get_card_ids()[allowed_choice], "value": probs[0][allowed_choice]})
+
+    if USE_SOFTMAX_FOR_DECK_PREDICTION:
+        for_softmaxing = []
+        for answer in answers:
+            for_softmaxing.append(answer["value"])
+        print(for_softmaxing)
+        for_softmaxing = torch.softmax(torch.tensor([for_softmaxing], dtype=torch.float32), dim=1).cpu().numpy()
+        for i, answer in enumerate(answers):
+            answer["value"] = for_softmaxing[0][i]
 
     return sorted(answers, key=lambda x: x["value"], reverse=True)
 
