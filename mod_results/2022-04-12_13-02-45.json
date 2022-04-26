@@ -1,0 +1,86 @@
+[
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Bludgeon"
+        ],
+        "relics": [
+            "Burning Blood"
+        ],
+        "available_choices": [
+            "Heavy Blade",
+            "Iron Wave",
+            "Body Slam"
+        ],
+        "floor": 1,
+        "model_answers": {
+            "top": [
+                "SKIP",
+                "0.8458"
+            ],
+            "second": [
+                "Heavy Blade",
+                "0.0749"
+            ],
+            "third": [
+                "Body Slam",
+                "0.0526"
+            ],
+            "fourth": [
+                "Iron Wave",
+                "0.0267"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Bludgeon"
+        ],
+        "relics": [
+            "Burning Blood"
+        ],
+        "available_choices": [
+            "Rage",
+            "Impervious",
+            "Whirlwind"
+        ],
+        "floor": 2,
+        "model_answers": {
+            "top": [
+                "Impervious",
+                "0.9571"
+            ],
+            "second": [
+                "Whirlwind",
+                "0.0283"
+            ],
+            "third": [
+                "SKIP",
+                "0.0074"
+            ],
+            "fourth": [
+                "Rage",
+                "0.0072"
+            ]
+        }
+    }
+]
