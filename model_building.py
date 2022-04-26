@@ -1,4 +1,5 @@
 from preprocessing.Preprocesser import Preprocesser
+from Plotter import Plotter
 import json
 import copy
 
@@ -175,6 +176,9 @@ def train_model(train_dl, model, test_dl):
         raise f"Unknown optimizer function: {config_options['optimizer']}"
 
 
+    plotter = Plotter(f"strict_mode_decks: {config_options['preprocessor']['strict_mode_decks']} strict_mode_relics: {config_options['preprocessor']['strict_mode_relics']}")
+
+
     # enumerate epochs
     for epoch in range(max_epochs):
         # enumerate mini batches
@@ -200,7 +204,9 @@ def train_model(train_dl, model, test_dl):
             if acc > accuracy_of_most_accurate_model:
                 most_accurate_model = copy.deepcopy(model)
                 accuracy_of_most_accurate_model = acc
-        
+            plotter.push_epoch(epoch, epoch_loss, acc_percentage)
+    
+    plotter.save()
     return most_accurate_model, accuracy_of_most_accurate_model
 
 def accuracy(model, ldr):
