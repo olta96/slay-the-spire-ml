@@ -1,0 +1,669 @@
+[
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Bludgeon"
+        ],
+        "relics": [
+            "Burning Blood"
+        ],
+        "available_choices": [
+            "Heavy Blade",
+            "Iron Wave",
+            "Body Slam"
+        ],
+        "floor": 1,
+        "model_answers": {
+            "top": [
+                "SKIP",
+                "0.8458"
+            ],
+            "second": [
+                "Heavy Blade",
+                "0.0749"
+            ],
+            "third": [
+                "Body Slam",
+                "0.0526"
+            ],
+            "fourth": [
+                "Iron Wave",
+                "0.0267"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Bludgeon"
+        ],
+        "relics": [
+            "Burning Blood"
+        ],
+        "available_choices": [
+            "Rage",
+            "Impervious",
+            "Whirlwind"
+        ],
+        "floor": 2,
+        "model_answers": {
+            "top": [
+                "Impervious",
+                "0.9571"
+            ],
+            "second": [
+                "Whirlwind",
+                "0.0283"
+            ],
+            "third": [
+                "SKIP",
+                "0.0074"
+            ],
+            "fourth": [
+                "Rage",
+                "0.0072"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash",
+            "Bludgeon",
+            "Impervious"
+        ],
+        "relics": [
+            "Burning Blood"
+        ],
+        "available_choices": [
+            "Flex",
+            "Twin Strike",
+            "Havoc"
+        ],
+        "floor": 3,
+        "model_answers": {
+            "top": [
+                "SKIP",
+                "0.9473"
+            ],
+            "second": [
+                "Twin Strike",
+                "0.0443"
+            ],
+            "third": [
+                "Flex",
+                "0.0074"
+            ],
+            "fourth": [
+                "Havoc",
+                "0.0009"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Injury"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol"
+        ],
+        "available_choices": [
+            "Pummel",
+            "Blood for Blood",
+            "Flex"
+        ],
+        "floor": 8,
+        "model_answers": {
+            "top": [
+                "Blood for Blood",
+                "0.5194"
+            ],
+            "second": [
+                "SKIP",
+                "0.4722"
+            ],
+            "third": [
+                "Flex",
+                "0.0055"
+            ],
+            "fourth": [
+                "Pummel",
+                "0.0029"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Injury",
+            "Blood for Blood",
+            "Metamorphosis"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2"
+        ],
+        "available_choices": [
+            "Clothesline",
+            "Feel No Pain+1",
+            "Havoc"
+        ],
+        "floor": 12,
+        "model_answers": {
+            "top": [
+                "Feel No Pain+1",
+                "0.9866"
+            ],
+            "second": [
+                "SKIP",
+                "0.0102"
+            ],
+            "third": [
+                "Clothesline",
+                "0.0031"
+            ],
+            "fourth": [
+                "Havoc",
+                "0.0000"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Injury",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2"
+        ],
+        "available_choices": [
+            "Metallicize+1",
+            "Rage",
+            "Dark Embrace+1"
+        ],
+        "floor": 14,
+        "model_answers": {
+            "top": [
+                "Metallicize+1",
+                "0.9526"
+            ],
+            "second": [
+                "Dark Embrace+1",
+                "0.0472"
+            ],
+            "third": [
+                "Rage",
+                "0.0001"
+            ],
+            "fourth": [
+                "SKIP",
+                "0.0000"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Injury",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2"
+        ],
+        "available_choices": [
+            "Immolate",
+            "Limit Break",
+            "Juggernaut+1"
+        ],
+        "floor": 16,
+        "model_answers": {
+            "top": [
+                "Immolate",
+                "0.7142"
+            ],
+            "second": [
+                "Limit Break",
+                "0.2836"
+            ],
+            "third": [
+                "Juggernaut+1",
+                "0.0021"
+            ],
+            "fourth": [
+                "SKIP",
+                "0.0000"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Injury",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube"
+        ],
+        "available_choices": [
+            "True Grit",
+            "Uppercut",
+            "Perfected Strike"
+        ],
+        "floor": 18,
+        "model_answers": {
+            "top": [
+                "Uppercut",
+                "0.9715"
+            ],
+            "second": [
+                "SKIP",
+                "0.0280"
+            ],
+            "third": [
+                "Perfected Strike",
+                "0.0004"
+            ],
+            "fourth": [
+                "True Grit",
+                "0.0000"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate",
+            "Uppercut"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube"
+        ],
+        "available_choices": [
+            "Twin Strike",
+            "Clothesline",
+            "True Grit+1"
+        ],
+        "floor": 21,
+        "model_answers": {
+            "top": [
+                "True Grit+1",
+                "0.7841"
+            ],
+            "second": [
+                "SKIP",
+                "0.1431"
+            ],
+            "third": [
+                "Clothesline",
+                "0.0725"
+            ],
+            "fourth": [
+                "Twin Strike",
+                "0.0003"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate",
+            "Uppercut+1",
+            "True Grit+1",
+            "Rage",
+            "Armaments"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube",
+            "Blood Vial",
+            "Boot"
+        ],
+        "available_choices": [
+            "Body Slam",
+            "Hemokinesis",
+            "Clash"
+        ],
+        "floor": 28,
+        "model_answers": {
+            "top": [
+                "Body Slam",
+                "0.4995"
+            ],
+            "second": [
+                "SKIP",
+                "0.4961"
+            ],
+            "third": [
+                "Hemokinesis",
+                "0.0030"
+            ],
+            "fourth": [
+                "Clash",
+                "0.0014"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate",
+            "Uppercut+1",
+            "True Grit+1",
+            "Rage",
+            "Armaments",
+            "Body Slam"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube",
+            "Blood Vial",
+            "Boot"
+        ],
+        "available_choices": [
+            "Pummel+1",
+            "Warcry+1",
+            "Anger"
+        ],
+        "floor": 29,
+        "model_answers": {
+            "top": [
+                "Pummel+1",
+                "0.5632"
+            ],
+            "second": [
+                "Warcry+1",
+                "0.2881"
+            ],
+            "third": [
+                "SKIP",
+                "0.1312"
+            ],
+            "fourth": [
+                "Anger",
+                "0.0174"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate",
+            "Uppercut+1",
+            "True Grit+1",
+            "Rage",
+            "Armaments",
+            "Body Slam",
+            "Pummel+1"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube",
+            "Blood Vial",
+            "Boot"
+        ],
+        "available_choices": [
+            "Armaments",
+            "Uppercut",
+            "Pommel Strike"
+        ],
+        "floor": 30,
+        "model_answers": {
+            "top": [
+                "Armaments",
+                "0.5927"
+            ],
+            "second": [
+                "Uppercut",
+                "0.3972"
+            ],
+            "third": [
+                "Pommel Strike",
+                "0.0083"
+            ],
+            "fourth": [
+                "SKIP",
+                "0.0018"
+            ]
+        }
+    },
+    {
+        "deck": [
+            "Strike_R",
+            "Strike_R+1",
+            "Strike_R",
+            "Strike_R",
+            "Strike_R",
+            "Defend_R+1",
+            "Defend_R",
+            "Defend_R",
+            "Defend_R",
+            "Bash+1",
+            "Bludgeon",
+            "Impervious",
+            "Blood for Blood",
+            "Metamorphosis",
+            "Feel No Pain+1",
+            "Metallicize+1",
+            "Immolate",
+            "Uppercut+1",
+            "True Grit+1",
+            "Rage",
+            "Armaments",
+            "Body Slam",
+            "Pummel+1",
+            "Armaments"
+        ],
+        "relics": [
+            "Burning Blood",
+            "Golden Idol",
+            "Happy Flower",
+            "Frozen Egg 2",
+            "Runic Cube",
+            "Blood Vial",
+            "Boot",
+            "Lantern"
+        ],
+        "available_choices": [
+            "Thunderclap+1",
+            "Wild Strike+1",
+            "Shockwave"
+        ],
+        "floor": 31,
+        "model_answers": {
+            "top": [
+                "Shockwave",
+                "0.7135"
+            ],
+            "second": [
+                "Thunderclap+1",
+                "0.2510"
+            ],
+            "third": [
+                "SKIP",
+                "0.0340"
+            ],
+            "fourth": [
+                "Wild Strike+1",
+                "0.0015"
+            ]
+        }
+    }
+]
